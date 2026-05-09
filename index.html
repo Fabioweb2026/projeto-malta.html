@@ -6,7 +6,11 @@
     <title>Malta | Galeria</title>
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: sans-serif;
@@ -45,6 +49,7 @@
             object-fit: cover;
             border-radius: 12px;
             border: 1px solid #333;
+            background-color: #111;
         }
     </style>
 </head>
@@ -58,16 +63,23 @@
     <h1>Galeria Malta</h1>
 
     <div class="gallery">
-        <img src="malta1.jpeg" alt="Malta 1">
-        <img src="malta10.jpeg" alt="Malta 10">
-        <img src="malta12.jpeg" alt="Malta 12">
-        <img src="malta3.jpeg" alt="Malta 3">
-        <img src="giorgios1.png" alt="Giorgios Malta">
 
+        <!-- IMAGENS (CONFIRME NOMES NO GITHUB) -->
+        <img src="malta1.jpeg" alt="Malta 1" loading="lazy">
+        <img src="malta10.jpeg" alt="Malta 10" loading="lazy">
+        <img src="malta12.jpeg" alt="Malta 12" loading="lazy">
+
+        <!-- ATENÇÃO: verifique se é malta3.jpeg (não "mala3") -->
+        <img src="malta3.jpeg" alt="Malta 3" loading="lazy">
+
+        <img src="giorgios1.png" alt="Giorgios Malta" loading="lazy">
+
+        <!-- VÍDEO -->
         <video controls>
             <source src="malta11.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
+
     </div>
 
 </body>
