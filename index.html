@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malta | Galeria</title>
 
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: sans-serif;
+            background-color: #000;
+            color: white;
+            text-align: center;
+        }
+
+        .nav {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .nav a {
+            color: #f1c40f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #f1c40f;
+            margin: 40px 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img,
+        .gallery video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <a href="index.html">← VOLTAR AO PORTFÓLIO</a>
+    </div>
+
+    <h1>Galeria Malta</h1>
+
+    <div class="gallery">
+        <img src="malta1.jpeg" alt="Malta 1">
+        <img src="malta10.jpeg" alt="Malta 10">
+        <img src="malta12.jpeg" alt="Malta 12">
+        <img src="malta3.jpeg" alt="Malta 3">
+        <img src="giorgios1.png" alt="Giorgios Malta">
+
+        <video controls>
+            <source src="malta11.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+    </div>
+
+</body>
+</html>
