@@ -6,7 +6,6 @@
     <title>Malta</title>
 
     <style>
-        /* RESET */
         * {
             margin: 0;
             padding: 0;
@@ -26,16 +25,17 @@
 
             min-height: 100vh;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-
             position: relative;
-            padding: 20px;
+
+            /* IMPORTANTE: remove flex que estava quebrando layout */
+            display: block;
+
+            padding: 60px 20px;
+
+            text-align: center;
         }
 
-        /* OVERLAY ESCURO */
+        /* OVERLAY */
         body::before {
             content: "";
             position: absolute;
@@ -44,15 +44,21 @@
             z-index: 0;
         }
 
-        /* TÍTULO AJUSTADO */
-        h1 {
-            font-size: clamp(40px, 8vw, 80px);
-            color: #ffffff;
-            z-index: 1;
+        /* CONTEÚDO */
+        .container {
             position: relative;
+            z-index: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: calc(100vh - 120px);
+        }
+
+        h1 {
+            font-size: clamp(40px, 7vw, 70px);
             letter-spacing: 2px;
-            max-width: 100%;
-            word-wrap: break-word;
         }
 
     </style>
@@ -60,7 +66,9 @@
 
 <body>
 
-    <h1>Malta</h1>
+    <div class="container">
+        <h1>Malta</h1>
+    </div>
 
 </body>
 </html>
