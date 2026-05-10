@@ -16,7 +16,7 @@
             overflow-x: hidden;
         }
 
-        /* Banner Principal com Azul Marinho conforme seu print */
+        /* Banner Principal com Azul Marinho e Imagem de Fundo */
         .hero-banner {
             height: 75vh;
             width: 100%;
@@ -30,6 +30,7 @@
             border-bottom: 3px solid #003366;
         }
 
+        /* Título Centralizado com Efeito de Vidro */
         .glass-title {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(15px);
@@ -43,12 +44,13 @@
         .hero-banner h1 { 
             font-family: 'Playfair Display', serif; 
             font-size: clamp(70px, 15vw, 130px); 
-            color: #003366; /* AZUL MARINHO DO SEU NOVO VISUAL */
+            color: #003366; /* AZUL MARINHO NOS TÍTULOS */
             letter-spacing: -2px;
             margin: 0;
             line-height: 1;
         }
 
+        /* Botão Voltar ao Portfólio */
         .btn-back {
             position: absolute; top: 30px; left: 30px;
             text-decoration: none; color: #003366; font-weight: 800; font-size: 11px;
@@ -57,7 +59,7 @@
         }
         .btn-back:hover { background: #003366; color: #fff; }
 
-        /* Cards */
+        /* Container dos Cards */
         .container { max-width: 1200px; margin: -60px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
 
         .guide-grid {
@@ -73,8 +75,8 @@
         }
         .guide-card:hover { transform: translateY(-15px); border-color: #003366; }
 
-        /* CORREÇÃO DAS IMAGENS: Agora elas vão carregar */
-        .guide-card img { width: 100%; height: 280px; object-fit: cover; display: block; }
+        /* AJUSTE DAS IMAGENS DOS CARDS */
+        .guide-card img { width: 100%; height: 280px; object-fit: cover; display: block; background: #eee; }
 
         .card-body { padding: 35px; text-align: center; }
         .card-body h3 { color: #003366; font-size: 26px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
@@ -93,27 +95,27 @@
     <div class="container">
         <div class="guide-grid">
             
+            <!-- CARD 1: Gastronomia com malta1.jpeg -->
             <div class="guide-card">
-                <!-- Certifique-se de que a imagem giorgios3.png está no mesmo repositório -->
-                <img src="giorgios3.png" alt="Gastronomia">
+                <img src="malta1.jpeg" alt="Gastronomia">
                 <div class="card-body">
                     <h3>Gastronomia</h3>
                     <p>SLIEMA, MALTA</p>
                 </div>
             </div>
 
+            <!-- CARD 2: História com malta1.jpeg -->
             <div class="guide-card">
-                <!-- Certifique-se de que a imagem malta10.jpeg está no mesmo repositório -->
-                <img src="malta10.jpeg" alt="Cidade Histórica">
+                <img src="malta1.jpeg" alt="Cidade Histórica">
                 <div class="card-body">
                     <h3>Cidade Histórica</h3>
                     <p>VALLETTA, MALTA</p>
                 </div>
             </div>
 
+            <!-- CARD 3: Litoral com malta10.jpeg -->
             <div class="guide-card">
-                <!-- Certifique-se de que a imagem malta12.jpeg está no mesmo repositório -->
-                <img src="malta12.jpeg" alt="Azure Horizons">
+                <img src="malta10.jpeg" alt="Azure Horizons">
                 <div class="card-body">
                     <h3>Azure Horizons</h3>
                     <p>LITORAL MEDITERRÂNEO</p>
@@ -125,3 +127,4 @@
 
 </body>
 </html>
+
