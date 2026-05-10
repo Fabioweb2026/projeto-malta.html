@@ -31,7 +31,7 @@
         .btn-back:hover { background: #b39359; color: white; }
         .glass-box h1 { font-family: 'Playfair Display', serif; font-size: clamp(50px, 10vw, 90px); color: #b39359; }
 
-        /* GRID DE CARDS LADO A LADO */
+        /* GRID DE CARDS */
         .container { width: 100%; max-width: 1200px; padding: 0 20px 80px; }
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
 
@@ -56,25 +56,30 @@
         }
         .btn-card:hover { background: #b39359; color: white; }
 
-        /* MODAL HARMONIZADO */
+        /* MODAIS CENTRALIZADOS */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(253, 252, 240, 0.98); backdrop-filter: blur(15px);
-            display: none; justify-content: center; align-items: center;
-            z-index: 1000; overflow-y: auto; padding: 60px 20px;
+            display: none; justify-content: center; align-items: center; /* Centralização vertical e horizontal */
+            z-index: 1000; overflow-y: auto; padding: 40px 20px;
         }
 
         .modal:target { display: flex; }
 
         .modal-container {
             display: flex; flex-direction: column; align-items: center;
-            width: 100%; max-width: 900px;
+            width: 100%; max-width: 1000px;
+            margin: auto; /* Garante que o conteúdo respire no centro */
         }
 
         .modal-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px; justify-items: center; width: 100%; margin-bottom: 30px;
+            display: flex;
+            flex-direction: row;
+            gap: 15px; 
+            justify-content: center; 
+            flex-wrap: wrap;
+            width: 100%; 
+            margin-bottom: 30px;
         }
 
         .modal-content img, .modal-content video {
@@ -101,6 +106,7 @@
             background: #b39359; color: white; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-size: 24px; text-decoration: none; font-weight: bold;
+            z-index: 1001;
         }
 
         .modal-info h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: #b39359; margin-bottom: 10px; text-align: center; }
@@ -109,7 +115,6 @@
         @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 700px) { 
             .grid { grid-template-columns: 1fr; }
-            .modal-content { grid-template-columns: repeat(2, 1fr); }
             .modal-content img, .modal-content video { width: 100%; height: auto; }
         }
     </style>
@@ -126,7 +131,6 @@
     <div class="container">
         <div class="grid">
             
-            <!-- Card 1 -->
             <div class="card">
                 <div class="card-img-container"><img src="imagem10.jpg.png" alt="Malta"></div>
                 <div class="card-body">
@@ -136,7 +140,6 @@
                 </div>
             </div>
 
-            <!-- Card 2 -->
             <div class="card">
                 <div class="card-img-container"><img src="malta01.jpeg" alt="Giorgios"></div>
                 <div class="card-body">
@@ -146,7 +149,6 @@
                 </div>
             </div>
 
-            <!-- Card 3 -->
             <div class="card">
                 <div class="card-img-container"><img src="malta8.jpg" alt="Turismo"></div>
                 <div class="card-body">
@@ -159,16 +161,16 @@
         </div>
     </div>
 
-    <!-- Modal Turismo Lazer COMPLETO -->
+    <!-- Modal Turismo Lazer Ajustado (Removido Lazer 4 e Centralizado) -->
     <div id="turismo-modal" class="modal">
         <a href="#" class="modal-close">&times;</a>
         <div class="modal-container">
             <div class="modal-content">
                 <video autoplay muted loop><source src="image2.jpg.mp4" type="video/mp4"></video>
-                <img src="image3jpg.jpeg" alt="Lazer 1">
-                <img src="imagem5.jpg.jpeg" alt="Lazer 2">
-                <img src="malta9.jpeg" alt="Lazer 3">
-                <img src="malta10.jpg" alt="Lazer 4">
+                <img src="image3jpg.jpeg" alt="Blue Lagoon">
+                <img src="imagem5.jpg.jpeg" alt="Blue Grotto">
+                <img src="malta9.jpeg" alt="St. Peter's Pool">
+                <!-- Imagem malta10.jpg removida conforme solicitado -->
             </div>
             <div class="modal-info">
                 <h2>Exploração e Aventura</h2>
