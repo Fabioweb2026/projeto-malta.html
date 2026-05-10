@@ -1,110 +1,102 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Malta</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malta</title>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        min-height: 100vh;
-        background: url("malta10.jpg") no-repeat center center/cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+        /* FUNDO COM IMAGEM */
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
 
-    /* TÍTULO FORTE E FIXO */
-    .header {
-        margin-top: 25px;
-        text-align: center;
-    }
+            background-image: url("mata.png14.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
-    .header h1 {
-        font-size: 62px;
-        color: #0b1f3a;
-        background: rgba(255,255,255,0.7);
-        padding: 12px 35px;
-        border-radius: 12px;
-        display: inline-block;
-        letter-spacing: 2px;
-    }
+            position: relative;
+            min-height: 100vh;
+        }
 
-    /* BLOCO CENTRAL LIMPO */
-    .card {
-        margin-top: 60px;
-        width: 900px;
-        max-width: 95%;
-        display: flex;
-        gap: 25px;
-        align-items: center;
+        /* CAMADA ESCURA SOBRE A IMAGEM */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: -1;
+        }
 
-        background: rgba(255,255,255,0.65);
-        padding: 20px;
-        border-radius: 16px;
-        backdrop-filter: blur(4px);
-    }
+        /* CONTEÚDO PRINCIPAL */
+        .container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 40px;
+        }
 
-    /* IMAGEM SEMPRE À ESQUERDA */
-    .card img {
-        width: 220px;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        box-shadow: 0 8px 18px rgba(0,0,0,0.35);
-    }
+        /* IMAGEM ESQUERDA */
+        .container img {
+            width: 250px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
 
-    /* TEXTO DISCRETO E ELEGANTE */
-    .text {
-        color: #0b1f3a;
-    }
+        /* TEXTO */
+        .text {
+            max-width: 600px;
+        }
 
-    .text h2 {
-        font-size: 20px;
-        margin-bottom: 8px;
-        opacity: 0.9;
-    }
+        h1 {
+            color: #1e3a8a; /* azul elegante */
+            margin-bottom: 10px;
+        }
 
-    .text p {
-        font-size: 15px;
-        line-height: 1.6;
-        opacity: 0.85;
-    }
-</style>
+        .location {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
 
+    </style>
 </head>
 
 <body>
 
-    <div class="header">
-        <h1>Malta</h1>
-    </div>
+    <div class="container">
 
-    <div class="card">
-
-        <!-- IMAGEM ESQUERDA -->
+        <!-- IMAGEM -->
         <img src="malta01.jpeg" alt="Malta">
 
-        <!-- TEXTO DIREITA -->
+        <!-- TEXTO -->
         <div class="text">
-            <h2>Localização</h2>
+            <h1>Malta</h1>
+
             <p>
-                Malta é uma ilha localizada no Mar Mediterrâneo, ao sul da Itália.<br><br>
-                📍 Ilha de Malta – Mediterrâneo Central<br>
-                🌍 Europa<br>
-                🏛️ Capital: Valletta
+                Malta is a beautiful island country in the Mediterranean Sea,
+                known for its crystal-clear waters, historic architecture,
+                and rich cultural heritage.
             </p>
+
+            <div class="location">
+                Location: Mediterranean Sea, Southern Europe
+            </div>
         </div>
 
     </div>
 
 </body>
 </html>
-
