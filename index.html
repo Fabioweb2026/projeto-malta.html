@@ -1,148 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malta Journey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malta</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-            /* ⭐ fundo mais elegante */
-            background: linear-gradient(180deg, #f7faff 0%, #e6eef8 100%);
-            
-            color: #1f2d3d;
-        }
+    body {
+        height: 100vh;
+        font-family: Arial, sans-serif;
 
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 50px;
-            padding: 70px;
-            flex-wrap: wrap;
-        }
+        /* IMAGEM DE FUNDO */
+        background-image: url("malta10.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
 
-        /* imagem */
-        .image-box img {
-            width: 450px;
-            max-width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 18px 45px rgba(0,0,0,0.12);
-            transition: transform 0.3s ease;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .image-box img:hover {
-            transform: scale(1.03);
-        }
+    /* TÍTULO CENTRAL */
+    h1 {
+        font-size: 80px;
+        color: #0b1f3a; /* azul marinho elegante */
+        background: rgba(255, 255, 255, 0.55);
+        padding: 20px 50px;
+        border-radius: 15px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+</style>
 
-        /* texto */
-        .text-box {
-            max-width: 520px;
-            background: rgba(255,255,255,0.7);
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-        }
-
-        h1 {
-            color: #0b2a4a;
-            font-size: 44px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #333;
-        }
-
-        /* location card */
-        .location {
-            margin-top: 20px;
-            padding: 15px;
-            background: #ffffff;
-            border-left: 5px solid #0b2a4a;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-
-        .location strong {
-            display: block;
-            margin-bottom: 5px;
-            color: #0b2a4a;
-        }
-
-        /* botão */
-        .btn-map {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 10px 16px;
-            background: #0b2a4a;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .btn-map:hover {
-            background: #163d66;
-        }
-
-        /* responsivo */
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-<div class="container">
-
-    <!-- IMAGEM ESQUERDA -->
-    <div class="image-box">
-        <img src="malta01.jpeg" alt="Malta">
-    </div>
-
-    <!-- TEXTO DIREITA -->
-    <div class="text-box">
-
-        <h1>Malta</h1>
-
-        <p>
-            Malta is a Mediterranean island country known for its crystal-clear waters,
-            historic architecture, and stunning coastal landscapes.
-            A perfect mix of history, culture, and modern lifestyle.
-        </p>
-
-        <!-- LOCALIZAÇÃO -->
-        <div class="location">
-            <strong>Location:</strong>
-            Valletta, Malta 🇲🇹<br>
-            Mediterranean Sea, Southern Europe
-
-            <br>
-
-            <a class="btn-map"
-               href="https://www.google.com/maps/place/Valletta,+Malta"
-               target="_blank">
-               View on Google Maps
-            </a>
-        </div>
-
-    </div>
-
-</div>
+    <h1>Malta</h1>
 
 </body>
 </html>
