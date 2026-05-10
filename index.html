@@ -17,7 +17,6 @@
             display: flex; flex-direction: column; align-items: center; color: #4a4a4a;
         }
 
-        /* HEADER */
         .hero { padding: 60px 20px 40px; text-align: center; }
         .btn-back {
             text-decoration: none; color: #b39359; background: white;
@@ -27,7 +26,6 @@
         .btn-back:hover { background: #b39359; color: white; }
         .glass-box h1 { font-family: 'Playfair Display', serif; font-size: clamp(50px, 10vw, 90px); color: #b39359; }
 
-        /* GRID DE CARDS */
         .container { width: 100%; max-width: 1200px; padding: 0 20px 80px; }
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(179, 147, 89, 0.1); transition: 0.4s ease; }
@@ -41,45 +39,49 @@
         .btn-card { display: inline-block; padding: 10px 30px; border: 1px solid #b39359; color: #b39359; text-decoration: none; font-size: 10px; font-weight: 700; text-transform: uppercase; border-radius: 50px; transition: 0.3s; }
         .btn-card:hover { background: #b39359; color: white; }
 
-        /* MODAIS (GALERIAS) */
+        /* MODAIS HARMONIZADOS (IMAGENS MENORES) */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(253, 252, 240, 0.98); backdrop-filter: blur(15px);
             display: none; justify-content: center; align-items: center;
-            z-index: 1000; overflow-y: auto; padding: 60px 20px;
+            z-index: 1000; overflow-y: auto; padding: 40px 20px;
         }
         .modal:target { display: flex; }
-        .modal-container { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1100px; }
+        .modal-container { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 900px; }
         
         .modal-content {
-            display: flex; flex-direction: row; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            justify-items: center;
+            width: 100%;
+            margin-bottom: 30px;
         }
 
-        /* AJUSTE DAS IMAGENS NA GALERIA */
         .modal-content img, .modal-content video {
-            height: 250px; width: 250px; object-fit: cover; border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(179, 147, 89, 0.15); border: 4px solid white; transition: 0.3s;
+            height: 220px; /* TAMANHO REDUZIDO PARA HARMONIA */
+            width: 220px; 
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(179, 147, 89, 0.1);
+            border: 4px solid white;
+            transition: 0.3s;
         }
-        .modal-content img:hover, .modal-content video:hover { transform: scale(1.05); }
 
-        /* BOTÃO X DE FECHAR */
         .modal-close {
-            position: fixed; top: 20px; right: 30px; width: 50px; height: 50px;
+            position: fixed; top: 20px; right: 30px; width: 45px; height: 45px;
             background: #b39359; color: white; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 30px; text-decoration: none; font-weight: bold;
-            box-shadow: 0 5px 15px rgba(179, 147, 89, 0.4); z-index: 1001; transition: 0.3s;
+            font-size: 24px; text-decoration: none; font-weight: bold; z-index: 1001;
         }
-        .modal-close:hover { background: #8c6d31; transform: rotate(90deg); }
 
         .modal-info { text-align: center; }
         .modal-info h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #b39359; margin-bottom: 10px; }
-        .modal-info p { font-size: 13px; color: #666; max-width: 600px; line-height: 1.6; }
+        .modal-info p { font-size: 13px; color: #666; max-width: 500px; line-height: 1.6; }
 
-        /* RESPONSIVIDADE */
-        @media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) { 
             .grid { grid-template-columns: 1fr; }
+            .modal-content { grid-template-columns: repeat(2, 1fr); }
             .modal-content img, .modal-content video { width: 100%; height: auto; }
         }
     </style>
@@ -95,10 +97,8 @@
 
     <div class="container">
         <div class="grid">
-            
-            <!-- Card 1 -->
             <div class="card">
-                <div class="card-img-container"><img src="imagem10.jpg.png" alt="Malta Experience"></div>
+                <div class="card-img-container"><img src="imagem10.jpg.png" alt="Malta"></div>
                 <div class="card-body">
                     <h3>Malta Experience</h3>
                     <p>Valletta, Malta</p>
@@ -106,9 +106,8 @@
                 </div>
             </div>
 
-            <!-- Card 2 -->
             <div class="card">
-                <div class="card-img-container"><img src="malta01.jpeg" alt="Giorgios Cafeteria"></div>
+                <div class="card-img-container"><img src="malta01.jpeg" alt="Giorgios"></div>
                 <div class="card-body">
                     <h3>Giorgios Cafeteria</h3>
                     <p>Gastronomia e Café</p>
@@ -116,9 +115,8 @@
                 </div>
             </div>
 
-            <!-- Card 3: Turismo Lazer -->
             <div class="card">
-                <div class="card-img-container"><img src="malta8.jpg" alt="Turismo Lazer"></div>
+                <div class="card-img-container"><img src="malta8.jpg" alt="Turismo"></div>
                 <div class="card-body">
                     <h3>Turismo Lazer</h3>
                     <p>Exploração e Aventura</p>
@@ -128,23 +126,40 @@
         </div>
     </div>
 
-    <!-- Modal Card 1 -->
-    <div id="experience-modal" class="modal">
+    <!-- Modal Turismo Lazer Harmonizado -->
+    <div id="turismo-modal" class="modal">
         <a href="#" class="modal-close">&times;</a>
         <div class="modal-container">
             <div class="modal-content">
-                <img src="imagem8.jpg.png" alt="Malta 1">
-                <img src="malta5.jpg" alt="Malta 2">
-                <img src="malta6.jpg" alt="Malta 3">
+                <video autoplay muted loop><source src="image2.jpg.mp4" type="video/mp4"></video>
+                <img src="mage3jpg.jpeg" alt="Lazer 1">
+                <img src="imagem5.jpg.jpeg" alt="Lazer 2">
+                <img src="malta9.jpeg" alt="Lazer 3">
+                <img src="malta10.jpeg" alt="Lazer 4">
             </div>
             <div class="modal-info">
-                <h2>Malta Experience</h2>
-                <p>Uma jornada visual capturando a essência histórica de Valletta e suas paisagens únicas.</p>
+                <h2>Turismo e Lazer</h2>
+                <p>Explorações inesquecíveis pelas águas cristalinas e marcos históricos de Malta.</p>
             </div>
         </div>
     </div>
 
-    <!-- Modal Card 2 -->
+    <!-- Modais Anteriores (Experience e Menu) mantidos aqui... -->
+    <div id="experience-modal" class="modal">
+        <a href="#" class="modal-close">&times;</a>
+        <div class="modal-container">
+            <div class="modal-content">
+                <img src="imagem8.jpg.png" alt="Experience 1">
+                <img src="malta5.jpg" alt="Experience 2">
+                <img src="malta6.jpg" alt="Experience 3">
+            </div>
+            <div class="modal-info">
+                <h2>Malta Experience</h2>
+                <p>A essência visual da ilha de Malta.</p>
+            </div>
+        </div>
+    </div>
+
     <div id="menu-modal" class="modal">
         <a href="#" class="modal-close">&times;</a>
         <div class="modal-container">
@@ -159,29 +174,9 @@
         </div>
     </div>
 
-    <!-- Modal Card 3: Turismo Lazer (Harmonizado com Vídeo e Imagens) -->
-    <div id="turismo-modal" class="modal">
-        <a href="#" class="modal-close">&times;</a>
-        <div class="modal-container">
-            <div class="modal-content">
-                <!-- Vídeo (Se o arquivo existir no seu GitHub) -->
-                <video autoplay muted loop>
-                    <source src="image2.jpg.mp4" type="video/mp4">
-                </video>
-                <img src="mage3jpg.jpeg" alt="Lazer 1">
-                <img src="imagem5.jpg.jpeg" alt="Lazer 2">
-                <img src="malta9.jpeg" alt="Lazer 3">
-                <img src="malta10.jpeg" alt="Lazer 4">
-            </div>
-            <div class="modal-info">
-                <h2>Turismo e Lazer</h2>
-                <p>Descubra as melhores aventuras em Malta, de passeios de barco em águas cristalinas a explorações históricas inesquecíveis.</p>
-            </div>
-        </div>
-    </div>
-
 </body>
 </html>
+
 
 
 
