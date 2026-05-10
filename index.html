@@ -4,113 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malta Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            /* Configuração do Fundo com Malta10.jpg */
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('malta10.jpg') no-repeat center center fixed;
+            /* Se a imagem malta10.jpg não carregar, ele ficará cinza escuro */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('malta10.jpg') no-repeat center center fixed;
             background-size: cover;
+            background-color: #333; 
             min-height: 100vh;
-            overflow-x: hidden;
+            color: white;
         }
 
-        /* ESTILOS DO HEADER / HERO */
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
         .btn-back {
             text-decoration: none;
             color: white;
-            background: rgba(0,0,0,0.5);
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-size: 14px;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 25px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: 0.3s;
         }
 
+        .btn-back:hover { background: rgba(255,255,255,0.4); }
+
         .side-frame img {
-            width: 300px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            width: 280px;
+            border-radius: 20px;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .glass-box h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 64px;
-            color: white;
+            font-size: clamp(40px, 8vw, 80px);
             margin-top: 20px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 2px 4px 15px rgba(0,0,0,0.7);
         }
 
-        /* CONTAINER E GRID */
         .container {
             max-width: 1200px;
-            margin: 40px auto 80px;
+            margin: 0 auto 100px;
             padding: 0 20px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background: white;
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: 0.4s;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-        }
+        .card:hover { transform: translateY(-10px); }
 
         .card img {
             width: 100%;
-            height: 220px;
+            height: 250px;
             object-fit: cover;
-            display: block;
         }
 
         .card-body {
-            padding: 20px;
+            padding: 25px;
             text-align: center;
+            color: #333;
         }
 
         .card-body h3 {
             font-family: 'Playfair Display', serif;
             color: #b39359;
-            margin-bottom: 8px;
+            font-size: 22px;
+            margin-bottom: 10px;
         }
 
         .card-body p {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
-            color: #777;
+            color: #888;
             text-transform: uppercase;
-        }
-
-        /* RESPONSIVIDADE */
-        @media (max-width: 768px) {
-            .glass-box h1 {
-                font-size: 48px;
-            }
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -120,6 +111,7 @@
         <a href="index.html" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
         
         <div class="side-frame">
+            <!-- Verifique se o nome é malta1.jpeg ou malta1.jpg -->
             <img src="malta1.jpeg" alt="Malta Principal">
         </div>
 
@@ -130,15 +122,37 @@
 
     <div class="container">
         <div class="grid">
+            
+            <!-- Card 1: Malta Experience -->
             <div class="card">
-                <img src="malta10.jpg" alt="Malta Experience">
+                <img src="malta10.jpg" alt="Malta">
                 <div class="card-body">
                     <h3>Malta Experience</h3>
                     <p>Valletta, Malta</p>
                 </div>
             </div>
+
+            <!-- Card 2: Gioges Cafeteria -->
+            <div class="card">
+                <img src="cafe.jpg" alt="Gioges Cafeteria">
+                <div class="card-body">
+                    <h3>Gioges Cafeteria</h3>
+                    <p>Gastronomia e Café</p>
+                </div>
+            </div>
+
+            <!-- Card 3: Turismo Lazer -->
+            <div class="card">
+                <img src="turismo.jpg" alt="Turismo Lazer">
+                <div class="card-body">
+                    <h3>Turismo Lazer</h3>
+                    <p>Exploração e Aventura</p>
+                </div>
+            </div>
+
         </div>
     </div>
 
 </body>
 </html>
+
