@@ -1,48 +1,87 @@
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-    font-family: Arial, sans-serif;
-    color: white;
+    <title>Malta - Travel Project</title>
 
-    background-image: url("mata.png14.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    min-height: 100vh;
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
 
-    /* IMPORTANTE: remove flex que causa o bug */
-    display: block;
+            background-image: url("mata.png14.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
-    position: relative;
+            min-height: 100vh;
+            position: relative;
+        }
 
-    padding: 80px 20px;
-    text-align: center;
-}
+        /* overlay escuro */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 0;
+        }
 
-/* camada escura correta */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 0;
-}
+        /* TOPO DO PROJETO */
+        .project-header {
+            position: relative;
+            z-index: 1;
 
-/* garante que tudo fique acima do overlay */
-h1 {
-    position: relative;
-    z-index: 1;
+            padding: 20px;
+            text-align: center;
 
-    font-size: clamp(40px, 6vw, 70px);
-    letter-spacing: 2px;
+            font-size: 16px;
+            letter-spacing: 3px;
 
-    margin-top: 0;
-}
-</style>
+            color: #d6d6d6;
+        }
+
+        /* CENTRALIZAÇÃO */
+        .container {
+            position: relative;
+            z-index: 1;
+
+            min-height: calc(100vh - 60px);
+
+            display: grid;
+            place-items: center;
+
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 80px);
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NOME DO PROJETO (TOPO) -->
+    <div class="project-header">
+        TRAVEL PROJECT • MALTA PAGE
+    </div>
+
+    <!-- CONTEÚDO CENTRAL -->
+    <div class="container">
+        <h1>Malta</h1>
+    </div>
+
+</body>
+</html>
