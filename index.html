@@ -65,7 +65,7 @@
         }
         .btn-card:hover { background: #b39359; color: white; }
 
-        /* MODAL HARMONIZADO (INFORMATIVO) */
+        /* MODAL HARMONIZADO REDUZIDO */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(253, 252, 240, 0.98);
@@ -81,24 +81,24 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 900px;
+            max-width: 750px; /* Reduzi a largura máxima do modal */
         }
 
         .modal-content {
             display: flex;
             flex-direction: row;
-            gap: 25px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 30px;
         }
 
         .modal-content img {
-            height: 380px;      /* Altura Harmonizada */
-            width: 380px;       /* Largura Harmonizada para Simetria */
-            object-fit: cover;  /* Mantém a foto perfeita sem distorção */
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(179, 147, 89, 0.15);
+            height: 300px;      /* ALTURA REDUZIDA */
+            width: 300px;       /* LARGURA REDUZIDA PARA SIMETRIA */
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(179, 147, 89, 0.15);
             border: 4px solid white;
             transition: 0.3s;
         }
@@ -106,12 +106,12 @@
         .modal-content img:hover { transform: scale(1.02); }
 
         .modal-info { text-align: center; }
-        .modal-info h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: #b39359; margin-bottom: 10px; }
+        .modal-info h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #b39359; margin-bottom: 10px; }
         
         .address-link {
             text-decoration: none;
             color: #666;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             display: block;
             margin-bottom: 10px;
@@ -125,14 +125,14 @@
             color: #b39359;
             padding: 5px 15px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         .modal-close {
             position: fixed; top: 20px; right: 40px;
-            color: #b39359; font-size: 50px; text-decoration: none; font-weight: 300;
+            color: #b39359; font-size: 45px; text-decoration: none; font-weight: 300;
         }
 
         /* RESPONSIVIDADE */
@@ -184,13 +184,13 @@
         </div>
     </div>
 
-    <!-- Galeria Modal Harmonizada (Informativo) -->
+    <!-- Galeria Modal Reduzida e Harmonizada -->
     <div id="menu-modal" class="modal">
         <a href="#" class="modal-close">&times;</a>
         <div class="modal-container">
             <div class="modal-content">
-                <img src="malta09.jpg.jpge.webp" alt="Ambiente Giorgio's">
-                <img src="malta10.jpg.jpge.webp" alt="Gastronomia Malta">
+                <img src="malta09.jpg.jpge.webp" alt="Fachada Giorgio's">
+                <img src="malta10.jpg.jpge.webp" alt="Prato Giorgio's">
             </div>
             <div class="modal-info">
                 <h2>Giorgio's Cafeteria</h2>
@@ -198,7 +198,7 @@
                     📍 110, Tigne Seafront, Sliema, Malta
                 </a>
                 <span class="info-tag">Menu Mediterrâneo & Café</span>
-                <p style="margin-top: 15px; font-size: 13px; color: #888; max-width: 400px; line-height: 1.6;">
+                <p style="margin-top: 15px; font-size: 13px; color: #888; max-width: 450px; line-height: 1.6;">
                     Um ícone em Sliema, oferecendo vistas deslumbrantes do porto e uma culinária autêntica que une tradição e sofisticação.
                 </p>
             </div>
@@ -207,6 +207,7 @@
 
 </body>
 </html>
+
 
 
 
