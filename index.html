@@ -9,7 +9,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdfaf6; overflow-x: hidden; }
 
-        /* Banner Principal */
         .hero {
             height: 75vh; width: 100%;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('mata.png14.png') no-repeat center center;
@@ -17,28 +16,25 @@
             border-bottom: 2px solid #b39359; padding: 0 50px;
         }
 
-        /* Botão Voltar */
         .btn-back {
             position: absolute; top: 30px; left: 30px; text-decoration: none; color: #fff; 
             font-weight: 800; font-size: 11px; text-transform: uppercase; border: 1px solid #b39359; 
             padding: 10px 22px; border-radius: 50px; background: rgba(0,0,0,0.5); z-index: 100;
         }
 
-        /* Moldura da Foto Esquerda */
+        /* AQUI ESTÁ A MOLDURA ÚNICA E CORRIGIDA */
         .side-frame {
             width: 400px; height: 280px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.4);
             overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); margin-right: 40px; flex-shrink: 0;
         }
         .side-frame img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Título Malta (Efeito Vidro) */
         .glass-box {
             background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); padding: 60px 100px;
             border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 30px 60px rgba(0,0,0,0.3);
         }
         .glass-box h1 { font-family: 'Playfair Display', serif; font-size: clamp(60px, 10vw, 110px); color: #b39359; margin: 0; }
 
-        /* Cards */
         .container { max-width: 1200px; margin: -50px auto 80px; padding: 0 20px; position: relative; z-index: 50; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .card { background: #fff; border-radius: 24px; overflow: hidden; border: 1px solid #e5e1da; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; }
@@ -49,31 +45,24 @@
     </style>
 </head>
 <body>
-
     <header class="hero">
         <a href="https://github.io" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
-        <div class="side-frame"><img src="malta1.jpeg"></div>
-        <div class="glass-box"><h1>Malta</h1></div>
+        <div class="side-frame">
+            <img src="malta1.jpeg" alt="Malta">
+        </div>
+        <div class="glass-box">
+            <h1>Malta</h1>
+        </div>
     </header>
-
     <div class="container">
         <div class="grid">
-            <div class="card">
-                <img src="giorgios3.png">
-                <div class="card-body"><h3>Gastronomia</h3><p>SLIEMA, MALTA</p></div>
-            </div>
-            <div class="card">
-                <img src="malta10.jpeg">
-                <div class="card-body"><h3>Cidade Histórica</h3><p>VALLETTA, MALTA</p></div>
-            </div>
-            <div class="card">
-                <img src="malta12.jpeg">
-                <div class="card-body"><h3>Azure Horizons</h3><p>LITORAL MEDITERRÂNEO</p></div>
-            </div>
+            <div class="card"><img src="giorgios3.png"><div class="card-body"><h3>Gastronomia</h3><p>SLIEMA, MALTA</p></div></div>
+            <div class="card"><img src="malta10.jpeg"><div class="card-body"><h3>Cidade Histórica</h3><p>VALLETTA, MALTA</p></div></div>
+            <div class="card"><img src="malta12.jpeg"><div class="card-body"><h3>Azure Horizons</h3><p>LITORAL MEDITERRÂNEO</p></div></div>
         </div>
     </div>
-
 </body>
 </html>
+
 
 
