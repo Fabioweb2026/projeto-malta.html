@@ -13,44 +13,44 @@
             box-sizing: border-box;
         }
 
+        /* FUNDO COM IMAGEM */
         body {
             font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #1a1a1a;
-        }
+            color: white;
 
-        /* CONTAINER */
-        .container {
+            background-image: url("mata.png14.png"); /* coloque essa imagem no GitHub */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            height: 100vh;
+
             display: flex;
-            align-items: flex-start;
-            gap: 30px;
-            padding: 50px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        /* IMAGEM */
-        .container img {
-            width: 280px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        /* CAMADA ESCURA PARA LEGIBILIDADE */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.35);
+            z-index: 0;
         }
 
-        /* TEXTO */
+        /* TÍTULO */
         h1 {
-            color: #1e3a8a;
-            font-size: 36px;
-        }
-
-        /* RESPONSIVO */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .container img {
-                width: 90%;
-            }
+            font-size: 80px;
+            color: #ffffff;
+            z-index: 1;
+            position: relative;
+            letter-spacing: 2px;
         }
 
     </style>
@@ -58,15 +58,7 @@
 
 <body>
 
-    <div class="container">
-
-        <!-- IMAGEM -->
-        <img src="malta01.jpeg" alt="Malta">
-
-        <!-- APENAS TÍTULO -->
-        <h1>Malta</h1>
-
-    </div>
+    <h1>Malta</h1>
 
 </body>
 </html>
