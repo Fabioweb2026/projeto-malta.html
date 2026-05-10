@@ -1,74 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malta</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body {
+    font-family: Arial, sans-serif;
+    color: white;
 
-        /* FUNDO */
-        body {
-            font-family: Arial, sans-serif;
-            color: white;
+    background-image: url("mata.png14.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-            background-image: url("mata.png14.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+    min-height: 100vh;
 
-            min-height: 100vh;
+    /* IMPORTANTE: remove flex que causa o bug */
+    display: block;
 
-            position: relative;
+    position: relative;
 
-            /* IMPORTANTE: remove flex que estava quebrando layout */
-            display: block;
+    padding: 80px 20px;
+    text-align: center;
+}
 
-            padding: 60px 20px;
+/* camada escura correta */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+}
 
-            text-align: center;
-        }
+/* garante que tudo fique acima do overlay */
+h1 {
+    position: relative;
+    z-index: 1;
 
-        /* OVERLAY */
-        body::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-            z-index: 0;
-        }
+    font-size: clamp(40px, 6vw, 70px);
+    letter-spacing: 2px;
 
-        /* CONTEÚDO */
-        .container {
-            position: relative;
-            z-index: 1;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            min-height: calc(100vh - 120px);
-        }
-
-        h1 {
-            font-size: clamp(40px, 7vw, 70px);
-            letter-spacing: 2px;
-        }
-
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-        <h1>Malta</h1>
-    </div>
-
-</body>
-</html>
+    margin-top: 0;
+}
+</style>
