@@ -1,86 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Malta - Travel Project</title>
-
+    <title>Malta | Heritage</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @import url('https://googleapis.com');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #001f3f; /* O seu Azul Marinho */
+            color: #fff; 
+            overflow-x: hidden;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            color: white;
-
-            background-image: url("mata.png14.png");
+        /* Banner Principal Limpo (Sem foto lateral e sem selo) */
+        .hero-banner {
+            height: 75vh;
+            width: 100%;
+            background: linear-gradient(rgba(0,31,63,0.4), #001f3f), url('malta1.jpeg') no-repeat center center;
             background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-
-            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid #b39359;
             position: relative;
         }
 
-        /* overlay escuro */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-            z-index: 0;
+        .hero-banner h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(80px, 15vw, 150px); 
+            color: #fff; 
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            letter-spacing: -2px;
         }
 
-        /* TOPO DO PROJETO */
-        .project-header {
-            position: relative;
-            z-index: 1;
-
-            padding: 20px;
-            text-align: center;
-
-            font-size: 16px;
-            letter-spacing: 3px;
-
-            color: #d6d6d6;
+        /* Botão Voltar Discreto */
+        .btn-back {
+            position: absolute; top: 30px; left: 30px;
+            text-decoration: none; color: #b39359; font-weight: 800; font-size: 11px;
+            text-transform: uppercase; border: 1px solid #b39359; padding: 10px 20px;
+            border-radius: 50px; background: rgba(0,0,0,0.3); transition: 0.3s;
         }
+        .btn-back:hover { background: #b39359; color: #fff; }
 
-        /* CENTRALIZAÇÃO */
-        .container {
-            position: relative;
-            z-index: 1;
+        /* Conteúdo dos Cards */
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
 
-            min-height: calc(100vh - 60px);
-
+        .guide-grid {
             display: grid;
-            place-items: center;
-
-            text-align: center;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
-        h1 {
-            font-size: clamp(40px, 6vw, 80px);
-            letter-spacing: 2px;
+        .guide-card {
+            background: #001a35; border-radius: 28px; overflow: hidden; 
+            border: 1px solid rgba(179, 147, 89, 0.2); transition: 0.4s ease;
         }
+
+        .guide-card img { width: 100%; height: 260px; object-fit: cover; }
+        .card-body { padding: 30px; text-align: center; }
+        .card-body h3 { color: #b39359; font-size: 24px; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
+        .card-body p { color: #ccc; font-size: 15px; line-height: 1.7; }
+
     </style>
 </head>
-
 <body>
 
-    <!-- NOME DO PROJETO (TOPO) -->
-    <div class="project-header">
-        TRAVEL PROJECT • MALTA PAGE
-    </div>
-
-    <!-- CONTEÚDO CENTRAL -->
-    <div class="container">
+    <section class="hero-banner">
+        <a href="index.html" class="btn-back">← Voltar</a>
         <h1>Malta</h1>
+    </section>
+
+    <div class="container">
+        <div class="guide-grid">
+            <div class="guide-card">
+                <img src="giorgios3.png" alt="Gastronomia">
+                <div class="card-body">
+                    <h3>Giorgios Cafeteria</h3>
+                    <p>Sliema, Malta</p>
+                </div>
+            </div>
+
+            <div class="guide-card">
+                <img src="malta10.jpeg" alt="História">
+                <div class="card-body">
+                    <h3>Cidade Histórica</h3>
+                    <p>Valletta, Malta</p>
+                </div>
+            </div>
+
+            <div class="guide-card">
+                <img src="malta12.jpeg" alt="Litoral">
+                <div class="card-body">
+                    <h3>Azure Horizons</h3>
+                    <p>Litoral Mediterrâneo</p>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
