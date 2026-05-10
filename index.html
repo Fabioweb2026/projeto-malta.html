@@ -16,51 +16,63 @@
             overflow-x: hidden;
         }
 
-        /* Banner Principal com Azul Marinho e Imagem de Fundo */
-        .hero-banner {
+        /* Hero: Destaque para malta01.jpeg à esquerda */
+        .hero {
             height: 75vh;
             width: 100%;
-            background: linear-gradient(rgba(255,255,255,0.1), rgba(253, 250, 246, 1)), 
-                        url('mata.png14.png') no-repeat center center;
-            background-size: cover;
             display: flex;
             align-items: center;
-            justify-content: center;
+            background: #fff;
+            border-bottom: 4px solid #003366;
+            padding: 0 8%;
             position: relative;
-            border-bottom: 3px solid #003366;
         }
 
-        /* Título Centralizado com Efeito de Vidro */
-        .glass-title {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(15px);
-            padding: 50px 100px;
-            border-radius: 30px;
-            border: 1px solid rgba(0, 51, 102, 0.2);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-            text-align: center;
+        .hero-img-container {
+            flex: 1;
+            height: 85%;
+            display: flex;
+            justify-content: flex-start;
         }
 
-        .hero-banner h1 { 
+        .hero-img-container img {
+            height: 100%;
+            border-radius: 20px;
+            border: 2px solid #b39359;
+            box-shadow: 20px 20px 50px rgba(0, 51, 102, 0.2);
+            object-fit: cover;
+        }
+
+        .hero-content { 
+            flex: 1.5;
+            padding-left: 60px;
+            text-align: left;
+        }
+
+        .hero-content h1 { 
             font-family: 'Playfair Display', serif; 
-            font-size: clamp(70px, 15vw, 130px); 
-            color: #003366; /* AZUL MARINHO NOS TÍTULOS */
-            letter-spacing: -2px;
-            margin: 0;
+            font-size: clamp(60px, 10vw, 120px); 
+            color: #003366; 
             line-height: 1;
         }
 
-        /* Botão Voltar ao Portfólio */
+        .hero-content p { 
+            font-size: 14px; 
+            letter-spacing: 8px; 
+            text-transform: uppercase; 
+            font-weight: 800;
+            color: #b39359;
+        }
+
         .btn-back {
-            position: absolute; top: 30px; left: 30px;
+            position: absolute; top: 40px; right: 50px;
             text-decoration: none; color: #003366; font-weight: 800; font-size: 11px;
-            text-transform: uppercase; border: 2px solid #003366; padding: 12px 25px;
+            text-transform: uppercase; border: 1px solid #003366; padding: 12px 25px;
             border-radius: 50px; background: #fff; transition: 0.3s;
         }
         .btn-back:hover { background: #003366; color: #fff; }
 
-        /* Container dos Cards */
-        .container { max-width: 1200px; margin: -60px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
 
         .guide-grid {
             display: grid;
@@ -70,61 +82,56 @@
 
         .guide-card {
             background: #fff; border-radius: 28px; overflow: hidden; 
-            border: 1px solid #e5e1da; transition: 0.4s ease;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border: 1px solid #eee; box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: 0.4s ease;
         }
-        .guide-card:hover { transform: translateY(-15px); border-color: #003366; }
 
-        /* AJUSTE DAS IMAGENS DOS CARDS */
-        .guide-card img { width: 100%; height: 280px; object-fit: cover; display: block; background: #eee; }
-
+        .guide-card img { width: 100%; height: 260px; object-fit: cover; }
         .card-body { padding: 35px; text-align: center; }
-        .card-body h3 { color: #003366; font-size: 26px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
-        .card-body p { color: #b39359; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+        .card-body h3 { color: #003366; font-size: 24px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .card-body p { color: #b39359; font-size: 12px; font-weight: 800; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
-    <section class="hero-banner">
-        <a href="https://github.io" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
-        <div class="glass-title">
-            <h1>Malta</h1>
+    <a href="https://github.io" class="btn-back">← Voltar ao Portfólio</a>
+
+    <header class="hero">
+        <div class="hero-img-container">
+            <!-- DESTAQUE SOLICITADO -->
+            <img src="malta01.jpeg" alt="Destaque Malta">
         </div>
-    </section>
+        <div class="hero-content">
+            <h1>Malta</h1>
+            <p>Herança Mediterrânea</p>
+        </div>
+    </header>
 
     <div class="container">
         <div class="guide-grid">
-            
-            <!-- CARD 1: Gastronomia com malta1.jpeg -->
             <div class="guide-card">
-                <img src="malta1.jpeg" alt="Gastronomia">
+                <img src="giorgios3.png" alt="Gastronomia">
                 <div class="card-body">
                     <h3>Gastronomia</h3>
-                    <p>SLIEMA, MALTA</p>
+                    <p>Sliema, Malta</p>
                 </div>
             </div>
-
-            <!-- CARD 2: História com malta1.jpeg -->
             <div class="guide-card">
-                <img src="malta1.jpeg" alt="Cidade Histórica">
+                <img src="malta10.jpeg" alt="História">
                 <div class="card-body">
                     <h3>Cidade Histórica</h3>
-                    <p>VALLETTA, MALTA</p>
+                    <p>Valletta, Malta</p>
                 </div>
             </div>
-
-            <!-- CARD 3: Litoral com malta10.jpeg -->
             <div class="guide-card">
-                <img src="malta10.jpeg" alt="Azure Horizons">
+                <img src="malta12.jpeg" alt="Litoral">
                 <div class="card-body">
                     <h3>Azure Horizons</h3>
-                    <p>LITORAL MEDITERRÂNEO</p>
+                    <p>Litoral Mediterrâneo</p>
                 </div>
             </div>
-
         </div>
     </div>
 
 </body>
 </html>
-
