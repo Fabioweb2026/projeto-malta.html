@@ -7,7 +7,6 @@
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
-        /* RESET E FUNDO */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -15,13 +14,11 @@
             background: linear-gradient(135deg, #fdfcf0 0%, #e6d5b8 100%);
             background-attachment: fixed;
             min-height: 100vh;
-            color: #4a4a4a;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* CABEÇALHO */
         .hero {
             padding: 60px 20px 40px;
             text-align: center;
@@ -40,33 +37,34 @@
             margin-bottom: 20px;
         }
 
-        .btn-back:hover { background: #b39359; color: white; }
-
         .glass-box h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(50px, 10vw, 90px);
             color: #b39359;
         }
 
-        /* GRID E EFEITO DE ZOOM */
+        /* GRID ALINHADO LADO A LADO */
         .container {
+            width: 100%;
             max-width: 1200px;
             padding: 0 20px 80px;
+            display: flex;
+            justify-content: center;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr); /* FORÇA 3 COLUNAS */
+            gap: 25px;
+            width: 100%;
         }
 
         .card {
             background: white;
             border-radius: 20px;
-            overflow: hidden; /* Importante para o zoom não vazar */
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(179, 147, 89, 0.15);
             transition: 0.4s ease;
-            cursor: pointer;
         }
 
         .card:hover {
@@ -74,22 +72,21 @@
             box-shadow: 0 20px 40px rgba(179, 147, 89, 0.3);
         }
 
-        /* Moldura da imagem para o Zoom */
         .card-img-container {
             width: 100%;
-            height: 250px;
-            overflow: hidden; /* Esconde a parte da imagem que cresce */
+            height: 220px;
+            overflow: hidden;
         }
 
         .card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease; /* Velocidade do zoom */
+            transition: transform 0.6s ease;
         }
 
         .card:hover img {
-            transform: scale(1.15); /* Aumenta a foto em 15% */
+            transform: scale(1.15);
         }
 
         .card-body {
@@ -100,7 +97,7 @@
         .card-body h3 {
             font-family: 'Playfair Display', serif;
             color: #b39359;
-            font-size: 22px;
+            font-size: 20px;
             margin-bottom: 5px;
         }
 
@@ -113,14 +110,13 @@
             margin-bottom: 20px;
         }
 
-        /* BOTÃO INTERATIVO */
         .btn-card {
             display: inline-block;
-            padding: 10px 30px;
+            padding: 8px 25px;
             border: 1px solid #b39359;
             color: #b39359;
             text-decoration: none;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
             border-radius: 50px;
@@ -130,6 +126,14 @@
         .btn-card:hover {
             background: #b39359;
             color: white;
+        }
+
+        /* RESPONSIVIDADE PARA TELAS MENORES */
+        @media (max-width: 1000px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 700px) {
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -152,7 +156,7 @@
                 <div class="card-body">
                     <h3>Malta Experience</h3>
                     <p>Valletta, Malta</p>
-                    <span class="btn-card">Explorar</span>
+                    <a href="#" class="btn-card">Explorar</a>
                 </div>
             </div>
 
@@ -163,7 +167,7 @@
                 <div class="card-body">
                     <h3>Giorgios Cafeteria</h3>
                     <p>Gastronomia e Café</p>
-                    <span class="btn-card">Ver Menu</span>
+                    <a href="#" class="btn-card">Ver Menu</a>
                 </div>
             </div>
 
@@ -174,7 +178,7 @@
                 <div class="card-body">
                     <h3>Turismo Lazer</h3>
                     <p>Exploração e Aventura</p>
-                    <span class="btn-card">Descobrir</span>
+                    <a href="#" class="btn-card">Descobrir</a>
                 </div>
             </div>
 
@@ -183,4 +187,3 @@
 
 </body>
 </html>
-
