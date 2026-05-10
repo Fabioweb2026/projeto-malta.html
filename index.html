@@ -14,68 +14,68 @@
     }
 
     body {
-        height: 100vh;
-        background-image: url("malta10.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        min-height: 100vh;
+        background: url("malta10.jpg") no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* TÍTULO FIXO NO TOPO */
+    /* TÍTULO FORTE E FIXO */
     .header {
-        width: 100%;
+        margin-top: 25px;
         text-align: center;
-        padding-top: 25px;
     }
 
     .header h1 {
-        font-size: 60px;
+        font-size: 62px;
         color: #0b1f3a;
-        background: rgba(255, 255, 255, 0.65);
+        background: rgba(255,255,255,0.7);
+        padding: 12px 35px;
+        border-radius: 12px;
         display: inline-block;
-        padding: 10px 30px;
-        border-radius: 10px;
         letter-spacing: 2px;
     }
 
-    /* LAYOUT FORÇADO EM LINHA */
-    .container {
-        display: grid;
-        grid-template-columns: 260px 1fr;
+    /* BLOCO CENTRAL LIMPO */
+    .card {
+        margin-top: 60px;
+        width: 900px;
+        max-width: 95%;
+        display: flex;
+        gap: 25px;
         align-items: center;
-        gap: 30px;
 
-        width: 80%;
-        margin: 70px auto 0 auto;
-
-        background: rgba(255, 255, 255, 0.55);
+        background: rgba(255,255,255,0.65);
         padding: 20px;
-        border-radius: 15px;
+        border-radius: 16px;
+        backdrop-filter: blur(4px);
     }
 
-    /* IMAGEM ESQUERDA FIXA */
-    .container img {
-        width: 240px;
-        height: auto;
-        border-radius: 10px;
+    /* IMAGEM SEMPRE À ESQUERDA */
+    .card img {
+        width: 220px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 12px;
         box-shadow: 0 8px 18px rgba(0,0,0,0.35);
     }
 
-    /* TEXTO DISCRETO */
-    .info {
+    /* TEXTO DISCRETO E ELEGANTE */
+    .text {
         color: #0b1f3a;
-        font-size: 16px;
-        line-height: 1.5;
     }
 
-    .info h2 {
+    .text h2 {
         font-size: 20px;
         margin-bottom: 8px;
-        opacity: 0.85;
+        opacity: 0.9;
     }
 
-    .info p {
-        opacity: 0.9;
+    .text p {
+        font-size: 15px;
+        line-height: 1.6;
+        opacity: 0.85;
     }
 </style>
 
@@ -83,22 +83,20 @@
 
 <body>
 
-    <!-- TÍTULO -->
     <div class="header">
         <h1>Malta</h1>
     </div>
 
-    <!-- CONTEÚDO -->
-    <div class="container">
+    <div class="card">
 
         <!-- IMAGEM ESQUERDA -->
         <img src="malta01.jpeg" alt="Malta">
 
         <!-- TEXTO DIREITA -->
-        <div class="info">
+        <div class="text">
             <h2>Localização</h2>
             <p>
-                Malta é uma ilha no Mar Mediterrâneo, ao sul da Itália.<br><br>
+                Malta é uma ilha localizada no Mar Mediterrâneo, ao sul da Itália.<br><br>
                 📍 Ilha de Malta – Mediterrâneo Central<br>
                 🌍 Europa<br>
                 🏛️ Capital: Valletta
