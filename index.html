@@ -16,7 +16,7 @@
             overflow-x: hidden;
         }
 
-        /* Banner Principal - Fiel ao seu Print */
+        /* Banner Principal conforme seu print */
         .hero-banner {
             height: 70vh;
             width: 100%;
@@ -31,15 +31,16 @@
             padding: 0 5%;
         }
 
-        /* Moldura lateral esquerda */
+        /* Moldura lateral esquerda CORRIGIDA */
         .hero-side-img {
-            width: 350px;
-            height: 250px;
+            width: 400px;
+            height: 280px;
             border-radius: 20px;
-            border: 2px solid rgba(255,255,255,0.5);
+            border: 2px solid rgba(255,255,255,0.4);
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             margin-right: 40px;
+            background: rgba(255,255,255,0.1);
         }
         .hero-side-img img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -47,7 +48,7 @@
         .glass-title {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
-            padding: 50px 100px;
+            padding: 60px 100px;
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 30px 60px rgba(0,0,0,0.2);
@@ -56,12 +57,12 @@
         .hero-banner h1 { 
             font-family: 'Playfair Display', serif; 
             font-size: clamp(60px, 12vw, 120px); 
-            color: #b39359; /* DOURADO DO PRINT */
+            color: #b39359; 
             letter-spacing: -2px;
             margin: 0;
         }
 
-        /* Botão Voltar do Print */
+        /* Botão Voltar */
         .btn-back {
             position: absolute; top: 30px; left: 30px;
             text-decoration: none; color: #fff; font-weight: 800; font-size: 11px;
@@ -71,11 +72,11 @@
         .btn-back:hover { background: #b39359; color: #000; }
 
         /* Container dos Cards */
-        .container { max-width: 1200px; margin: -50px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
+        .container { max-width: 1300px; margin: -50px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
 
         .guide-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
 
@@ -85,8 +86,8 @@
             text-align: center;
         }
 
-        /* AJUSTE DAS IMAGENS: Agora elas vão preencher o espaço */
-        .guide-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        /* Imagens dos Cards agora aparecem preenchendo o espaço */
+        .guide-card img { width: 100%; height: 240px; object-fit: cover; display: block; background: #eee; }
 
         .card-body { padding: 30px; }
         .card-body h3 { color: #b39359; font-size: 24px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
@@ -99,7 +100,8 @@
         <a href="https://github.io" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
         
         <div class="hero-side-img">
-            <img src="malta1.jpeg" alt="Malta Side">
+            <!-- Colocando a malta1.jpeg na moldura esquerda -->
+            <img src="malta1.jpeg" alt="Malta Side View">
         </div>
 
         <div class="glass-title">
@@ -119,7 +121,7 @@
             </div>
 
             <div class="guide-card">
-                <img src="malta10.jpeg" alt="História">
+                <img src="malta10.jpeg" alt="Cidade Histórica">
                 <div class="card-body">
                     <h3>Cidade Histórica</h3>
                     <p>VALLETTA, MALTA</p>
@@ -139,4 +141,5 @@
 
 </body>
 </html>
+
 
