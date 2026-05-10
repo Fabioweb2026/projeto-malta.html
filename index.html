@@ -7,6 +7,7 @@
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
+        /* RESET E FUNDO */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -17,9 +18,10 @@
             color: #4a4a4a;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centraliza o conteúdo horizontalmente */
+            align-items: center;
         }
 
+        /* CABEÇALHO */
         .hero {
             width: 100%;
             display: flex;
@@ -54,6 +56,7 @@
             letter-spacing: -2px;
         }
 
+        /* GRID E CARDS */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -65,7 +68,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            justify-content: center; /* Centraliza os cards no grid */
+            justify-content: center;
         }
 
         .card {
@@ -75,16 +78,30 @@
             box-shadow: 0 15px 35px rgba(179, 147, 89, 0.15);
             transition: 0.4s;
             border: 1px solid rgba(179, 147, 89, 0.1);
-            display: flex;
-            flex-direction: column;
+            cursor: pointer;
         }
 
-        .card:hover { transform: translateY(-10px); }
+        .card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 45px rgba(179, 147, 89, 0.25);
+        }
+
+        /* EFEITO DE ZOOM NA IMAGEM */
+        .card-img-wrapper {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
 
         .card img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
         }
 
         .card-body {
@@ -100,11 +117,32 @@
         }
 
         .card-body p {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: #999;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        /* BOTÃO DO CARD */
+        .btn-card {
+            display: inline-block;
+            padding: 10px 25px;
+            border: 1px solid #b39359;
+            color: #b39359;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-card:hover {
+            background: #b39359;
+            color: white;
         }
     </style>
 </head>
@@ -121,38 +159,46 @@
         <div class="grid">
             
             <!-- Card 1 -->
-           <!-- Card 1: Malta Experience -->
-<div class="card">
-    <img src="imagem10.jpg.png" alt="Malta Experience">
-    <div class="card-body">
-        <h3>Malta Experience</h3>
-        <p>Valletta, Malta</p>
-    </div>
-</div>
-
-
-            <!-- Card 2: Gioges Cafeteria com malta01.jpeg -->
             <div class="card">
-                <img src="malta01.jpeg" alt="Gioges Cafeteria">
+                <div class="card-img-wrapper">
+                    <img src="imagem10.jpg.png" alt="Malta Experience">
+                </div>
                 <div class="card-body">
-                    <h3>Gioges Cafeteria</h3>
-                    <p>Gastronomia e Café</p>
+                    <h3>Malta Experience</h3>
+                    <p>Valletta, Malta</p>
+                    <a href="#" class="btn-card">Explorar</a>
                 </div>
             </div>
-            <!-- Card 3: Turismo Lazer -->
-<div class="card">
-    <img src="malta8.jpg" alt="Turismo Lazer">
-    <div class="card-body">
-        <h3>Turismo Lazer</h3>
-        <p>Exploração e Aventura</p>
-    </div>
-</div>
 
+            <!-- Card 2: Nome Corrigido -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="malta01.jpeg" alt="Giorgios Cafeteria">
+                </div>
+                <div class="card-body">
+                    <h3>Giorgios Cafeteria</h3>
+                    <p>Gastronomia e Café</p>
+                    <a href="#" class="btn-card">Ver Menu</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="malta8.jpg" alt="Turismo Lazer">
+                </div>
+                <div class="card-body">
+                    <h3>Turismo Lazer</h3>
+                    <p>Exploração e Aventura</p>
+                    <a href="#" class="btn-card">Descobrir</a>
+                </div>
+            </div>
 
         </div>
     </div>
 
 </body>
 </html>
+
 
 
