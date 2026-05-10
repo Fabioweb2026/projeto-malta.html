@@ -21,58 +21,61 @@
         background-repeat: no-repeat;
     }
 
-    /* TÍTULO */
+    /* TÍTULO FIXO NO TOPO */
     .header {
+        width: 100%;
         text-align: center;
-        padding-top: 30px;
+        padding-top: 25px;
     }
 
     .header h1 {
-        font-size: 65px;
+        font-size: 60px;
         color: #0b1f3a;
-        background: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.65);
         display: inline-block;
-        padding: 10px 35px;
-        border-radius: 12px;
-        letter-spacing: 3px;
+        padding: 10px 30px;
+        border-radius: 10px;
+        letter-spacing: 2px;
     }
 
-    /* CONTEÚDO */
+    /* LAYOUT FORÇADO EM LINHA */
     .container {
-        display: flex;
+        display: grid;
+        grid-template-columns: 260px 1fr;
         align-items: center;
-        justify-content: center;
-        gap: 40px;
-        margin-top: 60px;
+        gap: 30px;
+
+        width: 80%;
+        margin: 70px auto 0 auto;
+
+        background: rgba(255, 255, 255, 0.55);
         padding: 20px;
-        flex-wrap: wrap;
-    }
-
-    /* IMAGEM ESQUERDA MENOR */
-    .container img {
-        width: 250px;
-        height: auto;
-        border-radius: 12px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    }
-
-    /* TEXTO DIREITA */
-    .info {
-        max-width: 420px;
-        background: rgba(255, 255, 255, 0.75);
-        padding: 25px;
         border-radius: 15px;
+    }
+
+    /* IMAGEM ESQUERDA FIXA */
+    .container img {
+        width: 240px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    }
+
+    /* TEXTO DISCRETO */
+    .info {
         color: #0b1f3a;
+        font-size: 16px;
+        line-height: 1.5;
     }
 
     .info h2 {
-        margin-bottom: 10px;
-        font-size: 26px;
+        font-size: 20px;
+        margin-bottom: 8px;
+        opacity: 0.85;
     }
 
     .info p {
-        font-size: 17px;
-        line-height: 1.6;
+        opacity: 0.9;
     }
 </style>
 
@@ -95,13 +98,10 @@
         <div class="info">
             <h2>Localização</h2>
             <p>
-                📍 Malta é um país insular localizado no Mar Mediterrâneo, ao sul da Itália.  
-                <br><br>
-                📌 Endereço: Ilha de Malta, Mediterrâneo Central  
-                🌍 Região: Europa  
-                🏛️ Capital: Valletta  
-                <br><br>
-                Um dos destinos turísticos mais bonitos do Mediterrâneo.
+                Malta é uma ilha no Mar Mediterrâneo, ao sul da Itália.<br><br>
+                📍 Ilha de Malta – Mediterrâneo Central<br>
+                🌍 Europa<br>
+                🏛️ Capital: Valletta
             </p>
         </div>
 
