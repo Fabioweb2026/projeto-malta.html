@@ -14,7 +14,6 @@
     box-sizing: border-box;
 }
 
-/* remove qualquer imagem solta que cause bug */
 img {
     display: block;
     max-width: 100%;
@@ -54,7 +53,7 @@ body {
     background: rgba(0,0,0,0.5);
 }
 
-/* LADO IMAGEM */
+/* IMAGEM LATERAL */
 .side-frame {
     width: 320px;
     height: 220px;
@@ -87,16 +86,15 @@ body {
 /* CONTAINER */
 .container {
     max-width: 1200px;
-    margin: 40px auto 80px; /* corrigido */
+    margin: 40px auto 80px;
     padding: 0 20px;
 }
 
-/* GRID (evita sobreposição e imagens soltas) */
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    align-items: start;
 }
 
 /* CARD */
@@ -140,7 +138,6 @@ body {
 
 <body>
 
-<!-- HERO -->
 <header class="hero">
 
     <a href="index.html" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
@@ -155,31 +152,15 @@ body {
 
 </header>
 
-<!-- CARDS (SEM IMAGEM SOLTA GARANTIDO) -->
 <div class="container">
     <div class="grid">
 
+        <!-- CARD ÚNICO -->
         <div class="card">
-            <img src="giorgios3.png" alt="Gastronomia">
+            <img src="malta10.jpg" alt="Malta">
             <div class="card-body">
-                <h3>Gastronomia</h3>
-                <p>Sliema, Malta</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="malta10.jpeg" alt="Cidade Histórica">
-            <div class="card-body">
-                <h3>Cidade Histórica</h3>
+                <h3>Malta Experience</h3>
                 <p>Valletta, Malta</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="malta12.jpeg" alt="Litoral">
-            <div class="card-body">
-                <h3>Azure Horizons</h3>
-                <p>Litoral Mediterrâneo</p>
             </div>
         </div>
 
