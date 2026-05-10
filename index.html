@@ -13,44 +13,46 @@
             box-sizing: border-box;
         }
 
-        /* FUNDO COM IMAGEM */
+        /* FUNDO */
         body {
             font-family: Arial, sans-serif;
             color: white;
 
-            background-image: url("mata.png14.png"); /* coloque essa imagem no GitHub */
+            background-image: url("mata.png14.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
 
-            height: 100vh;
+            min-height: 100vh;
 
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+
+            position: relative;
+            padding: 20px;
         }
 
-        /* CAMADA ESCURA PARA LEGIBILIDADE */
+        /* OVERLAY ESCURO */
         body::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.35);
+            inset: 0;
+            background: rgba(0,0,0,0.45);
             z-index: 0;
         }
 
-        /* TÍTULO */
+        /* TÍTULO AJUSTADO */
         h1 {
-            font-size: 80px;
+            font-size: clamp(40px, 8vw, 80px);
             color: #ffffff;
             z-index: 1;
             position: relative;
             letter-spacing: 2px;
+            max-width: 100%;
+            word-wrap: break-word;
         }
 
     </style>
@@ -62,5 +64,4 @@
 
 </body>
 </html>
-        
 
