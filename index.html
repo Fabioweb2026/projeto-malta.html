@@ -10,32 +10,69 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: Arial, sans-serif;
     }
 
     body {
         height: 100vh;
-        font-family: Arial, sans-serif;
-
-        /* IMAGEM DE FUNDO */
         background-image: url("malta10.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
-    /* TÍTULO CENTRAL */
-    h1 {
-        font-size: 80px;
-        color: #0b1f3a; /* azul marinho elegante */
-        background: rgba(255, 255, 255, 0.55);
-        padding: 20px 50px;
-        border-radius: 15px;
+    /* TÍTULO SUPERIOR */
+    .header {
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .header h1 {
+        font-size: 70px;
+        color: #0b1f3a;
+        background: rgba(255, 255, 255, 0.6);
+        display: inline-block;
+        padding: 10px 40px;
+        border-radius: 12px;
         letter-spacing: 3px;
-        text-transform: uppercase;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 80px;
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* IMAGEM ESQUERDA */
+    .container img {
+        width: 350px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    /* TEXTO DIREITA */
+    .info {
+        max-width: 400px;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 25px;
+        border-radius: 15px;
+        color: #0b1f3a;
+    }
+
+    .info h2 {
+        margin-bottom: 10px;
+        font-size: 28px;
+    }
+
+    .info p {
+        font-size: 18px;
+        line-height: 1.6;
     }
 </style>
 
@@ -43,7 +80,32 @@
 
 <body>
 
-    <h1>Malta</h1>
+    <!-- TÍTULO -->
+    <div class="header">
+        <h1>Malta</h1>
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div class="container">
+
+        <!-- IMAGEM ESQUERDA -->
+        <img src="malta01.jpeg" alt="Malta">
+
+        <!-- TEXTO DIREITA -->
+        <div class="info">
+            <h2>Localização</h2>
+            <p>
+                Malta é um país insular localizado no Mar Mediterrâneo, ao sul da Itália.
+                <br><br>
+                📍 Endereço: Ilha de Malta, Mediterrâneo Central  
+                <br>
+                🌍 Região: Europa  
+                <br>
+                🏛️ Capital: Valletta
+            </p>
+        </div>
+
+    </div>
 
 </body>
 </html>
