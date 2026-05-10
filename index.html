@@ -16,11 +16,11 @@
             overflow-x: hidden;
         }
 
-        /* Banner Principal conforme seu print */
+        /* Banner Principal - Fundo Geral */
         .hero-banner {
             height: 70vh;
             width: 100%;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
                         url('mata.png14.png') no-repeat center center;
             background-size: cover;
             display: flex;
@@ -28,38 +28,7 @@
             justify-content: center;
             position: relative;
             border-bottom: 2px solid #b39359;
-            padding: 0 5%;
-        }
-
-        /* Moldura lateral esquerda CORRIGIDA */
-        .hero-side-img {
-            width: 400px;
-            height: 280px;
-            border-radius: 20px;
-            border: 2px solid rgba(255,255,255,0.4);
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            margin-right: 40px;
-            background: rgba(255,255,255,0.1);
-        }
-        .hero-side-img img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* Título Central com Efeito Vidro */
-        .glass-title {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            padding: 60px 100px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-        }
-
-        .hero-banner h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(60px, 12vw, 120px); 
-            color: #b39359; 
-            letter-spacing: -2px;
-            margin: 0;
+            padding: 0 50px;
         }
 
         /* Botão Voltar */
@@ -68,28 +37,58 @@
             text-decoration: none; color: #fff; font-weight: 800; font-size: 11px;
             text-transform: uppercase; border: 1px solid #b39359; padding: 10px 22px;
             border-radius: 50px; background: rgba(0,0,0,0.5); transition: 0.3s;
+            z-index: 100;
         }
-        .btn-back:hover { background: #b39359; color: #000; }
 
-        /* Container dos Cards */
-        .container { max-width: 1300px; margin: -50px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
+        /* Moldura Única para a imagem da esquerda */
+        .hero-side-frame {
+            width: 400px;
+            height: 280px;
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.4);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            margin-right: 40px;
+            flex-shrink: 0; /* Impede de amassar */
+        }
+        .hero-side-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Título Centralizado com efeito de vidro */
+        .glass-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 60px 100px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .glass-box h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(60px, 10vw, 110px); 
+            color: #b39359; 
+            margin: 0;
+        }
+
+        /* Grade de Cards lá embaixo */
+        .container { max-width: 1200px; margin: -50px auto 80px; padding: 0 20px; position: relative; z-index: 50; }
 
         .guide-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .guide-card {
             background: #fff; border-radius: 24px; overflow: hidden; 
-            border: 1px solid #e5e1da; box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            text-align: center;
+            border: 1px solid #e5e1da; box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
-        /* Imagens dos Cards agora aparecem preenchendo o espaço */
-        .guide-card img { width: 100%; height: 240px; object-fit: cover; display: block; background: #eee; }
+        /* Faz a foto aparecer dentro do card */
+        .guide-card img { width: 100%; height: 240px; object-fit: cover; display: block; }
 
-        .card-body { padding: 30px; }
+        .card-body { padding: 30px; text-align: center; }
         .card-body h3 { color: #b39359; font-size: 24px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
         .card-body p { color: #888; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
     </style>
@@ -99,12 +98,13 @@
     <section class="hero-banner">
         <a href="https://github.io" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
         
-        <div class="hero-side-img">
-            <!-- Colocando a malta1.jpeg na moldura esquerda -->
-            <img src="malta1.jpeg" alt="Malta Side View">
+        <!-- Moldura Esquerda Corrigida -->
+        <div class="hero-side-frame">
+            <img src="malta1.jpeg" alt="Malta View">
         </div>
 
-        <div class="glass-title">
+        <!-- Caixa de Vidro Central Corrigida -->
+        <div class="glass-box">
             <h1>Malta</h1>
         </div>
     </section>
@@ -121,7 +121,7 @@
             </div>
 
             <div class="guide-card">
-                <img src="malta10.jpeg" alt="Cidade Histórica">
+                <img src="malta10.jpeg" alt="História">
                 <div class="card-body">
                     <h3>Cidade Histórica</h3>
                     <p>VALLETTA, MALTA</p>
@@ -141,5 +141,6 @@
 
 </body>
 </html>
+
 
 
