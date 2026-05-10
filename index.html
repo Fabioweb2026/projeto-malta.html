@@ -1,99 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malta Journey</title>
-
+    <title>Malta | Heritage Experience</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        @import url('https://googleapis.com');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #001f3f; /* AZUL MARINHO PREMIUM NO FUNDO TODO */
+            color: #fff; 
+            overflow-x: hidden;
         }
 
-        body {
-            background: #f4f4f4;
-            padding: 20px;
-        }
-
-        /* CONTAINER */
-        .container {
+        /* Hero: Imagem à esquerda e Título à direita */
+        .hero {
+            height: 70vh;
+            width: 100%;
             display: flex;
             align-items: center;
-            gap: 30px;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            max-width: 1000px;
-            margin: auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #001a35; /* Azul um pouco mais escuro para o topo */
+            border-bottom: 4px solid #b39359;
+            padding: 0 8%;
+            position: relative;
         }
 
-        /* IMAGE */
-        .container img {
-            width: 350px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+        .hero-img-container {
+            flex: 1;
+            height: 85%;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .hero-img-container img {
+            height: 100%;
+            border-radius: 20px;
+            border: 2px solid #b39359;
+            box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.4);
             object-fit: cover;
         }
 
-        /* TEXT AREA */
-        .text {
-            flex: 1;
+        .hero-content { 
+            flex: 1.5;
+            padding-left: 60px;
+            text-align: left;
         }
 
-        /* TITLE (NAVY BLUE) */
-        .text h1 {
-            margin-bottom: 10px;
-            font-size: 32px;
-            color: #0a1f44; /* navy blue */
+        .hero-content h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(50px, 8vw, 90px); 
+            color: #b39359; 
+            line-height: 1;
         }
 
-        .text p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
+        .hero-content p { 
+            font-size: 13px; 
+            letter-spacing: 6px; 
+            text-transform: uppercase; 
+            font-weight: 800;
+            color: #fff;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                text-align: center;
-            }
+        .btn-back {
+            position: absolute; top: 40px; right: 50px;
+            text-decoration: none; color: #b39359; font-weight: 800; font-size: 11px;
+            text-transform: uppercase; border: 1px solid #b39359; padding: 10px 22px;
+            border-radius: 50px; background: rgba(0,0,0,0.3); transition: 0.3s;
+        }
+        .btn-back:hover { background: #b39359; color: #fff; }
 
-            .container img {
-                width: 100%;
-            }
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+
+        /* Grade de Cards */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
+        .guide-card {
+            background: #001a35; /* Cards em Azul Marinho */
+            border-radius: 28px;
+            overflow: hidden; 
+            border: 1px solid rgba(179, 147, 89, 0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: 0.4s ease;
+        }
+
+        .guide-card img { width: 100%; height: 260px; object-fit: cover; }
+
+        .card-body { padding: 35px; text-align: center; }
+        .card-body h3 { color: #b39359; font-size: 24px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .card-body .localizacao { color: #fff; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 800; }
+        .card-body p { color: #ccc; font-size: 15px; line-height: 1.7; }
     </style>
 </head>
-
 <body>
 
-    <div class="container">
+    <a href="https://github.io" class="btn-back">← Voltar ao Portfólio</a>
 
-        <!-- IMAGE LEFT -->
-        <img src="malta01.jpeg" alt="Malta Travel">
-
-        <!-- TEXT RIGHT -->
-        <div class="text">
-            <h1>Malta Journey</h1>
-            <p>
-                Welcome to my Malta project.  
-                Here I share experiences, images, and stories from this amazing trip.  
-                The layout is designed to look modern, simple, and responsive.
-            </p>
+    <header class="hero">
+        <div class="hero-img-container">
+            <img src="malta1.jpeg" alt="Malta Heritage">
         </div>
+        <div class="hero-content">
+            <h1>Malta</h1>
+            <p>Herança Mediterrânea</p>
+        </div>
+    </header>
 
+    <div class="container">
+        <div class="guide-grid">
+            <!-- CARD GIORGIOS COM LOCALIZAÇÃO -->
+            <div class="guide-card">
+                <img src="giorgios3.png" alt="Gastronomia">
+                <div class="card-body">
+                    <h3>Giorgios Cafeteria</h3>
+                    <p class="localizacao">📍 Sliema, Malta</p>
+                    <p>Uma experiência gastronômica clássica no calçadão de Sliema. Sabores tradicionais com a melhor vista para o mar de Malta.</p>
+                </div>
+            </div>
+
+            <div class="guide-card">
+                <img src="malta10.jpeg" alt="História">
+                <div class="card-body">
+                    <h3>Cidades Históricas</h3>
+                    <p class="localizacao">📍 Valletta & Mdina</p>
+                    <p>Explore as ruas majestosas de Valletta e a cidade silenciosa de Mdina, locais repletos de história e arquitetura barroca.</p>
+                </div>
+            </div>
+
+            <div class="guide-card">
+                <img src="malta12.jpeg" alt="Paisagens">
+                <div class="card-body">
+                    <h3>Belezas Naturais</h3>
+                    <p class="localizacao">📍 Blue Grotto & Falésias</p>
+                    <p>Descubra as águas cristalinas e as falésias dramáticas do arquipélago maltês. Um paraíso natural no Mediterrâneo.</p>
+                </div>
+            </div>
+        </div>
     </div>
-
 </body>
-
 </html>
 
