@@ -11,7 +11,7 @@
         
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #fdfaf6; /* FUNDO CREME */
+            background-color: #fdfaf6; 
             color: #1a1a1a; 
             overflow-x: hidden;
         }
@@ -30,7 +30,7 @@
 
         .hero-img-container {
             flex: 1;
-            height: 80%;
+            height: 85%; /* Aumentei um pouco para dar mais destaque */
             display: flex;
             justify-content: flex-start;
         }
@@ -39,6 +39,7 @@
             height: 100%;
             border-radius: 20px;
             border: 2px solid #b39359;
+            box-shadow: 15px 15px 40px rgba(179, 147, 89, 0.2);
             object-fit: cover;
         }
 
@@ -71,12 +72,8 @@
         }
         .btn-back:hover { background: #b39359; color: #fff; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
 
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 42px; color: #1a1a1a; }
-
-        /* Grade de Cards */
         .guide-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -103,7 +100,7 @@
 
     <header class="hero">
         <div class="hero-img-container">
-            <!-- CORRIGIDO: Nome exato malta1.jpeg -->
+            <!-- NOME CORRIGIDO PARA malta1.jpeg -->
             <img src="malta1.jpeg" alt="Malta Heritage">
         </div>
         <div class="hero-content">
@@ -113,11 +110,8 @@
     </header>
 
     <div class="container">
-        <div class="section-header"><h2>The Experience</h2></div>
         <div class="guide-grid">
-            
             <div class="guide-card">
-                <!-- CORRIGIDO: Nome exato giorgios3.png -->
                 <img src="giorgios3.png" alt="Gastronomy">
                 <div class="card-body">
                     <h3>Gastronomy</h3>
@@ -126,8 +120,7 @@
             </div>
 
             <div class="guide-card">
-                <!-- CORRIGIDO: Nome exato malta10.jpeg -->
-                <img src="malta10.jpeg" alt="Historical Heritage">
+                <img src="malta10.jpeg" alt="History">
                 <div class="card-body">
                     <h3>Historical Heritage</h3>
                     <p>Explore the majestic streets of Valletta and the silent city of Mdina, UNESCO World Heritage sites.</p>
@@ -135,19 +128,16 @@
             </div>
 
             <div class="guide-card">
-                <!-- CORRIGIDO: Nome exato malta12.jpeg -->
-                <img src="malta12.jpeg" alt="Azure Horizons">
+                <img src="malta12.jpeg" alt="Landscapes">
                 <div class="card-body">
                     <h3>Azure Horizons</h3>
                     <p>Discover dramatic limestone cliffs and the crystal-clear waters of the Mediterranean archipelago.</p>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
 </html>
-
 
 
 
