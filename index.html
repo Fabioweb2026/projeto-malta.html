@@ -15,10 +15,7 @@
             background: linear-gradient(135deg, #fdfcf0 0%, #e6d5b8 100%);
             background-attachment: fixed;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #4a4a4a;
+            display: flex; flex-direction: column; align-items: center; color: #4a4a4a;
         }
 
         /* CABEÇALHO */
@@ -34,89 +31,40 @@
         /* GRID DE CARDS */
         .container { width: 100%; max-width: 1200px; padding: 0 20px 80px; }
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-
-        .card {
-            background: white; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(179, 147, 89, 0.1); transition: 0.4s ease;
-        }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(179, 147, 89, 0.25); }
-
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(179, 147, 89, 0.1); }
         .card-img-container { width: 100%; height: 240px; overflow: hidden; }
         .card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
         .card:hover img { transform: scale(1.1); }
-
         .card-body { padding: 30px 20px; text-align: center; }
         .card-body h3 { font-family: 'Playfair Display', serif; color: #b39359; font-size: 22px; margin-bottom: 8px; }
         .card-body p { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
-        
-        .btn-card {
-            display: inline-block; padding: 10px 30px; border: 1px solid #b39359;
-            color: #b39359; text-decoration: none; font-size: 10px; font-weight: 700;
-            text-transform: uppercase; border-radius: 50px; transition: 0.3s;
-        }
+        .btn-card { display: inline-block; padding: 10px 30px; border: 1px solid #b39359; color: #b39359; text-decoration: none; font-size: 10px; font-weight: 700; text-transform: uppercase; border-radius: 50px; transition: 0.3s; }
         .btn-card:hover { background: #b39359; color: white; }
 
         /* MODAIS CENTRALIZADOS */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(253, 252, 240, 0.98); backdrop-filter: blur(15px);
-            display: none; justify-content: center; align-items: center; /* Centralização vertical e horizontal */
+            display: none; justify-content: center; align-items: center;
             z-index: 1000; overflow-y: auto; padding: 40px 20px;
         }
-
         .modal:target { display: flex; }
+        .modal-container { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: auto; }
+        .modal-content { display: flex; flex-direction: row; gap: 15px; justify-content: center; flex-wrap: wrap; width: 100%; margin-bottom: 40px; }
+        .modal-content img, .modal-content video { height: 220px; width: 220px; object-fit: cover; border-radius: 12px; border: 4px solid white; box-shadow: 0 5px 15px rgba(179, 147, 89, 0.1); }
 
-        .modal-container {
-            display: flex; flex-direction: column; align-items: center;
-            width: 100%; max-width: 1000px;
-            margin: auto; /* Garante que o conteúdo respire no centro */
-        }
+        /* TEXTOS TURÍSTICOS HARMONIZADOS */
+        .tourist-info { text-align: center; max-width: 800px; padding: 0 20px; }
+        .tourist-info h2 { font-family: 'Playfair Display', serif; font-size: 36px; color: #b39359; margin-bottom: 30px; }
 
-        .modal-content {
-            display: flex;
-            flex-direction: row;
-            gap: 15px; 
-            justify-content: center; 
-            flex-wrap: wrap;
-            width: 100%; 
-            margin-bottom: 30px;
-        }
+        .tour-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; text-align: left; }
+        .tour-item { padding: 15px; border-bottom: 1px solid rgba(179, 147, 89, 0.2); }
+        .tour-item h4 { font-family: 'Playfair Display', serif; color: #b39359; font-size: 18px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .tour-item p { font-size: 14px; line-height: 1.6; color: #666; font-weight: 400; }
 
-        .modal-content img, .modal-content video {
-            height: 220px; width: 220px; object-fit: cover;
-            border-radius: 12px; border: 4px solid white;
-            box-shadow: 0 5px 15px rgba(179, 147, 89, 0.1);
-        }
+        .modal-close { position: fixed; top: 20px; right: 30px; width: 45px; height: 45px; background: #b39359; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; z-index: 1001; }
 
-        /* TEXTOS TURÍSTICOS */
-        .tourist-grid {
-            display: flex; flex-direction: column; gap: 15px;
-            text-align: left; max-width: 700px; margin-top: 20px;
-        }
-
-        .tour-item {
-            font-size: 14px; line-height: 1.6; color: #555;
-            border-left: 3px solid #b39359; padding-left: 15px;
-        }
-
-        .tour-item strong { color: #b39359; display: block; margin-bottom: 2px; }
-
-        .modal-close {
-            position: fixed; top: 20px; right: 30px; width: 45px; height: 45px;
-            background: #b39359; color: white; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px; text-decoration: none; font-weight: bold;
-            z-index: 1001;
-        }
-
-        .modal-info h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: #b39359; margin-bottom: 10px; text-align: center; }
-
-        /* RESPONSIVIDADE */
-        @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 700px) { 
-            .grid { grid-template-columns: 1fr; }
-            .modal-content img, .modal-content video { width: 100%; height: auto; }
-        }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .tour-list { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -130,7 +78,6 @@
 
     <div class="container">
         <div class="grid">
-            
             <div class="card">
                 <div class="card-img-container"><img src="imagem10.jpg.png" alt="Malta"></div>
                 <div class="card-body">
@@ -139,16 +86,14 @@
                     <a href="#experience-modal" class="btn-card">Explorar</a>
                 </div>
             </div>
-
             <div class="card">
-                <div class="card-img-container"><img src="malta01.jpeg" alt="Giorgios"></div>
+                <div class="card-container"><div class="card-img-container"><img src="malta01.jpeg" alt="Giorgios"></div></div>
                 <div class="card-body">
                     <h3>Giorgios Cafeteria</h3>
                     <p>Gastronomia e Café</p>
                     <a href="#menu-modal" class="btn-card">Informações</a>
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-img-container"><img src="malta8.jpg" alt="Turismo"></div>
                 <div class="card-body">
@@ -157,11 +102,10 @@
                     <a href="#turismo-modal" class="btn-card">Descobrir</a>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <!-- Modal Turismo Lazer Ajustado (Removido Lazer 4 e Centralizado) -->
+    <!-- Modal Turismo Lazer Harmonizado -->
     <div id="turismo-modal" class="modal">
         <a href="#" class="modal-close">&times;</a>
         <div class="modal-container">
@@ -170,50 +114,61 @@
                 <img src="image3jpg.jpeg" alt="Blue Lagoon">
                 <img src="imagem5.jpg.jpeg" alt="Blue Grotto">
                 <img src="malta9.jpeg" alt="St. Peter's Pool">
-                <!-- Imagem malta10.jpg removida conforme solicitado -->
             </div>
-            <div class="modal-info">
+            <div class="tourist-info">
                 <h2>Exploração e Aventura</h2>
-                <div class="tourist-grid">
-                    <div class="tour-item"><strong>Blue Lagoon (Comino):</strong> Atração mais famosa, uma lagoa com águas azul-turquesa e areia fina.</div>
-                    <div class="tour-item"><strong>Blue Grotto (Gruta Azul):</strong> Complexo de cavernas marinhas com tons de azul impressionantes.</div>
-                    <div class="tour-item"><strong>St. Peter's Pool:</strong> Piscina natural em formato de ferradura ideal para saltos.</div>
-                    <div class="tour-item"><strong>Golden Bay e Riviera Beach:</strong> Praias de areia dourada ideais para relaxar.</div>
-                    <div class="tour-item"><strong>Crystal Lagoon:</strong> Próxima a Comino, ideal para snorkel e águas cristalinas.</div>
+                <div class="tour-list">
+                    <div class="tour-item">
+                        <h4>✦ Blue Lagoon (Comino)</h4>
+                        <p>A atração mais famosa de Malta. Uma lagoa paradisíaca com águas azul-turquesa cristalinas e areia branca e fina no fundo.</p>
+                    </div>
+                    <div class="tour-item">
+                        <h4>✦ Blue Grotto (Gruta Azul)</h4>
+                        <p>Um espetacular complexo de cavernas marinhas onde o reflexo da luz cria tons de azul impressionantes na água.</p>
+                    </div>
+                    <div class="tour-item">
+                        <h4>✦ St. Peter's Pool</h4>
+                        <p>Uma piscina natural esculpida em formato de ferradura. O lugar ideal para quem gosta de saltos das pedras e snorkel.</p>
+                    </div>
+                    <div class="tour-item">
+                        <h4>✦ Golden Bay & Riviera</h4>
+                        <p>Duas das praias mais bonitas da ilha, famosas por sua areia dourada e pores do sol inesquecíveis, perfeitas para relaxar.</p>
+                    </div>
+                    <div class="tour-item">
+                        <h4>✦ Crystal Lagoon</h4>
+                        <p>Localizada próxima a Comino, é menos movimentada que a Blue Lagoon, oferecendo águas profundas e perfeitas para mergulho.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal Experience -->
+    <!-- Outros Modais (Experience e Menu) -->
     <div id="experience-modal" class="modal">
         <a href="#" class="modal-close">&times;</a>
         <div class="modal-container">
             <div class="modal-content">
-                <img src="imagem8.jpg.png" alt="Experience 1">
-                <img src="malta5.jpg" alt="Experience 2">
-                <img src="malta6.jpg" alt="Experience 3">
+                <img src="imagem8.jpg.png" alt="Exp 1">
+                <img src="malta5.jpg" alt="Exp 2">
+                <img src="malta6.jpg" alt="Exp 3">
             </div>
-            <div class="modal-info"><h2>Malta Experience</h2><p>A essência visual da ilha.</p></div>
+            <div class="tourist-info"><h2>Malta Experience</h2><p>A essência visual da ilha de Malta.</p></div>
         </div>
     </div>
 
-    <!-- Modal Menu -->
     <div id="menu-modal" class="modal">
         <a href="#" class="modal-close">&times;</a>
         <div class="modal-container">
             <div class="modal-content">
-                <img src="malta09.jpg.jpge.webp" alt="Giorgio's">
-                <img src="malta10.jpg.jpge.webp" alt="Prato">
+                <img src="malta09.jpg.jpge.webp" alt="Giorgios">
+                <img src="malta10.jpg.jpge.webp" alt="Menu">
             </div>
-            <div class="modal-info"><h2>Giorgio's Cafeteria</h2><p>📍 110, Tigne Seafront, Sliema, Malta</p></div>
+            <div class="tourist-info"><h2>Giorgio's Cafeteria</h2><p>📍 110, Tigne Seafront, Sliema, Malta</p></div>
         </div>
     </div>
 
 </body>
 </html>
-
-
 
 
 
