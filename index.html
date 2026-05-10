@@ -24,41 +24,36 @@
             padding: 10px 22px; border-radius: 50px; background: rgba(0,0,0,0.5); z-index: 100;
         }
 
-        /* Foto da Esquerda (UMA MOLDURA SÓ) */
+        /* Moldura da Foto Esquerda */
         .side-frame {
             width: 400px; height: 280px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.4);
             overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); margin-right: 40px; flex-shrink: 0;
         }
         .side-frame img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Título Malta (EFEITO VIDRO) */
+        /* Título Malta (Efeito Vidro) */
         .glass-box {
             background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); padding: 60px 100px;
             border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 30px 60px rgba(0,0,0,0.3);
         }
-       <header class="hero">
-    <!-- BOTÃO VOLTAR -->
-    <a href="index.html" class="btn-back">← VOLTAR</a>
-    
-    <!-- APENAS UMA MOLDURA PARA A FOTO -->
-    <div class="side-frame">
-        <img src="malta1.jpeg">
-    </div>
+        .glass-box h1 { font-family: 'Playfair Display', serif; font-size: clamp(60px, 10vw, 110px); color: #b39359; margin: 0; }
 
-    <!-- APENAS UMA CAIXA PARA O TÍTULO -->
-    <div class="glass-box">
-        <h1>Malta</h1>
-    </div>
-</header>
+        /* Cards */
+        .container { max-width: 1200px; margin: -50px auto 80px; padding: 0 20px; position: relative; z-index: 50; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: #fff; border-radius: 24px; overflow: hidden; border: 1px solid #e5e1da; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; }
+        .card img { width: 100%; height: 240px; object-fit: cover; display: block; }
+        .card-body { padding: 30px; }
+        .card-body h3 { color: #b39359; font-size: 24px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .card-body p { color: #888; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    </style>
+</head>
+<body>
 
-        
-        <div class="side-frame">
-            <img src="malta1.jpeg" alt="Malta">
-        </div>
-
-        <div class="glass-box">
-            <h1>Malta</h1>
-        </div>
+    <header class="hero">
+        <a href="https://github.io" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
+        <div class="side-frame"><img src="malta1.jpeg"></div>
+        <div class="glass-box"><h1>Malta</h1></div>
     </header>
 
     <div class="container">
@@ -80,3 +75,4 @@
 
 </body>
 </html>
+
