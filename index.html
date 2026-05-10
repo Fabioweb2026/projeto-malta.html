@@ -16,7 +16,7 @@
             overflow-x: hidden;
         }
 
-        /* Banner Principal com a imagem de fundo que você escolheu */
+        /* Banner Principal com Azul Marinho conforme seu print */
         .hero-banner {
             height: 75vh;
             width: 100%;
@@ -27,10 +27,9 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            border-bottom: 3px solid #003366; /* AZUL MEDITERRÂNEO */
+            border-bottom: 3px solid #003366;
         }
 
-        /* Título com Azul Profundo e Dourado */
         .glass-title {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(15px);
@@ -44,13 +43,12 @@
         .hero-banner h1 { 
             font-family: 'Playfair Display', serif; 
             font-size: clamp(70px, 15vw, 130px); 
-            color: #003366; /* AZUL PROFUNDO PARA MAIS DESTAQUE */
+            color: #003366; /* AZUL MARINHO DO SEU NOVO VISUAL */
             letter-spacing: -2px;
             margin: 0;
             line-height: 1;
         }
 
-        /* Botão Voltar Premium */
         .btn-back {
             position: absolute; top: 30px; left: 30px;
             text-decoration: none; color: #003366; font-weight: 800; font-size: 11px;
@@ -59,7 +57,7 @@
         }
         .btn-back:hover { background: #003366; color: #fff; }
 
-        /* Container dos Cards */
+        /* Cards */
         .container { max-width: 1200px; margin: -60px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
 
         .guide-grid {
@@ -70,13 +68,13 @@
 
         .guide-card {
             background: #fff; border-radius: 28px; overflow: hidden; 
-            border: 1px solid #e5e1da; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e5e1da; transition: 0.4s ease;
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
-        .guide-card:hover { transform: translateY(-15px); border-color: #b39359; }
+        .guide-card:hover { transform: translateY(-15px); border-color: #003366; }
 
-        /* AJUSTE DAS IMAGENS: Agora elas vão carregar! */
-        .guide-card img { width: 100%; height: 280px; object-fit: cover; background: #eee; }
+        /* CORREÇÃO DAS IMAGENS: Agora elas vão carregar */
+        .guide-card img { width: 100%; height: 280px; object-fit: cover; display: block; }
 
         .card-body { padding: 35px; text-align: center; }
         .card-body h3 { color: #003366; font-size: 26px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
@@ -96,7 +94,7 @@
         <div class="guide-grid">
             
             <div class="guide-card">
-                <!-- Nomes corrigidos conforme seus arquivos no GitHub -->
+                <!-- Certifique-se de que a imagem giorgios3.png está no mesmo repositório -->
                 <img src="giorgios3.png" alt="Gastronomia">
                 <div class="card-body">
                     <h3>Gastronomia</h3>
@@ -105,7 +103,8 @@
             </div>
 
             <div class="guide-card">
-                <img src="malta1.jpeg" alt="História">
+                <!-- Certifique-se de que a imagem malta10.jpeg está no mesmo repositório -->
+                <img src="malta10.jpeg" alt="Cidade Histórica">
                 <div class="card-body">
                     <h3>Cidade Histórica</h3>
                     <p>VALLETTA, MALTA</p>
@@ -113,7 +112,8 @@
             </div>
 
             <div class="guide-card">
-                <img src="malta12.jpeg" alt="Litoral">
+                <!-- Certifique-se de que a imagem malta12.jpeg está no mesmo repositório -->
+                <img src="malta12.jpeg" alt="Azure Horizons">
                 <div class="card-body">
                     <h3>Azure Horizons</h3>
                     <p>LITORAL MEDITERRÂNEO</p>
@@ -125,4 +125,3 @@
 
 </body>
 </html>
-
