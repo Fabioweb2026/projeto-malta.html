@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malta | Premium Experience</title>
+    <title>Malta | Heritage Experience</title>
     <style>
         @import url('https://googleapis.com');
 
@@ -11,25 +11,26 @@
         
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #c5a059; /* FUNDO DOURADO SOLICITADO */
+            background-color: #fdfaf6; /* FUNDO CREME REFINADO */
             color: #1a1a1a; 
             overflow-x: hidden;
         }
 
-        /* Hero com imagem à esquerda e texto à direita */
+        /* Hero: Imagem à esquerda e Título à direita */
         .hero {
-            height: 80vh;
+            height: 70vh;
             width: 100%;
             display: flex;
             align-items: center;
-            background: #111; /* Fundo escuro para destacar a seção superior */
-            border-bottom: 5px solid #b39359;
-            padding: 0 5%;
+            background: #fff; /* Fundo branco puro para o topo */
+            border-bottom: 4px solid #b39359;
+            padding: 0 8%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
         .hero-img-container {
             flex: 1;
-            height: 70%;
+            height: 80%;
             display: flex;
             justify-content: flex-start;
         }
@@ -37,73 +38,86 @@
         .hero-img-container img {
             height: 100%;
             border-radius: 20px;
-            border: 3px solid #b39359;
-            box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
+            border: 2px solid #b39359;
+            box-shadow: 15px 15px 40px rgba(179, 147, 89, 0.2);
             object-fit: cover;
         }
 
         .hero-content { 
-            flex: 1;
-            padding-left: 50px;
+            flex: 1.2;
+            padding-left: 60px;
             text-align: left;
         }
 
         .hero-content h1 { 
             font-family: 'Playfair Display', serif; 
-            font-size: clamp(60px, 8vw, 100px); 
-            color: #b39359; 
-            margin-bottom: 10px;
+            font-size: clamp(50px, 8vw, 90px); 
+            color: #b39359; /* DOURADO NO TÍTULO */
+            margin-bottom: 5px;
+            line-height: 1;
         }
 
         .hero-content p { 
-            font-size: 14px; 
-            letter-spacing: 5px; 
+            font-size: 13px; 
+            letter-spacing: 6px; 
             text-transform: uppercase; 
             font-weight: 800;
-            color: #ffffff;
+            color: #8a6d3b; /* DOURADO ESCURO */
         }
 
         .btn-back {
             position: absolute; top: 40px; right: 50px;
             text-decoration: none; color: #b39359; font-weight: 800; font-size: 11px;
-            text-transform: uppercase; border: 1px solid #b39359; padding: 12px 25px;
-            border-radius: 50px; background: rgba(0,0,0,0.8); transition: 0.3s;
+            text-transform: uppercase; border: 1px solid #b39359; padding: 10px 22px;
+            border-radius: 50px; background: #fff; transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .btn-back:hover { background: #b39359; color: #111; }
+        .btn-back:hover { background: #b39359; color: #fff; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
 
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 48px; color: #1a1a1a; }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 42px; 
+            color: #1a1a1a;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: ''; width: 50%; height: 3px; background: #b39359;
+            position: absolute; bottom: -15px; left: 25%;
+        }
 
-        /* Grade de Cards corrigida para o fundo dourado */
+        /* Grade de Cards: Estilo Clean & Gold */
         .guide-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
         .guide-card {
-            background: #111; border-radius: 24px;
-            overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            transition: 0.4s;
+            background: #fff; border-radius: 28px;
+            overflow: hidden; border: 1px solid #eee;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: 0.4s ease;
         }
-        .guide-card:hover { transform: translateY(-10px); }
+        .guide-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(179, 147, 89, 0.15); }
 
-        .guide-card img { width: 100%; height: 250px; object-fit: cover; }
+        .guide-card img { width: 100%; height: 260px; object-fit: cover; }
 
-        .card-body { padding: 30px; color: #fff; }
-        .card-body h3 { color: #b39359; font-size: 22px; margin-bottom: 15px; }
-        .card-body p { color: #ccc; font-size: 14px; line-height: 1.6; }
+        .card-body { padding: 35px; text-align: center; }
+        .card-body h3 { color: #b39359; font-size: 24px; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
+        .card-body p { color: #555; font-size: 15px; line-height: 1.7; }
 
-        footer { text-align: center; padding: 60px; color: #444; font-size: 10px; font-weight: 800; }
+        footer { text-align: center; padding: 100px 20px; color: #b39359; font-size: 10px; font-weight: 800; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
     <a href="https://github.io" class="btn-back">← Back to Portfolio</a>
 
-    <!-- Topo: Imagem malta1.jpeg à esquerda e Texto à direita -->
+    <!-- Topo: Imagem à esquerda e Título à direita com tons Dourados -->
     <header class="hero">
         <div class="hero-img-container">
             <img src="malta1.jpeg" alt="Malta Heritage">
@@ -122,27 +136,30 @@
 
         <div class="guide-grid">
             
+            <!-- Card 1: Gastronomy -->
             <div class="guide-card">
                 <img src="giorgios3.png" alt="Gastronomy">
                 <div class="card-body">
                     <h3>Gastronomy</h3>
-                    <p>Experience the timeless charm of Giorgios Cafeteria in Sliema. A perfect fusion of Maltese tradition and modern lifestyle.</p>
+                    <p>Experience the timeless charm of Giorgios Cafeteria in Sliema. A perfect fusion of Maltese tradition and modern lifestyle with premium sea views.</p>
                 </div>
             </div>
 
+            <!-- Card 2: History -->
             <div class="guide-card">
                 <img src="malta10.jpeg" alt="Historical Heritage">
                 <div class="card-body">
                     <h3>Historical Heritage</h3>
-                    <p>Explore the majestic streets of Valletta and the silent city of Mdina, UNESCO World Heritage sites filled with history.</p>
+                    <p>Explore the majestic streets of Valletta and the silent city of Mdina, UNESCO World Heritage sites filled with baroque architecture and stories.</p>
                 </div>
             </div>
 
+            <!-- Card 3: Landscapes -->
             <div class="guide-card">
                 <img src="malta12.jpeg" alt="Azure Horizons">
                 <div class="card-body">
                     <h3>Azure Horizons</h3>
-                    <p>Discover dramatic cliffs and the crystal-clear waters of the Mediterranean archipelago. A paradise for nature lovers.</p>
+                    <p>Discover dramatic limestone cliffs and the crystal-clear waters of the Mediterranean archipelago. A natural paradise for explorers.</p>
                 </div>
             </div>
 
@@ -150,9 +167,10 @@
 
     </div>
 
-    <footer>© 2026 FÁBIO ANDRADE — MALTA EXPLORATION</footer>
+    <footer>© 2026 FÁBIO ANDRADE — MALTA EXPLORATION SERIES</footer>
 
 </body>
 </html>
+
 
 
