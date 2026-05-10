@@ -1,171 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Malta Experience</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malta Experience</title>
+    <style>
+        @import url('https://googleapis.com');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdfaf6; overflow-x: hidden; }
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+        /* Banner Principal */
+        .hero {
+            height: 75vh; width: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('mata.png14.png') no-repeat center center;
+            background-size: cover; display: flex; align-items: center; justify-content: center; position: relative;
+            border-bottom: 2px solid #b39359; padding: 0 50px;
+        }
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Botão Voltar */
+        .btn-back {
+            position: absolute; top: 30px; left: 30px; text-decoration: none; color: #fff; 
+            font-weight: 800; font-size: 11px; text-transform: uppercase; border: 1px solid #b39359; 
+            padding: 10px 22px; border-radius: 50px; background: rgba(0,0,0,0.5); z-index: 100;
+        }
 
-img {
-    display: block;
-    max-width: 100%;
-}
+        /* MOLDURA ÚNICA (SEM SOBREPOSIÇÃO) */
+        .side-frame {
+            width: 400px; height: 280px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.4);
+            overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); margin-right: 40px; flex-shrink: 0;
+        }
+        .side-frame img { width: 100%; height: 100%; object-fit: cover; }
 
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #fdfaf6;
-    overflow-x: hidden;
-}
+        /* Título Malta (Efeito Vidro) */
+        .glass-box {
+            background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); padding: 60px 100px;
+            border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+        .glass-box h1 { font-family: 'Playfair Display', serif; font-size: clamp(60px, 10vw, 110px); color: #b39359; margin: 0; }
 
-/* HERO */
-.hero {
-    min-height: 75vh;
-    width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('mata.png14.png') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    position: relative;
-    flex-wrap: wrap;
-    padding: 60px 20px;
-}
-
-.btn-back {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-    font-size: 12px;
-    padding: 10px 18px;
-    border: 1px solid #b39359;
-    border-radius: 50px;
-    background: rgba(0,0,0,0.5);
-}
-
-/* IMAGEM LATERAL */
-.side-frame {
-    width: 320px;
-    height: 220px;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-.side-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* TITULO */
-.glass-box {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(15px);
-    padding: 40px 60px;
-    border-radius: 25px;
-    border: 1px solid rgba(255,255,255,0.2);
-}
-
-.glass-box h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 80px;
-    color: #b39359;
-}
-
-/* CONTAINER */
-.container {
-    max-width: 1200px;
-    margin: 40px auto 80px;
-    padding: 0 20px;
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-/* CARD */
-.card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-.card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.card-body {
-    padding: 20px;
-    text-align: center;
-}
-
-.card-body h3 {
-    font-family: 'Playfair Display', serif;
-    color: #b39359;
-    margin-bottom: 8px;
-}
-
-.card-body p {
-    font-size: 12px;
-    font-weight: 700;
-    color: #777;
-    text-transform: uppercase;
-}
-</style>
+        /* Grade de Cards */
+        .container { max-width: 1200px; margin: -50px auto 80px; padding: 0 20px; position: relative; z-index: 50; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: #fff; border-radius: 24px; overflow: hidden; border: 1px solid #e5e1da; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; }
+        .card img { width: 100%; height: 240px; object-fit: cover; display: block; }
+        .card-body { padding: 30px; }
+        .card-body h3 { color: #b39359; font-size: 24px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .card-body p { color: #888; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    </style>
 </head>
-
 <body>
 
-<header class="hero">
-
-    <a href="index.html" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
-
-    <div class="side-frame">
-        <img src="malta1.jpeg" alt="Malta">
-    </div>
-
-    <div class="glass-box">
-        <h1>Malta</h1>
-    </div>
-
-</header>
-
-<div class="container">
-    <div class="grid">
-
-        <!-- CARD ÚNICO -->
-        <div class="card">
-            <img src="malta10.jpg" alt="Malta">
-            <div class="card-body">
-                <h3>Malta Experience</h3>
-                <p>Valletta, Malta</p>
-            </div>
+    <header class="hero">
+        <a href="https://github.io" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
+        
+        <!-- Apenas uma moldura agora -->
+        <div class="side-frame">
+            <img src="malta1.jpeg" alt="Malta">
         </div>
 
+        <div class="glass-box">
+            <h1>Malta</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <img src="giorgios3.png">
+                <div class="card-body"><h3>Gastronomia</h3><p>SLIEMA, MALTA</p></div>
+            </div>
+            <div class="card">
+                <img src="malta10.jpeg">
+                <div class="card-body"><h3>Cidade Histórica</h3><p>VALLETTA, MALTA</p></div>
+            </div>
+            <div class="card">
+                <img src="malta12.jpeg">
+                <div class="card-body"><h3>Azure Horizons</h3><p>LITORAL MEDITERRÂNEO</p></div>
+            </div>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
+
