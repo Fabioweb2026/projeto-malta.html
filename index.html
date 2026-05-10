@@ -7,7 +7,7 @@
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
-        /* RESET E ELEGÂNCIA FUNDO */
+        /* RESET E ESTILO GERAL */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -21,7 +21,6 @@
             color: #4a4a4a;
         }
 
-        /* CABEÇALHO */
         .hero { padding: 60px 20px 40px; text-align: center; }
         .btn-back {
             text-decoration: none; color: #b39359; background: white;
@@ -29,20 +28,11 @@
             font-weight: 600; transition: 0.3s; display: inline-block; margin-bottom: 20px;
         }
         .btn-back:hover { background: #b39359; color: white; }
-        .glass-box h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(50px, 10vw, 90px); 
-            color: #b39359;
-            letter-spacing: -2px;
-        }
+        .glass-box h1 { font-family: 'Playfair Display', serif; font-size: clamp(50px, 10vw, 90px); color: #b39359; }
 
-        /* GRID DE CARDS */
+        /* GRID E CARDS */
         .container { width: 100%; max-width: 1200px; padding: 0 20px 80px; }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 25px; 
-        }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
 
         .card {
             background: white; border-radius: 20px; overflow: hidden;
@@ -65,7 +55,7 @@
         }
         .btn-card:hover { background: #b39359; color: white; }
 
-        /* MODAL HARMONIZADO REDUZIDO */
+        /* MODAIS (GALERIAS) */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(253, 252, 240, 0.98);
@@ -81,21 +71,21 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 750px; /* Reduzi a largura máxima do modal */
+            max-width: 1100px;
         }
 
         .modal-content {
             display: flex;
             flex-direction: row;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 30px;
         }
 
         .modal-content img {
-            height: 300px;      /* ALTURA REDUZIDA */
-            width: 300px;       /* LARGURA REDUZIDA PARA SIMETRIA */
+            height: 280px;      /* Tamanho reduzido para caber 3 lado a lado */
+            width: 280px;       /* Formato quadrado harmonizado */
             object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(179, 147, 89, 0.15);
@@ -103,32 +93,11 @@
             transition: 0.3s;
         }
 
-        .modal-content img:hover { transform: scale(1.02); }
+        .modal-content img:hover { transform: scale(1.05); }
 
         .modal-info { text-align: center; }
         .modal-info h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #b39359; margin-bottom: 10px; }
-        
-        .address-link {
-            text-decoration: none;
-            color: #666;
-            font-size: 13px;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 10px;
-            transition: 0.3s;
-        }
-        .address-link:hover { color: #b39359; }
-
-        .info-tag {
-            display: inline-block;
-            background: rgba(179, 147, 89, 0.1);
-            color: #b39359;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            margin-top: 5px;
-        }
+        .modal-info p { font-size: 13px; color: #666; max-width: 500px; line-height: 1.6; }
 
         .modal-close {
             position: fixed; top: 20px; right: 40px;
@@ -136,11 +105,13 @@
         }
 
         /* RESPONSIVIDADE */
-        @media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1024px) { 
+            .grid { grid-template-columns: repeat(2, 1fr); } 
+            .modal-content img { height: 220px; width: 220px; }
+        }
         @media (max-width: 768px) { 
             .grid { grid-template-columns: 1fr; }
             .modal-content img { width: 100%; height: auto; }
-            .modal-content { gap: 15px; }
         }
     </style>
 </head>
@@ -155,15 +126,18 @@
 
     <div class="container">
         <div class="grid">
+            
+            <!-- Card 1: Malta Experience -->
             <div class="card">
                 <div class="card-img-container"><img src="imagem10.jpg.png" alt="Malta Experience"></div>
                 <div class="card-body">
                     <h3>Malta Experience</h3>
                     <p>Valletta, Malta</p>
-                    <a href="imagem10.jpg.png" target="_blank" class="btn-card">Explorar</a>
+                    <a href="#experience-modal" class="btn-card">Explorar</a>
                 </div>
             </div>
 
+            <!-- Card 2: Giorgios Cafeteria -->
             <div class="card">
                 <div class="card-img-container"><img src="malta01.jpeg" alt="Giorgios Cafeteria"></div>
                 <div class="card-body">
@@ -173,6 +147,7 @@
                 </div>
             </div>
 
+            <!-- Card 3: Turismo Lazer -->
             <div class="card">
                 <div class="card-img-container"><img src="malta8.jpg" alt="Turismo Lazer"></div>
                 <div class="card-body">
@@ -184,7 +159,23 @@
         </div>
     </div>
 
-    <!-- Galeria Modal Reduzida e Harmonizada -->
+    <!-- Modal Card 1: Malta Experience (Harmonizado com 3 imagens) -->
+    <div id="experience-modal" class="modal">
+        <a href="#" class="modal-close">&times;</a>
+        <div class="modal-container">
+            <div class="modal-content">
+                <img src="imagem8.jpg.png" alt="Malta 1">
+                <img src="malta5.jpg" alt="Malta 2">
+                <img src="malta6.jpg" alt="Malta 3">
+            </div>
+            <div class="modal-info">
+                <h2>Malta Experience</h2>
+                <p>Uma jornada visual pelas cores e texturas da ilha de Malta, capturando a essência histórica de Valletta e suas paisagens únicas.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Card 2: Giorgios Cafeteria -->
     <div id="menu-modal" class="modal">
         <a href="#" class="modal-close">&times;</a>
         <div class="modal-container">
@@ -194,19 +185,15 @@
             </div>
             <div class="modal-info">
                 <h2>Giorgio's Cafeteria</h2>
-                <a href="https://goo.gl" target="_blank" class="address-link">
-                    📍 110, Tigne Seafront, Sliema, Malta
-                </a>
-                <span class="info-tag">Menu Mediterrâneo & Café</span>
-                <p style="margin-top: 15px; font-size: 13px; color: #888; max-width: 450px; line-height: 1.6;">
-                    Um ícone em Sliema, oferecendo vistas deslumbrantes do porto e uma culinária autêntica que une tradição e sofisticação.
-                </p>
+                <p style="font-weight: 600;">📍 110, Tigne Seafront, Sliema, Malta</p>
+                <p style="margin-top: 10px;">Referência em gastronomia mediterrânea com uma das vistas mais bonitas do porto.</p>
             </div>
         </div>
     </div>
 
 </body>
 </html>
+
 
 
 
