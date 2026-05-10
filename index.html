@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malta Experience</title>
+    <title>Malta Experience | Portfolio</title>
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
+        /* RESET E ELEGÂNCIA FUNDO */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -20,6 +21,7 @@
             color: #4a4a4a;
         }
 
+        /* CABEÇALHO */
         .hero { padding: 60px 20px 40px; text-align: center; }
         .btn-back {
             text-decoration: none; color: #b39359; background: white;
@@ -27,33 +29,43 @@
             font-weight: 600; transition: 0.3s; display: inline-block; margin-bottom: 20px;
         }
         .btn-back:hover { background: #b39359; color: white; }
-        .glass-box h1 { font-family: 'Playfair Display', serif; font-size: clamp(50px, 10vw, 90px); color: #b39359; }
+        .glass-box h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(50px, 10vw, 90px); 
+            color: #b39359;
+            letter-spacing: -2px;
+        }
 
+        /* GRID DE CARDS */
         .container { width: 100%; max-width: 1200px; padding: 0 20px 80px; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 25px; 
+        }
 
         .card {
             background: white; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(179, 147, 89, 0.15); transition: 0.4s ease;
+            box-shadow: 0 10px 30px rgba(179, 147, 89, 0.1); transition: 0.4s ease;
         }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(179, 147, 89, 0.3); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(179, 147, 89, 0.25); }
 
-        .card-img-container { width: 100%; height: 220px; overflow: hidden; }
+        .card-img-container { width: 100%; height: 240px; overflow: hidden; }
         .card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-        .card:hover img { transform: scale(1.15); }
+        .card:hover img { transform: scale(1.1); }
 
-        .card-body { padding: 25px; text-align: center; }
-        .card-body h3 { font-family: 'Playfair Display', serif; color: #b39359; font-size: 20px; margin-bottom: 5px; }
-        .card-body p { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; margin-bottom: 20px; }
+        .card-body { padding: 30px 20px; text-align: center; }
+        .card-body h3 { font-family: 'Playfair Display', serif; color: #b39359; font-size: 22px; margin-bottom: 8px; }
+        .card-body p { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
         
         .btn-card {
-            display: inline-block; padding: 8px 25px; border: 1px solid #b39359;
+            display: inline-block; padding: 10px 30px; border: 1px solid #b39359;
             color: #b39359; text-decoration: none; font-size: 10px; font-weight: 700;
             text-transform: uppercase; border-radius: 50px; transition: 0.3s;
         }
         .btn-card:hover { background: #b39359; color: white; }
 
-        /* MODAL REFINADO - IMAGENS MENORES LADO A LADO */
+        /* MODAL HARMONIZADO (INFORMATIVO) */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(253, 252, 240, 0.98);
@@ -69,58 +81,65 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 900px; /* Reduzi a largura máxima do conjunto */
+            max-width: 900px;
         }
 
         .modal-content {
             display: flex;
             flex-direction: row;
-            gap: 30px; /* Espaço elegante entre as fotos */
+            gap: 25px;
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 30px;
         }
 
         .modal-content img {
-            height: 400px; /* ALTURA CONTROLADA */
-            width: auto;
-            max-width: 100%;
-            object-fit: cover;
+            height: 380px;      /* Altura Harmonizada */
+            width: 380px;       /* Largura Harmonizada para Simetria */
+            object-fit: cover;  /* Mantém a foto perfeita sem distorção */
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(179, 147, 89, 0.15);
             border: 4px solid white;
+            transition: 0.3s;
         }
 
-        .modal-info {
-            text-align: center;
-            color: #b39359;
-            padding: 10px;
-        }
+        .modal-content img:hover { transform: scale(1.02); }
 
-        .modal-info h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 10px; }
+        .modal-info { text-align: center; }
+        .modal-info h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: #b39359; margin-bottom: 10px; }
         
         .address-link {
             text-decoration: none;
             color: #666;
             font-size: 14px;
             font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
             transition: 0.3s;
         }
         .address-link:hover { color: #b39359; }
 
+        .info-tag {
+            display: inline-block;
+            background: rgba(179, 147, 89, 0.1);
+            color: #b39359;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
         .modal-close {
-            position: fixed; top: 20px; right: 30px;
-            color: #b39359; font-size: 40px; text-decoration: none; font-weight: bold;
+            position: fixed; top: 20px; right: 40px;
+            color: #b39359; font-size: 50px; text-decoration: none; font-weight: 300;
         }
 
         /* RESPONSIVIDADE */
-        @media (max-width: 1000px) { 
-            .grid { grid-template-columns: repeat(2, 1fr); } 
-            .modal-content img { height: 320px; }
-        }
-        @media (max-width: 700px) { 
+        @media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { 
             .grid { grid-template-columns: 1fr; }
-            .modal-content img { height: auto; width: 100%; }
+            .modal-content img { width: 100%; height: auto; }
             .modal-content { gap: 15px; }
         }
     </style>
@@ -137,7 +156,7 @@
     <div class="container">
         <div class="grid">
             <div class="card">
-                <div class="card-img-container"><img src="imagem10.jpg.png" alt="Malta"></div>
+                <div class="card-img-container"><img src="imagem10.jpg.png" alt="Malta Experience"></div>
                 <div class="card-body">
                     <h3>Malta Experience</h3>
                     <p>Valletta, Malta</p>
@@ -146,16 +165,16 @@
             </div>
 
             <div class="card">
-                <div class="card-img-container"><img src="malta01.jpeg" alt="Giorgios"></div>
+                <div class="card-img-container"><img src="malta01.jpeg" alt="Giorgios Cafeteria"></div>
                 <div class="card-body">
                     <h3>Giorgios Cafeteria</h3>
                     <p>Gastronomia e Café</p>
-                    <a href="#menu-modal" class="btn-card">Ver Menu</a>
+                    <a href="#menu-modal" class="btn-card">Informações</a>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-img-container"><img src="malta8.jpg" alt="Turismo"></div>
+                <div class="card-img-container"><img src="malta8.jpg" alt="Turismo Lazer"></div>
                 <div class="card-body">
                     <h3>Turismo Lazer</h3>
                     <p>Exploração e Aventura</p>
@@ -165,20 +184,23 @@
         </div>
     </div>
 
-    <!-- Galeria Modal com Tamanho Ajustado e Link para o Mapa -->
+    <!-- Galeria Modal Harmonizada (Informativo) -->
     <div id="menu-modal" class="modal">
         <a href="#" class="modal-close">&times;</a>
         <div class="modal-container">
             <div class="modal-content">
-                <img src="malta09.jpg.jpge.webp" alt="Giorgios Fachada">
-                <img src="malta10.jpg.jpge.webp" alt="Giorgios Bruschetta">
+                <img src="malta09.jpg.jpge.webp" alt="Ambiente Giorgio's">
+                <img src="malta10.jpg.jpge.webp" alt="Gastronomia Malta">
             </div>
             <div class="modal-info">
                 <h2>Giorgio's Cafeteria</h2>
                 <a href="https://goo.gl" target="_blank" class="address-link">
                     📍 110, Tigne Seafront, Sliema, Malta
                 </a>
-                <p style="margin-top: 10px; font-size: 12px; opacity: 0.8; color: #888;">Clique no endereço para ver no mapa.</p>
+                <span class="info-tag">Menu Mediterrâneo & Café</span>
+                <p style="margin-top: 15px; font-size: 13px; color: #888; max-width: 400px; line-height: 1.6;">
+                    Um ícone em Sliema, oferecendo vistas deslumbrantes do porto e uma culinária autêntica que une tradição e sofisticação.
+                </p>
             </div>
         </div>
     </div>
