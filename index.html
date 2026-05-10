@@ -11,43 +11,44 @@
         
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #001f3f; /* O seu Azul Marinho */
-            color: #fff; 
+            background-color: #fdfaf6; /* TOM CREME SUAVE */
+            color: #1a1a1a; 
             overflow-x: hidden;
         }
 
-        /* Banner Principal Limpo (Sem foto lateral e sem selo) */
+        /* Banner Principal Limpo e Suave */
         .hero-banner {
-            height: 75vh;
+            height: 60vh;
             width: 100%;
-            background: linear-gradient(rgba(0,31,63,0.4), #001f3f), url('malta1.jpeg') no-repeat center center;
-            background-size: cover;
+            background-color: #fdfaf6;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 3px solid #b39359;
             position: relative;
+            /* Detalhe sutil: uma borda dourada fina no fundo */
+            border-bottom: 1px solid #e5e1da;
         }
 
         .hero-banner h1 { 
             font-family: 'Playfair Display', serif; 
-            font-size: clamp(80px, 15vw, 150px); 
-            color: #fff; 
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            font-size: clamp(80px, 15vw, 160px); 
+            color: #b39359; /* DOURADO SUAVE */
             letter-spacing: -2px;
+            /* Sombra bem leve para dar profundidade */
+            text-shadow: 2px 2px 0px rgba(255,255,255,1), 5px 5px 15px rgba(179, 147, 89, 0.2);
         }
 
-        /* Botão Voltar Discreto */
+        /* Botão Voltar Ajustado */
         .btn-back {
             position: absolute; top: 30px; left: 30px;
             text-decoration: none; color: #b39359; font-weight: 800; font-size: 11px;
             text-transform: uppercase; border: 1px solid #b39359; padding: 10px 20px;
-            border-radius: 50px; background: rgba(0,0,0,0.3); transition: 0.3s;
+            border-radius: 50px; background: transparent; transition: 0.3s;
         }
         .btn-back:hover { background: #b39359; color: #fff; }
 
         /* Conteúdo dos Cards */
-        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px 80px; }
 
         .guide-grid {
             display: grid;
@@ -56,14 +57,16 @@
         }
 
         .guide-card {
-            background: #001a35; border-radius: 28px; overflow: hidden; 
-            border: 1px solid rgba(179, 147, 89, 0.2); transition: 0.4s ease;
+            background: #fff; border-radius: 28px; overflow: hidden; 
+            border: 1px solid #eee; transition: 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
+        .guide-card:hover { transform: translateY(-10px); border-color: #b39359; box-shadow: 0 20px 40px rgba(179, 147, 89, 0.1); }
 
         .guide-card img { width: 100%; height: 260px; object-fit: cover; }
-        .card-body { padding: 30px; text-align: center; }
+        .card-body { padding: 35px; text-align: center; }
         .card-body h3 { color: #b39359; font-size: 24px; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
-        .card-body p { color: #ccc; font-size: 15px; line-height: 1.7; }
+        .card-body p { color: #666; font-size: 15px; line-height: 1.7; }
 
     </style>
 </head>
@@ -104,3 +107,4 @@
 
 </body>
 </html>
+
