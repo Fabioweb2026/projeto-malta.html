@@ -11,7 +11,7 @@
         
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #fdfaf6; /* FUNDO CREME REFINADO */
+            background-color: #fdfaf6; /* FUNDO CREME */
             color: #1a1a1a; 
             overflow-x: hidden;
         }
@@ -22,10 +22,10 @@
             width: 100%;
             display: flex;
             align-items: center;
-            background: #fff; /* Fundo branco puro para o topo */
+            background: #fff;
             border-bottom: 4px solid #b39359;
             padding: 0 8%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            position: relative;
         }
 
         .hero-img-container {
@@ -39,12 +39,11 @@
             height: 100%;
             border-radius: 20px;
             border: 2px solid #b39359;
-            box-shadow: 15px 15px 40px rgba(179, 147, 89, 0.2);
             object-fit: cover;
         }
 
         .hero-content { 
-            flex: 1.2;
+            flex: 1.5;
             padding-left: 60px;
             text-align: left;
         }
@@ -52,8 +51,7 @@
         .hero-content h1 { 
             font-family: 'Playfair Display', serif; 
             font-size: clamp(50px, 8vw, 90px); 
-            color: #b39359; /* DOURADO NO TÍTULO */
-            margin-bottom: 5px;
+            color: #b39359; 
             line-height: 1;
         }
 
@@ -62,7 +60,7 @@
             letter-spacing: 6px; 
             text-transform: uppercase; 
             font-weight: 800;
-            color: #8a6d3b; /* DOURADO ESCURO */
+            color: #8a6d3b;
         }
 
         .btn-back {
@@ -70,26 +68,15 @@
             text-decoration: none; color: #b39359; font-weight: 800; font-size: 11px;
             text-transform: uppercase; border: 1px solid #b39359; padding: 10px 22px;
             border-radius: 50px; background: #fff; transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         .btn-back:hover { background: #b39359; color: #fff; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
 
         .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 42px; 
-            color: #1a1a1a;
-            position: relative;
-            display: inline-block;
-        }
-        .section-header h2::after {
-            content: ''; width: 50%; height: 3px; background: #b39359;
-            position: absolute; bottom: -15px; left: 25%;
-        }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 42px; color: #1a1a1a; }
 
-        /* Grade de Cards: Estilo Clean & Gold */
+        /* Grade de Cards */
         .guide-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -102,24 +89,21 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
             transition: 0.4s ease;
         }
-        .guide-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(179, 147, 89, 0.15); }
 
         .guide-card img { width: 100%; height: 260px; object-fit: cover; }
 
         .card-body { padding: 35px; text-align: center; }
         .card-body h3 { color: #b39359; font-size: 24px; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
         .card-body p { color: #555; font-size: 15px; line-height: 1.7; }
-
-        footer { text-align: center; padding: 100px 20px; color: #b39359; font-size: 10px; font-weight: 800; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
     <a href="https://github.io" class="btn-back">← Back to Portfolio</a>
 
-    <!-- Topo: Imagem à esquerda e Título à direita com tons Dourados -->
     <header class="hero">
         <div class="hero-img-container">
+            <!-- CORRIGIDO: Nome exato malta1.jpeg -->
             <img src="malta1.jpeg" alt="Malta Heritage">
         </div>
         <div class="hero-content">
@@ -129,48 +113,41 @@
     </header>
 
     <div class="container">
-        
-        <div class="section-header">
-            <h2>The Experience</h2>
-        </div>
-
+        <div class="section-header"><h2>The Experience</h2></div>
         <div class="guide-grid">
             
-            <!-- Card 1: Gastronomy -->
             <div class="guide-card">
+                <!-- CORRIGIDO: Nome exato giorgios3.png -->
                 <img src="giorgios3.png" alt="Gastronomy">
                 <div class="card-body">
                     <h3>Gastronomy</h3>
-                    <p>Experience the timeless charm of Giorgios Cafeteria in Sliema. A perfect fusion of Maltese tradition and modern lifestyle with premium sea views.</p>
+                    <p>Experience the timeless charm of Giorgios Cafeteria in Sliema. A perfect fusion of Maltese tradition and modern lifestyle.</p>
                 </div>
             </div>
 
-            <!-- Card 2: History -->
             <div class="guide-card">
+                <!-- CORRIGIDO: Nome exato malta10.jpeg -->
                 <img src="malta10.jpeg" alt="Historical Heritage">
                 <div class="card-body">
                     <h3>Historical Heritage</h3>
-                    <p>Explore the majestic streets of Valletta and the silent city of Mdina, UNESCO World Heritage sites filled with baroque architecture and stories.</p>
+                    <p>Explore the majestic streets of Valletta and the silent city of Mdina, UNESCO World Heritage sites.</p>
                 </div>
             </div>
 
-            <!-- Card 3: Landscapes -->
             <div class="guide-card">
+                <!-- CORRIGIDO: Nome exato malta12.jpeg -->
                 <img src="malta12.jpeg" alt="Azure Horizons">
                 <div class="card-body">
                     <h3>Azure Horizons</h3>
-                    <p>Discover dramatic limestone cliffs and the crystal-clear waters of the Mediterranean archipelago. A natural paradise for explorers.</p>
+                    <p>Discover dramatic limestone cliffs and the crystal-clear waters of the Mediterranean archipelago.</p>
                 </div>
             </div>
 
         </div>
-
     </div>
-
-    <footer>© 2026 FÁBIO ANDRADE — MALTA EXPLORATION SERIES</footer>
-
 </body>
 </html>
+
 
 
 
