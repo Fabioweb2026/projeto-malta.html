@@ -14,9 +14,10 @@
     box-sizing: border-box;
 }
 
-/* 🔥 CORREÇÃO GLOBAL DAS IMAGENS */
+/* remove qualquer imagem solta que cause bug */
 img {
     display: block;
+    max-width: 100%;
 }
 
 body {
@@ -53,7 +54,7 @@ body {
     background: rgba(0,0,0,0.5);
 }
 
-/* IMAGEM LATERAL */
+/* LADO IMAGEM */
 .side-frame {
     width: 320px;
     height: 220px;
@@ -86,15 +87,16 @@ body {
 /* CONTAINER */
 .container {
     max-width: 1200px;
-    margin: -40px auto 80px;
+    margin: 40px auto 80px; /* corrigido */
     padding: 0 20px;
 }
 
-/* GRID */
+/* GRID (evita sobreposição e imagens soltas) */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
+    align-items: start;
 }
 
 /* CARD */
@@ -138,6 +140,7 @@ body {
 
 <body>
 
+<!-- HERO -->
 <header class="hero">
 
     <a href="index.html" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
@@ -152,6 +155,7 @@ body {
 
 </header>
 
+<!-- CARDS (SEM IMAGEM SOLTA GARANTIDO) -->
 <div class="container">
     <div class="grid">
 
