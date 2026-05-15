@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Fábio Web | Portfólio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    background: #0f0f0f;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    color: #b39359;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card h3 {
+    color: #b39359;
+}
+
+.card p {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Fábio Web</h1>
+    <p>Portfólio de Projetos</p>
+</header>
+
+<div class="grid">
+
+    <div class="card" onclick="window.location.href='malta.html'">
+        <img src="img/malta.jpg">
+        <div class="card-content">
+            <h3>Malta Experience</h3>
+            <p>Projeto turístico</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
