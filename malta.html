@@ -3,95 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Malta Experience</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
-
-<header class="hero">
-
-    <a class="back" href="index.html">← Voltar</a>
-
-    <h1>Malta</h1>
-    <p>Modern Mediterranean Experience</p>
-
-</header>
-    <head>
-    ...
-    <style>
-        <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Fábio Web | Portfólio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background: #0f0f0f;
+    background: #111;
     color: white;
-    min-height: 100vh;
 }
-
-/* HEADER */
 
 header {
     text-align: center;
-    padding: 60px 20px 30px;
+    padding: 60px 20px;
 }
 
 header h1 {
-    font-size: 40px;
     color: #b39359;
-    letter-spacing: 2px;
+    font-size: 50px;
 }
 
-header p {
-    opacity: 0.7;
-    margin-top: 10px;
+.back {
+    display: inline-block;
+    margin: 20px;
+    color: #b39359;
+    text-decoration: none;
 }
-
-/* GRID */
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
+    gap: 20px;
+    padding: 40px;
+    max-width: 1000px;
     margin: auto;
-    padding: 40px 20px;
 }
-
-/* CARD */
 
 .card {
     background: #1a1a1a;
     border-radius: 15px;
     overflow: hidden;
-    cursor: pointer;
-    transition: 0.3s;
-    border: 1px solid rgba(179,147,89,0.2);
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #b39359;
 }
 
 .card img {
@@ -101,21 +56,12 @@ header p {
 }
 
 .card-content {
-    padding: 18px;
-    text-align: center;
+    padding: 15px;
 }
 
 .card h3 {
     color: #b39359;
-    margin-bottom: 6px;
 }
-
-.card p {
-    font-size: 12px;
-    opacity: 0.7;
-}
-
-/* BUTTON (opcional futuro) */
 
 </style>
 
@@ -123,65 +69,34 @@ header p {
 
 <body>
 
+<a class="back" href="index.html">← Voltar</a>
+
 <header>
-    <h1>Fábio Web</h1>
-    <p>Portfólio de Projetos Web</p>
+    <h1>Malta Experience</h1>
+    <p>Modern Mediterranean Experience</p>
 </header>
 
 <section class="grid">
 
-    <!-- CARD 1 -->
-    <div class="card" onclick="window.location.href='malta.html'">
-        <img src="img/malta.jpg" alt="Malta">
+    <div class="card">
+        <img src="malta01.jpeg">
         <div class="card-content">
-            <h3>Malta Experience</h3>
-            <p>Projeto turístico e visual</p>
+            <h3>Valletta</h3>
         </div>
     </div>
 
-    <!-- CARD 2 -->
-    <div class="card" onclick="window.location.href='web-store.html'">
-        <img src="img/store.jpg" alt="Store">
+    <div class="card">
+        <img src="malta8.jpg">
         <div class="card-content">
-            <h3>Web Store HTML</h3>
-            <p>Loja de moda online</p>
+            <h3>Golden Bay</h3>
         </div>
     </div>
 
-    <!-- CARD 3 -->
-    <div class="card" onclick="window.open('resume.pdf','_blank')">
-        <img src="img/cv.jpg" alt="CV">
+    <div class="card">
+        <img src="malta6.jpg">
         <div class="card-content">
-            <h3>Currículo</h3>
-            <p>Experiência profissional</p>
+            <h3>Blue Lagoon</h3>
         </div>
-    </div>
-
-</section>
-
-</body>
-</html>
-    </style>
-</head>
-
-<section class="grid">
-
-    <div class="card">
-        <img src="img/malta1.jpg" alt="Gastronomia">
-        <h3>Gastronomia</h3>
-        <p>Valletta</p>
-    </div>
-
-    <div class="card">
-        <img src="img/malta2.jpg" alt="Cidade">
-        <h3>Cidade Histórica</h3>
-        <p>Mdina</p>
-    </div>
-
-    <div class="card">
-        <img src="img/malta3.jpg" alt="Litoral">
-        <h3>Litoral</h3>
-        <p>Blue Lagoon</p>
     </div>
 
 </section>
