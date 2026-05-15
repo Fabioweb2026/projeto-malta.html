@@ -1,111 +1,221 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malta Experience | Portfolio</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <style>
+        /* RESET & BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #fdfcf0 0%, #e6d5b8 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; color: #4a4a4a;
+            opacity: 0;
+            animation: fadeInPage 1.2s ease-out forwards;
+        }
 
-<title>Malta Experience</title>
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+        /* HEADER */
+        .hero { padding: 60px 20px 40px; text-align: center; }
+        .btn-back {
+            text-decoration: none; color: #b39359; background: white;
+            padding: 10px 25px; border-radius: 50px; border: 1px solid #b39359;
+            font-weight: 600; transition: 0.3s; display: inline-block; margin-bottom: 20px;
+        }
+        .btn-back:hover { background: #b39359; color: white; box-shadow: 0 5px 15px rgba(179,147,89,0.3); }
+        .glass-box h1 { font-family: 'Playfair Display', serif; font-size: clamp(50px, 10vw, 90px); color: #b39359; letter-spacing: -2px; }
 
-<style>
+        /* GRID SYSTEM */
+        .container { width: 100%; max-width: 1200px; padding: 0 20px 80px; flex: 1; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
 
-body{
-    margin:0;
-    font-family:'Plus Jakarta Sans',sans-serif;
-    background:#111;
-    color:white;
-}
+        .card { 
+            background: white; border-radius: 20px; overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(179, 147, 89, 0.1); transition: 0.4s ease;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(179, 147, 89, 0.25); }
 
-.hero{
-    height:70vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    background:#1a1a1a;
-}
+        .card-img-container { width: 100%; height: 240px; overflow: hidden; }
+        .card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .card:hover img { transform: scale(1.1); }
 
-h1{
-    font-size:70px;
-    color:#b39359;
-}
+        .card-body { padding: 30px 20px; text-align: center; }
+        .card-body h3 { font-family: 'Playfair Display', serif; color: #b39359; font-size: 22px; margin-bottom: 8px; }
+        .card-body p { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
+        
+        .btn-card { 
+            display: inline-block; padding: 10px 30px; border: 1px solid #b39359; 
+            color: #b39359; text-decoration: none; font-size: 10px; font-weight: 700; 
+            text-transform: uppercase; border-radius: 50px; transition: 0.3s; 
+        }
+        .btn-card:hover { background: #b39359; color: white; }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
-    padding:40px;
-}
+        /* MODALS */
+        .modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(253, 252, 240, 0.98); backdrop-filter: blur(15px);
+            display: none; justify-content: center; align-items: center;
+            z-index: 1000; overflow-y: auto; padding: 40px 20px;
+        }
+        .modal:target { display: flex; }
+        .modal-container { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1000px; margin: auto; }
+        
+        .modal-content { 
+            display: flex; flex-direction: row; gap: 15px; justify-content: center; 
+            flex-wrap: wrap; width: 100%; margin-bottom: 40px; 
+        }
+        .modal-content img, .modal-content video { 
+            height: 220px; width: 220px; object-fit: cover; 
+            border-radius: 12px; border: 4px solid white; 
+            box-shadow: 0 5px 15px rgba(179, 147, 89, 0.1); 
+        }
 
-.card{
-    background:#222;
-    border-radius:20px;
-    overflow:hidden;
-}
+        /* TEXT HARMONIZATION */
+        .tourist-info { text-align: center; max-width: 800px; padding: 0 20px; }
+        .tourist-info h2 { font-family: 'Playfair Display', serif; font-size: 36px; color: #b39359; margin-bottom: 30px; }
+        .tour-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; text-align: left; }
+        .tour-item { padding: 15px; border-bottom: 1px solid rgba(179, 147, 89, 0.2); }
+        .tour-item h4 { font-family: 'Playfair Display', serif; color: #b39359; font-size: 18px; margin-bottom: 8px; }
+        .tour-item p { font-size: 14px; line-height: 1.6; color: #666; }
 
-.card img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
-}
+        .modal-close { 
+            position: fixed; top: 20px; right: 30px; width: 45px; height: 45px; 
+            background: #b39359; color: white; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 24px; text-decoration: none; z-index: 1001; 
+        }
 
-.card-content{
-    padding:20px;
-}
+        /* FOOTER */
+        footer {
+            width: 100%; padding: 40px 20px; background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px); text-align: center; border-top: 1px solid rgba(179, 147, 89, 0.2);
+        }
+        footer p { font-size: 12px; color: #888; letter-spacing: 1px; }
+        footer .designer { color: #b39359; font-weight: 700; text-decoration: none; }
 
-</style>
+        @media (max-width: 768px) { 
+            .grid { grid-template-columns: 1fr; } 
+            .modal-content img, .modal-content video { width: 100%; height: auto; }
+        }
+    </style>
 </head>
-
 <body>
-    <body style="background:black;color:white;">
-<h1>OK FUNCIONA</h1>
+
+    <header class="hero">
+        <a href="index.html" class="btn-back">← BACK TO PORTFOLIO</a>
+        <div class="glass-box">
+            <h1>Malta</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-img-container"><img src="imagem10.jpg.png" alt="Malta Experience"></div>
+                <div class="card-body">
+                    <h3>Malta Experience</h3>
+                    <p>Valletta, Malta</p>
+                    <a href="#experience-modal" class="btn-card">Explore</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img-container"><img src="malta01.jpeg" alt="Giorgio's Cafeteria"></div>
+                <div class="card-body">
+                    <h3>Giorgio's Cafeteria</h3>
+                    <p>Gastronomy & Coffee</p>
+                    <a href="#menu-modal" class="btn-card">Information</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img-container"><img src="malta8.jpg" alt="Tourism & Leisure"></div>
+                <div class="card-body">
+                    <h3>Tourism & Leisure</h3>
+                    <p>Adventure & Discovery</p>
+                    <a href="#turismo-modal" class="btn-card">Discover</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal 1: Malta Experience -->
+    <div id="experience-modal" class="modal">
+        <a href="#" class="modal-close">&times;</a>
+        <div class="modal-container">
+            <div class="modal-content">
+                <img src="imagem8.jpg.png" alt="Exp 1">
+                <img src="malta5.jpg" alt="Exp 2">
+                <img src="malta6.jpg" alt="Exp 3">
+            </div>
+            <div class="tourist-info">
+                <h2>Malta Experience</h2>
+                <p>The visual essence of the Maltese island, capturing history and beauty.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Giorgio's Cafeteria -->
+    <div id="menu-modal" class="modal">
+        <a href="#" class="modal-close">&times;</a>
+        <div class="modal-container">
+            <div class="modal-content">
+                <img src="malta01.jpg.png" alt="Giorgio's 1">
+                <img src="malta09.jpg.jpge.webp" alt="Giorgio's 2">
+                <img src="malta10.jpg.jpge.webp" alt="Giorgio's 3">
+            </div>
+            <div class="tourist-info">
+                <h2>Giorgio's Cafeteria</h2>
+                <p>📍 110, Tigne Seafront, Sliema, Malta</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Tourism & Leisure -->
+    <div id="turismo-modal" class="modal">
+        <a href="#" class="modal-close">&times;</a>
+        <div class="modal-container">
+            <div class="modal-content">
+                <video autoplay muted loop><source src="image2.jpg.mp4" type="video/mp4"></video>
+                <img src="image3jpg.jpeg" alt="Blue Lagoon">
+                <img src="imagem5.jpg.jpeg" alt="Blue Grotto">
+                <img src="malta9.jpeg" alt="St. Peter's Pool">
+            </div>
+            <div class="tourist-info">
+                <h2>Exploration & Adventure</h2>
+                <div class="tour-list">
+                    <div class="tour-item"><h4>✦ Blue Lagoon</h4><p>Turquoise paradise featuring crystal-clear waters and white sandy floors.</p></div>
+                    <div class="tour-item"><h4>✦ Blue Grotto</h4><p>Spectacular complex of sea caves with stunning blue reflections.</p></div>
+                    <div class="tour-item"><h4>✦ St. Peter's Pool</h4><p>Natural horseshoe-shaped pool ideal for cliff jumping.</p></div>
+                    <div class="tour-item"><h4>✦ Golden Bay</h4><p>One of the island's most beautiful beaches with golden sand.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Malta Experience Portfolio. All Rights Reserved.</p>
+        <p style="margin-top: 10px;">Designed and Developed by <a href="#" class="designer">Fabio Web 2026</a></p>
+    </footer>
+
 </body>
 </html>
-<section class="hero">
 
-<h1>Malta</h1>
 
-<p>
-Modern Mediterranean Experience
-</p>
 
-</section>
 
-<section class="grid">
-
-<div class="card">
-
-<img src="malta5.jpg">
-
-<div class="card-content">
-<h3>Gastronomia</h3>
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="malta10.jpeg">
-
-<div class="card-content">
-<h3>Valletta</h3>
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="malta6.jpg">
-
-<div class="card-content">
-<h3>Azure Horizons</h3>
-</div>
-
-</div>
-
-</section>
-
-</body>
-</html>
