@@ -3,18 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malta | Experiência Premium</title>
+    <title>Malta Experience</title>
     <style>
         @import url('https://googleapis.com');
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #fdfaf6; 
-            color: #1a1a1a; 
-            overflow-x: hidden;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdfaf6; overflow-x: hidden; }
 
         /* Banner Principal */
         .hero {
@@ -24,16 +17,14 @@
             border-bottom: 2px solid #b39359; padding: 0 50px;
         }
 
-        /* Botão Voltar ao Portfólio */
+        /* Botão Voltar ao Portfólio Principal */
         .btn-back {
             position: absolute; top: 30px; left: 30px; text-decoration: none; color: #fff; 
             font-weight: 800; font-size: 11px; text-transform: uppercase; border: 1px solid #b39359; 
             padding: 10px 22px; border-radius: 50px; background: rgba(0,0,0,0.5); z-index: 100;
-            transition: 0.3s;
         }
-        .btn-back:hover { background: #b39359; color: #000; }
 
-        /* Moldura Única para a Foto da Esquerda */
+        /* Moldura Isolada para a Foto da Esquerda */
         .side-frame {
             width: 400px; height: 280px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.4);
             overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); margin-right: 40px; flex-shrink: 0;
@@ -60,10 +51,13 @@
 <body>
 
     <header class="hero">
-        <a href="projeto-malta.html" class="btn-project">Ver Projeto</a>
+        <!-- Aponta de volta para o seu portfólio completo -->
+        <a href="https://github.io" class="btn-back">← VOLTAR AO PORTFÓLIO</a>
+        
         <div class="side-frame">
             <img src="malta1.jpeg" alt="Malta">
         </div>
+
         <div class="glass-box">
             <h1>Malta</h1>
         </div>
@@ -73,24 +67,15 @@
         <div class="grid">
             <div class="card">
                 <img src="giorgios3.png" alt="Gastronomia">
-                <div class="card-body">
-                    <h3>Gastronomia</h3>
-                    <p>SLIEMA, MALTA</p>
-                </div>
+                <div class="card-body"><h3>Gastronomia</h3><p>SLIEMA, MALTA</p></div>
             </div>
             <div class="card">
                 <img src="malta10.jpeg" alt="Cidade Histórica">
-                <div class="card-body">
-                    <h3>Cidade Histórica</h3>
-                    <p>VALLETTA, MALTA</p>
-                </div>
+                <div class="card-body"><h3>Cidade Histórica</h3><p>VALLETTA, MALTA</p></div>
             </div>
             <div class="card">
                 <img src="malta12.jpeg" alt="Azure Horizons">
-                <div class="card-body">
-                    <h3>Azure Horizons</h3>
-                    <p>LITORAL MEDITERRÂNEO</p>
-                </div>
+                <div class="card-body"><h3>Azure Horizons</h3><p>LITORAL MEDITERRÂNEO</p></div>
             </div>
         </div>
     </div>
