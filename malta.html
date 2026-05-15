@@ -4,70 +4,124 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Malta Experience</title>
+<title>Malta Experience | Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body {
+/* RESET */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY - PALETA MEDITERRÂNEA */
+body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background: #111;
-    color: white;
+    background: linear-gradient(135deg, #f7f1e3, #e6d5b8);
+    color: #2b2b2b;
+    min-height: 100vh;
 }
 
-header {
+/* HERO */
+.hero {
     text-align: center;
-    padding: 60px 20px;
+    padding: 70px 20px 40px;
 }
 
-header h1 {
+.hero h1 {
+    font-size: 54px;
     color: #b39359;
-    font-size: 50px;
+    letter-spacing: 2px;
 }
 
+.hero p {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-top: 8px;
+}
+
+/* BOTÃO VOLTAR */
 .back {
-    display: inline-block;
-    margin: 20px;
-    color: #b39359;
+    position: absolute;
+    top: 20px;
+    left: 20px;
     text-decoration: none;
+    background: #b39359;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: 0.3s;
 }
 
+.back:hover {
+    background: #8c6d3c;
+}
+
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    padding: 40px;
-    max-width: 1000px;
+    gap: 25px;
+    max-width: 1100px;
     margin: auto;
+    padding: 40px 20px 80px;
 }
 
+/* CARD PREMIUM */
 .card {
-    background: #1a1a1a;
-    border-radius: 15px;
+    background: white;
+    border-radius: 18px;
     overflow: hidden;
-    transition: 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    transition: 0.35s ease;
     cursor: pointer;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    border: 1px solid #b39359;
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.18);
 }
 
+/* IMAGEM */
 .card img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
+    transition: 0.4s ease;
 }
 
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* CONTEÚDO */
 .card-content {
-    padding: 15px;
+    padding: 18px;
+    text-align: center;
 }
 
 .card h3 {
     color: #b39359;
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* DETALHE VISUAL */
+.line {
+    width: 40px;
+    height: 2px;
+    background: #b39359;
+    margin: 10px auto;
+    border-radius: 5px;
 }
 
 </style>
@@ -78,31 +132,37 @@ header h1 {
 
 <a class="back" href="index.html">← Voltar</a>
 
-<header>
+<div class="hero">
     <h1>Malta Experience</h1>
-    <p>Modern Mediterranean Experience</p>
-</header>
+    <p>Modern Mediterranean Travel & Culture</p>
+</div>
 
 <section class="grid">
 
     <div class="card">
         <img src="malta01.jpeg" alt="Valletta Malta">
         <div class="card-content">
+            <div class="line"></div>
             <h3>Valletta</h3>
+            <p>Historic Capital</p>
         </div>
     </div>
 
     <div class="card">
         <img src="malta8.jpg" alt="Golden Bay Malta">
         <div class="card-content">
+            <div class="line"></div>
             <h3>Golden Bay</h3>
+            <p>Beach Experience</p>
         </div>
     </div>
 
     <div class="card">
         <img src="malta6.jpg" alt="Blue Lagoon Malta">
         <div class="card-content">
+            <div class="line"></div>
             <h3>Blue Lagoon</h3>
+            <p>Crystal Waters</p>
         </div>
     </div>
 
