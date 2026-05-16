@@ -21,10 +21,17 @@
 html{
     scroll-behavior:smooth;
 }
+   body{
+    background:#f5efe4;
+    color:#2b2b2b;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
 
+/* HEADER */
 body{
-    background:#0f0f0f;
-    color:white;
+    background:#f5efe4;
+    color:#2b2b2b;
     font-family:'Inter',sans-serif;
     overflow-x:hidden;
 }
@@ -41,8 +48,9 @@ header{
     top:0;
     left:0;
     z-index:1000;
-    background:rgba(0,0,0,0.65);
+    background:rgba(245,239,228,0.92);
     backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
 .logo{
@@ -58,7 +66,7 @@ nav{
 }
 
 nav a{
-    color:white;
+    color:#2b2b2b;
     text-decoration:none;
     font-size:13px;
     letter-spacing:3px;
@@ -69,12 +77,15 @@ nav a:hover{
     color:#d8bc84;
 }
 
+    
+}
+
 /* HERO */
 
 .hero{
     width:100%;
     height:100vh;
-    background:url('images/goldenbay.png') center center/cover no-repeat;
+    background:url('goldenbay.png') center center/cover no-repeat;
     position:relative;
     display:flex;
     justify-content:center;
@@ -219,7 +230,7 @@ nav a:hover{
 }
 
 .card{
-    background:#171717;
+    background:#fffaf2;
     border-radius:28px;
     overflow:hidden;
     transition:0.5s;
@@ -311,28 +322,7 @@ footer p{
 /* RESPONSIVE */
 
 @media(max-width:768px){
-
-.hero-content h1{
-    font-size:52px;
-}
-
-.editorial img{
-    height:450px;
-}
-
-.editorial-content h2{
-    font-size:34px;
-}
-
-.section-header h2{
-    font-size:40px;
-}
-
-.video-title h2{
-    font-size:40px;
-}
-
-nav{
+.nav{
     gap:15px;
 }
 
@@ -393,7 +383,7 @@ nav{
 
 <section class="editorial">
 
-    <img src="images/image10.jpg.png" alt="Malta Editorial">
+    <img src="image10.jpg.png" alt="Malta Editorial">
 
     <div class="editorial-content">
 
@@ -437,7 +427,7 @@ nav{
 
         <div class="card">
 
-            <img src="images/valeta.png" alt="Valletta">
+            <img src="valeta.png" alt="Valletta">
 
             <div class="card-content">
 
@@ -462,7 +452,7 @@ nav{
 
         <div class="card">
 
-            <img src="images/goldenbay.png" alt="Golden Bay">
+            <img src="goldenbay.png" alt="Golden Bay">
 
             <div class="card-content">
 
@@ -487,7 +477,7 @@ nav{
 
         <div class="card">
 
-            <img src="images/image10.jpg.png" alt="Malta Experience">
+            <img src="image10.jpg.png" alt="Malta Experience">
 
             <div class="card-content">
 
@@ -529,8 +519,7 @@ nav{
     </div>
 
     <video controls autoplay muted loop>
-
-        <source src="videos/reel1.mp4" type="video/mp4">
+<source src="bluelagoon.png.mp4" type="video/mp4">
 
     </video>
 
