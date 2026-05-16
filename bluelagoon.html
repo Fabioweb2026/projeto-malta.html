@@ -78,15 +78,18 @@
         <h1>Comino Island Paradise</h1>
         <p>Tucked away on the small, car-free island of Comino, the Blue Lagoon is a world-famous sanctuary famous for its pristine turquoise waters and golden limestone cliffs.</p>
         
-        <!-- 🌟 VIDEO BOX: CONFIGURADO CORRETAMENTE COM AUTOPLAY E MUTED -->
+        <!-- 🌟 PLAYER CONFIGURADO PARA CARREGAR O NOVO VÍDEO -->
         <div class="video-box">
-            <video autoplay muted loop controls playsinline>
+            <video controls loop playsinline preload="auto">
+                <!-- Tenta rodar primeiro o bluelagoon1.mp4 com som -->
+                <source src="bluelagoon1.mp4" type="video/mp4">
+                <!-- Segunda opção caso o primeiro falhe -->
                 <source src="bluelagoon.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="video-content">
                 <h3>The Blue Lagoon Experience</h3>
-                <p>Immerse yourself in spectacular cyan waters. This local clip captures the cinematic purity, yacht sailing lanes, and tranquil ocean waves that define Malta's most breathtaking swimming gem.</p>
+                <p>Click play to watch the video with sound! This local clip captures the cinematic purity, yacht sailing lanes, and tranquil ocean waves that define Malta's most breathtaking swimming gem.</p>
             </div>
         </div>
 
