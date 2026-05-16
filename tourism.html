@@ -6,32 +6,40 @@
     <title>Tourism in Malta</title>
     <style>
         body { background-color: #F5F2EB; font-family: 'Segoe UI', sans-serif; color: #3E3B35; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
-        .container { max-width: 800px; background: white; padding: 30px; border-radius: 12px; border: 1px solid #E6DFD3; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .container { max-width: 850px; background: white; padding: 40px; border-radius: 16px; border: 1px solid #E6DFD3; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         h1, h3 { color: #8C6D46; }
-        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
-        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
-        .back-btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #8C6D46; color: white; text-decoration: none; border-radius: 6px; }
+        h1 { border-bottom: 2px solid #E6DFD3; padding-bottom: 10px; margin-top: 0; }
+        p { line-height: 1.7; font-size: 1.05rem; color: #4A463F; }
+        
+        /* Grid de 4 Imagens */
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; }
+        .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; transition: transform 0.2s; }
+        .gallery-grid img:hover { transform: scale(1.02); }
+        
+        .back-btn { display: inline-block; margin-top: 25px; padding: 12px 24px; background-color: #8C6D46; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
         .back-btn:hover { background-color: #705431; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Tourism in Malta</h1>
-        <p>Malta is an archipelago packed with rich history and breathtaking landscapes. From ancient walled cities to open crystal bays, there is something for every traveler.</p>
+        <p>Malta is an archipelago packed with rich historical heritage and breathtaking sea views. From ancient medieval fortresses to open natural wonders, it offers an unforgettable summer and historical travel experience.</p>
         
-        <div class="gallery">
-            <img src="imagem10.png" alt="Tourism 1">
-            <img src="imagem8.png" alt="Tourism 2">
+        <!-- Galeria Expandida -->
+        <div class="gallery-grid">
+            <img src="imagem10.png" alt="Valletta View">
+            <img src="imagem8.png" alt="Mdina Streets">
+            <img src="imagem5.jpeg" alt="Historic Coast">
+            <img src="goldenbay.jpg" alt="Golden Bay Beach">
         </div>
 
-        <h3>Top Attractions</h3>
-        <p>Visit the historic city of Valletta, explore the silent streets of Mdina, and take a boat ride to Gozo Island.</p>
+        <h3>Top Destinations & Hidden Gems</h3>
+        <p>Step back in time inside the silent walled city of Mdina, stroll through the bustling streets of Valletta, and check out the traditional colorful fishing boats in Marsaxlokk village. For nature lovers, the dramatic cliffs of Dingli offer incredible sunset locations.</p>
         
-        <h3>Travel Information</h3>
-        <p>The best time to visit is between May and October. Public transportation connects all major historical landmarks effectively.</p>
+        <h3>Essential Travel Tips</h3>
+        <p>The peak travel season runs from May to October when the weather is perfect for ocean cruises. The island uses type G British plugs, driving is on the left side of the road, and local English is widely spoken alongside Maltese everywhere.</p>
         
         <a href="index.html" class="back-btn">⬅ Back to Home</a>
     </div>
 </body>
 </html>
-
