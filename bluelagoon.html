@@ -11,33 +11,110 @@
         h1 { border-bottom: 2px solid #E6DFD3; padding-bottom: 10px; margin-top: 0; }
         p { line-height: 1.7; font-size: 1.05rem; color: #4A463F; }
         
-        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; }
-        .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; transition: transform 0.2s; }
-        .gallery-grid img:hover { transform: scale(1.02); }
+        /* VIDEO WRAPPER BOX */
+        .video-box {
+            background-color: #FDFBF7;
+            border: 2px solid #8C6D46;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 20px rgba(140, 109, 70, 0.15);
+            display: flex;
+            flex-direction: column;
+        }
+        .video-box video {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            background-color: #000;
+        }
+        .video-content {
+            padding: 25px;
+        }
         
-        .back-btn { display: inline-block; margin-top: 25px; padding: 12px 24px; background-color: #8C6D46; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
+        /* 2-Card Grid for Comino Info */
+        .comino-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .small-card {
+            background-color: #FDFBF7;
+            border: 1px solid #E6DFD3;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+        .small-card img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+        }
+        .small-card-body {
+            padding: 15px;
+            text-align: center;
+        }
+        .small-card-body h4 {
+            margin: 0 0 8px 0;
+            color: #8C6D46;
+            font-size: 1.15rem;
+        }
+        .small-card-body p { 
+            font-size: 0.9rem; 
+            margin: 0; 
+            color: #666; 
+            line-height: 1.4;
+        }
+
+        .back-btn { display: inline-block; margin-top: 45px; padding: 12px 24px; background-color: #8C6D46; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
         .back-btn:hover { background-color: #705431; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>The Blue Lagoon (Comino Island)</h1>
-        <p>Tucked away on the small, car-free island of Comino, the Blue Lagoon is a paradise worldwide famous for its brilliant cyan waters, soft white sand, and vibrant marine life ecosystems.</p>
+        <h1>Comino Island Paradise</h1>
+        <p>Tucked away on the small, car-free island of Comino, the Blue Lagoon is a world-famous sanctuary famous for its pristine turquoise waters and golden limestone cliffs.</p>
         
-        <!-- Galeria Expandida -->
-        <div class="gallery-grid">
-            <img src="bluelagoon.png" alt="Blue Lagoon Clear Water">
-            <img src="bluelagoon2.png" alt="Comino Island Cliffs">
-            <img src="bluelagoon3.png" alt="Snorkeling Spot">
-            <img src="imagem10.png" alt="Boats on Water">
+        <!-- 🌟 VIDEO BOX: CONFIGURADO CORRETAMENTE COM AUTOPLAY E MUTED -->
+        <div class="video-box">
+            <video autoplay muted loop controls playsinline>
+                <source src="bluelagoon.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-content">
+                <h3>The Blue Lagoon Experience</h3>
+                <p>Immerse yourself in spectacular cyan waters. This local clip captures the cinematic purity, yacht sailing lanes, and tranquil ocean waves that define Malta's most breathtaking swimming gem.</p>
+            </div>
         </div>
 
-        <h3>Paradise Activities</h3>
-        <p>It stands as the perfect coastal location for swimming, snorkeling, and sunbathing on the warm limestone cliffs. Adventurous travelers can rent kayaks or book short speed-boat excursions to explore the deep coastal caves and neighboring Crystal Lagoon bay areas.</p>
-        
-        <h3>Transportation & Visiting Info</h3>
-        <p>Since Comino island has no resident cars and only one hotel, you can reach this bay via daily shuttle ferries running from Cirkewwa harbor (Malta) or Mgarr harbor (Gozo). To enjoy the peaceful tranquility of the turquoise water, we highly recommend arriving early in the morning before the tour boats get crowded.</p>
-        
+        <!-- 🗺️ EXTENSION CARDS -->
+        <div class="section-block">
+            <h3>Exploring Comino Island</h3>
+            
+            <div class="comino-grid">
+                <!-- CARD 1: bluelagoon2.png -->
+                <div class="small-card">
+                    <img src="bluelagoon2.png" alt="Comino Coastal Caves">
+                    <div class="small-card-body">
+                        <h4>Hidden Coastal Caves</h4>
+                        <p>Rent kayak gear or take boat excursions to explore deep natural arches and secret crystalline swimming coves nearby.</p>
+                    </div>
+                </div>
+
+                <!-- CARD 2: bluelagoon3.png -->
+                <div class="small-card">
+                    <img src="bluelagoon3.png" alt="Best Visiting Times">
+                    <div class="small-card-body">
+                        <h4>Travel & Ferry Information</h4>
+                        <p>Daily standard shuttle boats depart from Marfa or Cirkewwa harbors. We recommend early morning visits to avoid standard tour crowding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <a href="index.html" class="back-btn">⬅ Back to Home</a>
     </div>
 </body>
