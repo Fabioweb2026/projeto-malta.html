@@ -104,41 +104,69 @@ body{
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:35px;
 }
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
 
 .card{
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,255,255,0.08);
-    border-radius:24px;
+    position:relative;
     overflow:hidden;
-    transition:0.5s;
-    backdrop-filter:blur(12px);
+    border-radius:28px;
+    height:500px;
+    background:#111;
+    transition:0.5s ease;
 }
 
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
 .card img{
     width:100%;
-    height:320px;
+    height:100%;
     object-fit:cover;
+    transition:0.6s;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.88),
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.05)
+    );
+    z-index:1;
 }
 
 .card-content{
-    padding:30px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:2;
+    padding:35px;
 }
 
 .card-content h3{
-    font-size:30px;
-    margin-bottom:15px;
+    font-size:36px;
     font-family:'Playfair Display',serif;
+    margin-bottom:12px;
 }
 
 .card-content p{
-    color:#bbb;
-    line-height:1.8;
+    color:#ddd;
+    line-height:1.7;
     font-size:15px;
+}
 }
 
 /* FOOTER */
@@ -183,10 +211,8 @@ footer p{
     font-size:38px;
 }
 
-}
-
 </style>
-</head>
+</head
 
 <body>
 
@@ -202,94 +228,72 @@ footer p{
         </h1>
 
         <p>
-            Discover crystal-clear waters, timeless architecture
-            and unforgettable Mediterranean elegance.
-        </p>
-
-        <a href="#discover" class="hero-btn">
-            Explore Malta
-        </a>
+            
+        </p
 
     </div>
+    
+<div class="cards">
 
-</section>
+    <!-- CARD 1 -->
 
-<!-- CARDS -->
+    <div class="card">
 
-<section class="section" id="discover">
+        <img src="imagem10.jpg.png" alt="Malta">
 
-    <div class="section-title">
+        <div class="card-content">
 
-        <h2>Discover Malta</h2>
+            <h3>Valletta</h3>
 
-        <p>
-            Experience the most iconic destinations
-            across the Mediterranean island.
-        </p>
-
-    </div>
-
-    <div class="cards">
-
-        <!-- CARD 1 -->
-
-        <div class="card">
-
-            <img src="valeta.png" alt="Valletta">
-
-            <div class="card-content">
-
-                <h3>Valletta</h3>
-
-                <p>
-                    Malta’s historic capital filled with elegant
-                    streets, luxury cafés and Mediterranean charm.
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- CARD 2 -->
-
-        <div class="card">
-
-            <img src="goldebay.png" alt="Golden Bay">
-
-            <div class="card-content">
-
-                <h3>Golden Bay</h3>
-
-                <p>
-                    Famous for golden sand, crystal waters and
-                    breathtaking sunset views by the sea.
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- CARD 3 -->
-
-        <div class="card">
-
-            <img src="bluegrotto.jpg" alt="Blue Grotto">
-
-            <div class="card-content">
-
-                <h3>Blue Grotto</h3>
-
-                <p>
-                    Stunning sea caves with turquoise reflections
-                    and unforgettable Mediterranean scenery.
-                </p>
-
-            </div>
+            <p>
+                Timeless Mediterranean architecture,
+                luxury cafés and historic beauty.
+            </p>
 
         </div>
 
     </div>
 
+    <!-- CARD 2 -->
+
+    <div class="card">
+
+        <img src="imagem5.jpg.jpeg" alt="Golden Bay">
+
+        <div class="card-content">
+
+            <h3>Golden Bay</h3>
+
+            <p>
+                Crystal-clear waters, golden sand
+                and unforgettable sunset views.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="card">
+
+        <img src="bluelagoon2.png" alt="Blue Lagoon">
+
+        <div class="card-content">
+
+            <h3>Blue Lagoon</h3>
+
+            <p>
+                Stunning turquoise sea and cinematic
+                Mediterranean scenery.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+    
 </section>
 
 <!-- FOOTER -->
