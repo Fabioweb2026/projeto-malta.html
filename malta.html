@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Discover Malta | Mediterranean Escape</title>
+<title>Malta Mediterranean</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,62 +17,11 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    background:#0b0b0b;
+    background:#0a0a0a;
     color:white;
     font-family:'Poppins',sans-serif;
     overflow-x:hidden;
-}
-
-/* HEADER */
-
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    z-index:999;
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-.navbar{
-    max-width:1400px;
-    margin:auto;
-    padding:20px 6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    font-size:28px;
-    font-family:'Playfair Display',serif;
-    font-weight:700;
-    letter-spacing:2px;
-    color:#fff;
-}
-
-.nav-links{
-    display:flex;
-    gap:35px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:#eee;
-    font-size:14px;
-    letter-spacing:1px;
-    transition:0.3s;
-}
-
-.nav-links a:hover{
-    color:#d6b98c;
 }
 
 /* HERO */
@@ -80,50 +29,48 @@ header{
 .hero{
     height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.6)),
+    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.65)),
     url('maltahero.jpg') center/cover no-repeat;
-    
+
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
     padding:0 8%;
 }
 
 .hero-content{
-    max-width:900px;
+    max-width:850px;
 }
 
 .hero h1{
     font-size:90px;
     font-family:'Playfair Display',serif;
-    font-weight:700;
+    line-height:1;
     margin-bottom:25px;
-    line-height:1.05;
 }
 
 .hero p{
-    font-size:18px;
     color:#ddd;
+    font-size:18px;
     line-height:1.8;
     margin-bottom:40px;
 }
 
 .hero-btn{
     display:inline-block;
-    padding:16px 42px;
+    padding:16px 40px;
     background:#d6b98c;
     color:black;
     text-decoration:none;
     border-radius:50px;
     font-weight:600;
-    letter-spacing:1px;
     transition:0.4s;
 }
 
 .hero-btn:hover{
-    transform:translateY(-4px);
     background:white;
+    transform:translateY(-4px);
 }
 
 /* SECTION */
@@ -150,24 +97,26 @@ header{
     line-height:1.8;
 }
 
-/* DESTINATIONS */
+/* CARDS */
 
-.destinations{
+.cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:35px;
 }
 
 .card{
-    background:#151515;
-    border-radius:22px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
     overflow:hidden;
     transition:0.5s;
-    border:1px solid rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
 }
 
 .card:hover{
     transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
 .card img{
@@ -181,7 +130,7 @@ header{
 }
 
 .card-content h3{
-    font-size:28px;
+    font-size:30px;
     margin-bottom:15px;
     font-family:'Playfair Display',serif;
 }
@@ -192,106 +141,47 @@ header{
     font-size:15px;
 }
 
-/* EXPERIENCE */
-
-.experience{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:40px;
-    margin-top:60px;
-}
-
-.exp-box{
-    padding:40px;
-    background:#121212;
-    border-radius:24px;
-    border:1px solid rgba(255,255,255,0.05);
-    transition:0.4s;
-}
-
-.exp-box:hover{
-    background:#181818;
-    transform:translateY(-8px);
-}
-
-.exp-box h3{
-    margin-bottom:18px;
-    font-size:26px;
-    font-family:'Playfair Display',serif;
-}
-
-.exp-box p{
-    color:#aaa;
-    line-height:1.8;
-}
-
-/* GALLERY */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.gallery img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    border-radius:20px;
-    transition:0.5s;
-}
-
-.gallery img:hover{
-    transform:scale(1.03);
-}
-
 /* FOOTER */
 
 footer{
     padding:60px 8%;
     text-align:center;
     border-top:1px solid rgba(255,255,255,0.08);
-    background:#080808;
 }
 
 footer h2{
     font-family:'Playfair Display',serif;
     margin-bottom:15px;
-    font-size:32px;
+    font-size:30px;
 }
 
 footer p{
-    color:#999;
-    line-height:1.7;
+    color:#888;
 }
 
 /* MOBILE */
 
 @media(max-width:900px){
 
-    .hero h1{
-        font-size:58px;
-    }
-
-    .nav-links{
-        display:none;
-    }
+.hero h1{
+    font-size:58px;
+}
 
 }
 
 @media(max-width:600px){
 
-    .hero h1{
-        font-size:42px;
-    }
+.hero h1{
+    font-size:42px;
+}
 
-    .hero p{
-        font-size:15px;
-    }
+.hero p{
+    font-size:15px;
+}
 
-    .section-title h2{
-        font-size:38px;
-    }
+.section-title h2{
+    font-size:38px;
+}
 
 }
 
@@ -300,18 +190,6 @@ footer p{
 
 <body>
 
-<header>
-    <div class="navbar">
-        <div class="logo">MALTA</div>
-
-        <div class="nav-links">
-            <a href="#destinations">DESTINATIONS</a>
-            <a href="#experience">EXPERIENCE</a>
-            <a href="#gallery">GALLERY</a>
-        </div>
-    </div>
-</header>
-
 <!-- HERO -->
 
 <section class="hero">
@@ -319,16 +197,16 @@ footer p{
     <div class="hero-content">
 
         <h1>
-            Mediterranean<br>
-            Luxury Escape
+            Malta<br>
+            Mediterranean
         </h1>
 
         <p>
-            Discover Malta through timeless architecture, crystal-clear waters,
-            luxury experiences and unforgettable Mediterranean beauty.
+            Discover crystal-clear waters, timeless architecture
+            and unforgettable Mediterranean elegance.
         </p>
 
-        <a href="#destinations" class="hero-btn">
+        <a href="#discover" class="hero-btn">
             Explore Malta
         </a>
 
@@ -336,129 +214,79 @@ footer p{
 
 </section>
 
-<!-- DESTINATIONS -->
+<!-- CARDS -->
 
-<section class="section" id="destinations">
+<section class="section" id="discover">
 
     <div class="section-title">
-        <h2>Iconic Destinations</h2>
+
+        <h2>Discover Malta</h2>
 
         <p>
-            Explore the most breathtaking places across Malta,
-            where history meets coastal paradise.
+            Experience the most iconic destinations
+            across the Mediterranean island.
         </p>
+
     </div>
 
-    <div class="destinations">
+    <div class="cards">
+
+        <!-- CARD 1 -->
 
         <div class="card">
+
             <img src="valeta.png" alt="Valletta">
 
             <div class="card-content">
+
                 <h3>Valletta</h3>
 
                 <p>
-                    The elegant capital of Malta filled with golden architecture,
-                    luxury cafés and breathtaking Mediterranean views.
+                    Malta’s historic capital filled with elegant
+                    streets, luxury cafés and Mediterranean charm.
                 </p>
+
             </div>
+
         </div>
 
+        <!-- CARD 2 -->
+
         <div class="card">
+
             <img src="goldebay.png" alt="Golden Bay">
 
             <div class="card-content">
+
                 <h3>Golden Bay</h3>
 
                 <p>
-                    One of Malta’s most iconic beaches featuring golden sand,
-                    crystal waters and unforgettable sunsets.
+                    Famous for golden sand, crystal waters and
+                    breathtaking sunset views by the sea.
                 </p>
+
             </div>
+
         </div>
 
+        <!-- CARD 3 -->
+
         <div class="card">
+
             <img src="bluegrotto.jpg" alt="Blue Grotto">
 
             <div class="card-content">
+
                 <h3>Blue Grotto</h3>
 
                 <p>
-                    Famous sea caves with vibrant turquoise reflections and
-                    stunning natural Mediterranean scenery.
+                    Stunning sea caves with turquoise reflections
+                    and unforgettable Mediterranean scenery.
                 </p>
+
             </div>
+
         </div>
-
-    </div>
-
-</section>
-
-<!-- EXPERIENCE -->
-
-<section class="section" id="experience">
-
-    <div class="section-title">
-        <h2>Luxury Experience</h2>
-
-        <p>
-            Malta combines relaxation, history and modern elegance
-            into a unique Mediterranean lifestyle.
-        </p>
-    </div>
-
-    <div class="experience">
-
-        <div class="exp-box">
-            <h3>Luxury Resorts</h3>
-
-            <p>
-                Premium hotels and seaside resorts designed for unforgettable
-                comfort and exclusive Mediterranean experiences.
-            </p>
-        </div>
-
-        <div class="exp-box">
-            <h3>Private Boat Tours</h3>
-
-            <p>
-                Discover hidden beaches, caves and crystal lagoons
-                with luxury private yacht experiences.
-            </p>
-        </div>
-
-        <div class="exp-box">
-            <h3>Historic Beauty</h3>
-
-            <p>
-                Walk through centuries of history surrounded by elegant
-                architecture and timeless European charm.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- GALLERY -->
-
-<section class="section" id="gallery">
-
-    <div class="section-title">
-        <h2>Malta Gallery</h2>
-
-        <p>
-            A visual journey through one of the Mediterranean’s
-            most beautiful destinations.
-        </p>
-    </div>
-
-    <div class="gallery">
-
-        <img src="gallery1.jpg" alt="">
-        <img src="gallery2.jpg" alt="">
-        <img src="gallery3.jpg" alt="">
-        <img src="gallery4.jpg" alt="">
 
     </div>
 
@@ -468,10 +296,10 @@ footer p{
 
 <footer>
 
-    <h2>Discover Malta</h2>
+    <h2>Malta Mediterranean</h2>
 
     <p>
-        Mediterranean elegance • Luxury travel • Timeless beauty
+        Luxury Mediterranean Experience
     </p>
 
 </footer>
