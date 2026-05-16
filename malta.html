@@ -1,139 +1,272 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Malta Experience | Premium</title>
+<title>Sollene Group | Luxury Fashion</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-/* BODY */
 body{
-    font-family:'Plus Jakarta Sans',sans-serif;
-    background:linear-gradient(135deg,#f7f1e3,#e6d5b8);
-    color:#2b2b2b;
-    min-height:100vh;
+    background:#0f0f0f;
+    color:#f5f5f5;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
 }
 
-/* BOTÃO */
-.back{
-    position:absolute;
-    top:20px;
-    left:20px;
+/* HEADER */
+
+header{
+    width:100%;
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:28px;
+    font-family:'Playfair Display',serif;
+    letter-spacing:3px;
+    color:#c6a56b;
+}
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
     text-decoration:none;
-    background:#b39359;
     color:white;
-    padding:10px 16px;
-    border-radius:30px;
-    font-size:12px;
+    font-size:14px;
+    letter-spacing:2px;
     transition:0.3s;
 }
 
-.back:hover{
-    background:#8c6d3c;
+nav a:hover{
+    color:#c6a56b;
 }
 
 /* HERO */
+
 .hero{
+    width:100%;
+    height:100vh;
+    background:url('images/goldenbay.png') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:80px 20px 50px;
+    position:relative;
 }
 
-.hero h1{
-    font-size:60px;
-    color:#b39359;
+.hero::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+    top:0;
+    left:0;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:800px;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:72px;
+    font-family:'Playfair Display',serif;
+    letter-spacing:6px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:18px;
+    line-height:1.8;
+    color:#d4d4d4;
+    margin-bottom:35px;
+}
+
+.hero-content a{
+    display:inline-block;
+    padding:16px 40px;
+    border:1px solid #c6a56b;
+    color:#c6a56b;
+    text-decoration:none;
     letter-spacing:2px;
+    transition:0.4s;
 }
 
-.hero p{
-    margin-top:10px;
-    opacity:0.7;
-    font-size:14px;
+.hero-content a:hover{
+    background:#c6a56b;
+    color:black;
 }
 
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-    max-width:1100px;
-    margin:auto;
-    padding:40px 20px 80px;
-}
+/* EDITORIAL */
 
-/* CARD */
-.card{
-    background:white;
-    border-radius:20px;
+.editorial-highlight{
+    width:90%;
+    margin:100px auto;
+    position:relative;
+    border-radius:24px;
     overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,0.12);
-    transition:0.35s ease;
+}
+
+.editorial-highlight img{
+    width:100%;
+    height:600px;
+    object-fit:cover;
+    filter:brightness(70%);
+}
+
+.editorial-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    width:90%;
+}
+
+.editorial-text h2{
+    font-size:52px;
+    font-family:'Playfair Display',serif;
+    letter-spacing:6px;
+    margin-bottom:25px;
+}
+
+.editorial-text p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
+    color:#ececec;
+}
+
+/* COLLECTIONS */
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:60px;
+    font-family:'Playfair Display',serif;
+    letter-spacing:4px;
+}
+
+.collections{
+    width:90%;
+    margin:auto;
+    padding-bottom:120px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.card{
+    background:#171717;
+    border-radius:24px;
+    overflow:hidden;
+    transition:0.4s;
 }
 
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 25px 50px rgba(0,0,0,0.18);
 }
 
-/* IMAGEM */
 .card img{
     width:100%;
-    height:220px;
+    height:420px;
     object-fit:cover;
-    transition:0.4s ease;
 }
 
-.card:hover img{
-    transform:scale(1.05);
-}
-
-/* CONTEÚDO */
 .card-content{
-    padding:22px;
+    padding:25px;
+}
+
+.card-content h3{
+    font-size:26px;
+    margin-bottom:10px;
+    font-family:'Playfair Display',serif;
+}
+
+.card-content p{
+    color:#b7b7b7;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.card-content a{
+    color:#c6a56b;
+    text-decoration:none;
+    letter-spacing:2px;
+}
+
+/* VIDEO */
+
+.video-section{
+    width:90%;
+    margin:0 auto 120px;
     text-align:center;
 }
 
-.card h3{
-    color:#b39359;
-    margin-bottom:8px;
-    font-size:20px;
+.video-section video{
+    width:100%;
+    border-radius:24px;
 }
 
-.card p{
-    font-size:12px;
-    opacity:0.65;
-    letter-spacing:1px;
-}
+/* FOOTER */
 
-/* LINHA */
-.line{
-    width:45px;
-    height:2px;
-    background:#b39359;
-    margin:12px auto;
-    border-radius:10px;
+footer{
+    padding:60px 20px;
+    text-align:center;
+    border-top:1px solid #222;
+    color:#999;
+    letter-spacing:2px;
 }
 
 /* RESPONSIVO */
+
 @media(max-width:768px){
 
-    .hero h1{
-        font-size:42px;
-    }
+.hero-content h1{
+    font-size:42px;
+}
 
-    .grid{
-        padding:20px;
-    }
+.editorial-highlight img{
+    height:400px;
+}
+
+.editorial-text h2{
+    font-size:32px;
+}
+
+nav{
+    gap:15px;
+}
 
 }
 
@@ -142,72 +275,161 @@ body{
 
 <body>
 
-<a class="back" href="index.html">← Voltar</a>
+<header>
+
+    <div class="logo">
+        SOLLENE GROUP
+    </div>
+
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#collections">COLLECTIONS</a>
+        <a href="#video">VIDEOS</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
 
 <section class="hero">
 
-    <h1>Malta Experience</h1>
+    <div class="hero-content">
 
-    <p>
-        Modern Mediterranean Travel & Culture
-    </p>
+        <h1>MODERN LUXURY</h1>
 
-</section>
+        <p>
+            Inspired by Mediterranean elegance,
+            timeless sophistication and refined premium fashion.
+        </p>
 
-<section class="grid">
-
-    <!-- CARD 1 -->
-    <div class="card">
-
-        <img src="valeta.png">
-
-        <div class="card-content">
-
-            <div class="line"></div>
-
-                  <h3>valeta</h3>
-
-            <p>Historic Capital</p>
-
-        </div>
-
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="card">
-
-        <img src="goldenbay.png" 
-
-        <div class="card-content">
-
-            <div class="line"></div>
-
-            <h3>goldenbay</h3>
-
-            <p>Beach Experience</p>
-
-        </div>
-
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="card">
-
-        <img src="malta6.jpg" alt="St. John’s Cathedral">
-
-        <div class="card-content">
-
-            <div class="line"></div>
-
-            <h3>St. John’s Cathedral</h3>
-
-            <p>Historic Architecture</p>
-
-        </div>
+        <a href="#collections">EXPLORE COLLECTION</a>
 
     </div>
 
 </section>
+
+<!-- EDITORIAL IMAGE -->
+
+<section class="editorial-highlight">
+
+    <img src="images/image10.jpg.png" alt="Editorial Fashion">
+
+    <div class="editorial-text">
+
+        <h2>TIMELESS ELEGANCE</h2>
+
+        <p>
+            A luxury fashion experience designed for modern men who appreciate
+            sophistication, minimal aesthetics and Mediterranean inspiration.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- COLLECTIONS -->
+
+<section class="collections" id="collections">
+
+    <h2 class="section-title">
+        MEN COLLECTION
+    </h2>
+
+    <div class="cards">
+
+        <!-- CARD 1 -->
+
+        <div class="card">
+
+            <img src="images/valeta.png" alt="Valeta Collection">
+
+            <div class="card-content">
+
+                <h3>Valeta</h3>
+
+                <p>
+                    Elegant linen essentials inspired by modern coastal luxury.
+                </p>
+
+                <a href="menshirts.html">
+                    VIEW COLLECTION
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="card">
+
+            <img src="images/goldenbay.png" alt="Golden Bay">
+
+            <div class="card-content">
+
+                <h3>Golden Bay</h3>
+
+                <p>
+                    Premium resortwear with sophisticated contemporary aesthetics.
+                </p>
+
+                <a href="#">
+                    DISCOVER
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="card">
+
+            <img src="images/image10.jpg.png" alt="Luxury Fashion">
+
+            <div class="card-content">
+
+                <h3>Editorial</h3>
+
+                <p>
+                    Mediterranean luxury identity with timeless fashion influence.
+                </p>
+
+                <a href="#">
+                    EXPLORE
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- VIDEO -->
+
+<section class="video-section" id="video">
+
+    <h2 class="section-title">
+        CAMPAIGN FILM
+    </h2>
+
+    <video controls autoplay muted loop>
+
+        <source src="videos/reel1.mp4" type="video/mp4">
+
+    </video>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 SOLLENE GROUP — ALL RIGHTS RESERVED
+
+</footer>
 
 </body>
 </html>
