@@ -3,41 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gastronomy & Architecture</title>
+    <title>Tourism in Malta</title>
     <style>
-        body { background-color: #F5F2EB; font-family: 'Segoe UI', sans-serif; color: #3E3B35; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
-        .container { max-width: 850px; background: white; padding: 40px; border-radius: 16px; border: 1px solid #E6DFD3; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        h1, h3 { color: #8C6D46; }
+        body { 
+            background-color: #F5F2EB; 
+            font-family: 'Segoe UI', sans-serif; 
+            color: #3E3B35; 
+            padding: 40px 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        .container { 
+            max-width: 850px; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 16px; 
+            border: 1px solid #E6DFD3; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+        }
+        h1, h2, h3 { color: #8C6D46; }
         h1 { border-bottom: 2px solid #E6DFD3; padding-bottom: 10px; margin-top: 0; }
         p { line-height: 1.7; font-size: 1.05rem; color: #4A463F; }
         
-        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; }
-        .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; transition: transform 0.2s; }
-        .gallery-grid img:hover { transform: scale(1.02); }
+        /* HEROBANNER FOR MAIN DESTINATION */
+        .tourism-banner {
+            background-color: #FDFBF7;
+            border: 2px solid #8C6D46;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 20px rgba(140, 109, 70, 0.15);
+        }
+        .tourism-banner img { 
+            width: 100%; 
+            height: 380px; 
+            object-fit: cover; 
+        }
+        .tourism-banner-content { 
+            padding: 25px; 
+        }
+        .tourism-banner-content h2 { 
+            margin: 0 0 10px 0; 
+            color: #8C6D46; 
+            font-size: 1.9rem; 
+        }
+
+        .section-block {
+            margin-top: 30px;
+            border-top: 2px dashed #E6DFD3;
+            padding-top: 30px;
+        }
+
+        /* 3-Card Symmetrical Grid for Travel Destinations */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
         
-        .back-btn { display: inline-block; margin-top: 25px; padding: 12px 24px; background-color: #8C6D46; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
+        /* Destinos secundários ocupam metade, o último pode se ajustar */
+        .dest-card {
+            background-color: #FDFBF7;
+            border: 1px solid #E6DFD3;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+        .dest-card img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+        }
+        .dest-card-body {
+            padding: 15px;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .dest-card-body h4 {
+            margin: 0 0 8px 0;
+            color: #8C6D46;
+            font-size: 1.15rem;
+        }
+        .dest-card-body p { 
+            font-size: 0.9rem; 
+            margin: 0; 
+            color: #666; 
+            line-height: 1.4;
+        }
+        
+        .wide-card {
+            grid-column: span 2;
+            display: flex;
+            flex-direction: row;
+        }
+        .wide-card img {
+            width: 50%;
+            height: 220px;
+        }
+        .wide-card .dest-card-body {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .back-btn { display: inline-block; margin-top: 45px; padding: 12px 24px; background-color: #8C6D46; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
         .back-btn:hover { background-color: #705431; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Gastronomy & Architecture</h1>
-        <p>Maltese culture is deeply integrated into its unique culinary style and magnificent buildings. Baroque features meet massive limestone ramparts engineered centuries ago by the legendary Knights of St. John.</p>
+        <h1>Maltese Tourism</h1>
+        <p>Malta is a sun-drenched Mediterranean archipelago packed with breathtaking historical heritage, crystal ocean vistas, and dramatic coastal cliffs. It offers an incredible fusion of summer relaxation and ancient time travel.</p>
         
-        <!-- Galeria Expandida -->
-        <div class="gallery-grid">
-            <img src="malta01.png" alt="Maltese Balconies">
-            <img src="image3.jpeg" alt="Local Cuisine">
-            <img src="malta09.webp" alt="Baroque Cathedral">
-            <img src="malta10.webp" alt="Limestone Walls">
+        <!-- 🌟 MAIN DESTINATION HIGHLIGHT: VALLETTA -->
+        <div class="tourism-banner">
+            <img src="imagem10.png" alt="Valletta Capital City">
+            <div class="tourism-banner-content">
+                <h2>Valletta: The Fortress Capital</h2>
+                <p>Built entirely by the Knights of St. John in the 16th century, Valletta stands proud as a UNESCO World Heritage site. Walking through its steep streets rewards travelers with dramatic overlooking views of the Grand Harbour, military fortresses, and beautiful limestone balconies.</p>
+            </div>
         </div>
 
-        <h3>Traditional Mediterranean Flavors</h3>
-        <p>The local food scene presents a delicious fusion of Sicilian and Arabic influences. You must sample <strong>Pastizzi</strong>, flaky pastries filled with warm ricotta cheese or mushy peas. Other local culinary specialties include slow-cooked rabbit stew (Fenkata), savory Ftira bread, and fresh olive oil appetizers.</p>
-        
-        <h3>Architectural Icons</h3>
-        <p>Look up to find the famous enclosed wooden balconies painted in vibrant shades matching the main wooden doors. Beyond the historic cities, Malta houses Megalithic temple ruins that stand older than Stonehenge and the Egyptian pyramids, marking out exceptional pre-historic building skills.</p>
-        
+        <!-- 🗺️ MORE DESTINATIONS SECTION -->
+        <div class="section-block">
+            <h3>Top Destinations & Hidden Gems</h3>
+            <p>From silent medieval walking alleys to sandy coastal getaways, discover the unique locations that make Malta unforgettable.</p>
+            
+            <div class="destinations-grid">
+                
+                <!-- CARD 1: MDINA (imagem8.png) -->
+                <div class="dest-card">
+                    <img src="imagem8.png" alt="Mdina Walled City">
+                    <div class="dest-card-body">
+                        <h4>Mdina: The Silent City</h4>
+                        <p>A beautiful medieval walled settlement perched on a hill. Explore peaceful narrow stone alleys, golden palaces, and centuries of preserved aristocratic charm.</p>
+                    </div>
+                </div>
+
+                <!-- CARD 2: NATURAL COAST (imagem5.jpeg) -->
+                <div class="dest-card">
+                    <img src="imagem5.jpeg" alt="Maltese Scenic Coast">
+                    <div class="dest-card-body">
+                        <h4>Scenic Coastal Cliffs</h4>
+                        <p>Witness rugged limestone drop-offs meeting the deep blue sea. Perfect viewpoints for spectacular Mediterranean sunsets and hiking paths.</p>
+                    </div>
+                </div>
+
+                <!-- CARD 3: GOLDEN BAY (goldenbay.jpg) - EXPANDED HORIZONTAL -->
+                <div class="dest-card wide-card">
+                    <img src="goldenbay.jpg" alt="Golden Bay Beach">
+                    <div class="dest-card-body">
+                        <h4>Golden Bay Beach</h4>
+                        <p>One of Malta's most popular sandy beach bays. An ideal destination for sunbathing, clear shallow water swimming, and dynamic ocean activities along the northwest coast line.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
         <a href="index.html" class="back-btn">⬅ Back to Home</a>
     </div>
 </body>
