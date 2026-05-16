@@ -16,8 +16,8 @@
             align-items: center;
         }
         header { text-align: center; margin-bottom: 40px; }
-        header h1 { color: #8C6D46; font-size: 2.5rem; margin-bottom: 5px; }
-        header p { font-style: italic; color: #706B62; }
+        header h1 { color: #8C6D46; font-size: 2.7rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        header p { font-style: italic; color: #706B62; font-size: 1.1rem; }
         
         .card-container {
             display: flex;
@@ -26,32 +26,33 @@
             flex-wrap: wrap;
             max-width: 1200px;
             width: 100%;
+            margin-top: 20px;
         }
         .card-link { text-decoration: none; color: inherit; }
         .card {
             background-color: #FFFFFF;
             border: 1px solid #E6DFD3;
             border-radius: 12px;
-            width: 300px;
+            width: 320px;
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(140, 109, 70, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(140, 109, 70, 0.2);
         }
-        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
-        .card h3 { color: #8C6D46; margin: 15px 0 10px 0; font-size: 1.3rem; }
-        .card p { font-size: 0.9rem; color: #666; }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+        .card h3 { color: #8C6D46; margin: 15px 0 10px 0; font-size: 1.4rem; }
+        .card p { font-size: 0.95rem; color: #666; line-height: 1.4; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Malta Mediterranean</h1>
-        <p>Explore the wonders of the heart of the Mediterranean</p>
+        <p>Discover the history, culture, and paradise hidden in the heart of the sea</p>
     </header>
 
     <div class="card-container">
@@ -60,29 +61,28 @@
             <div class="card">
                 <img src="imagem10.png" alt="Tourism">
                 <h3>Tourism</h3>
-                <p>Click to explore top destinations and travel routes.</p>
+                <p>Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
             </div>
         </a>
 
         <!-- CARD 2 -->
         <a href="gastronomy.html" class="card-link">
             <div class="card">
-                <img src="giorgios.png" alt="Gastronomy">
+                <img src="malta01.png" alt="Gastronomy">
                 <h3>Gastronomy & Architecture</h3>
-                <p>Click to discover historic buildings and local flavors.</p>
+                <p>Taste unique Mediterranean culinary delights and admire centuries of historical building designs.</p>
             </div>
         </a>
 
         <!-- CARD 3 -->
         <a href="bluelagoon.html" class="card-link">
             <div class="card">
-                <img src="bluelagoon2.png" alt="Blue Lagoon">
+                <img src="bluelagoon.png" alt="Blue Lagoon">
                 <h3>Blue Lagoon</h3>
-                <p>Click to view photos and information about Comino island.</p>
+                <p>Immerse yourself in crystal cyan waters, hidden coastal caves, and beautiful sunny bays.</p>
             </div>
         </a>
     </div>
 
 </body>
 </html>
-
