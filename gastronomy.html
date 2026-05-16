@@ -26,45 +26,59 @@
         h1 { border-bottom: 2px solid #E6DFD3; padding-bottom: 10px; margin-top: 0; }
         p { line-height: 1.7; font-size: 1.05rem; color: #4A463F; }
         
-        /* TOP INTRO GALLERY */
+        /* TOP DUO GALLERY (Sunset + Food) */
         .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; }
         .gallery-grid img { width: 100%; height: 240px; object-fit: cover; border-radius: 10px; }
         
-        /* SECTIONS */
         .section-block {
             margin-top: 40px;
             border-top: 2px dashed #E6DFD3;
             padding-top: 30px;
         }
 
-        /* 🌟 GIORGIO'S CAFE AREA */
-        .giorgios-container {
+        /* 🌟 GIORGIO'S CAFE EXCLUSIVE CONTAINER */
+        .giorgios-box {
             background-color: #FDFBF7;
             border: 2px solid #8C6D46;
             border-radius: 14px;
             padding: 25px;
             margin-top: 20px;
-            box-shadow: 0 6px 20px rgba(140, 109, 70, 0.1);
+            box-shadow: 0 6px 20px rgba(140, 109, 70, 0.08);
         }
-        .giorgios-header h2 { margin: 0 0 10px 0; font-size: 1.8rem; }
+        
+        /* Row for Giorgio's Branding and Address side by side */
+        .giorgios-brand-row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .giorgios-logo-img {
+            width: 45%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #E6DFD3;
+        }
+        .giorgios-info-text {
+            width: 55%;
+        }
+        .giorgios-info-text h2 { margin: 0 0 10px 0; font-size: 1.8rem; }
         .address-info { 
             font-size: 0.95rem; 
             color: #706B62; 
             background: #F5F2EB;
             padding: 12px;
             border-radius: 6px;
-            margin-bottom: 20px;
             line-height: 1.5;
         }
 
-        /* GIORGIO'S TWO CARDS GRID */
-        .giorgios-grid {
+        /* 3-Card Symmetrical Grid for Giorgio's Extensions */
+        .giorgios-gallery-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-
-        /* SYMMETRICAL SMALL CARDS */
         .small-card {
             background-color: #FFFFFF;
             border: 1px solid #E6DFD3;
@@ -76,12 +90,13 @@
         }
         .small-card img { 
             width: 100%; 
-            height: 220px; 
+            height: 200px; 
             object-fit: cover; 
         }
         .small-card-body {
             padding: 15px;
             text-align: center;
+            flex-grow: 1;
         }
         .small-card-body h4 {
             margin: 0 0 8px 0;
@@ -95,15 +110,18 @@
             line-height: 1.4;
         }
 
-        /* HISTORICAL SINGLE CARD */
-        .single-card-center {
+        /* HISTORICAL ARCHITECTURE CENTER CARD */
+        .architecture-center {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 25px;
         }
-        .wide-card {
-            max-width: 500px;
+        .cathedral-card {
+            max-width: 550px;
             width: 100%;
+        }
+        .cathedral-card img {
+            height: 280px;
         }
 
         .back-btn { display: inline-block; margin-top: 45px; padding: 12px 24px; background-color: #8C6D46; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
@@ -115,63 +133,69 @@
         <h1>Gastronomy & Architecture</h1>
         <p>Maltese culture is deeply integrated into its unique culinary style and magnificent buildings. Baroque features meet massive limestone ramparts engineered centuries ago by the legendary Knights of St. John.</p>
         
-        <!-- Top Visual Grid Intro -->
+        <!-- Top Intro Images -->
         <div class="gallery-grid">
-            <img src="malta01.png" alt="Maltese Balconies">
-            <img src="malta10.webp" alt="Limestone Walls">
+            <img src="bluelagoon.png" alt="Malta Sunset View">
+            <img src="image3.jpeg" alt="Traditional Pastry Cuisine">
         </div>
 
         <h3>Traditional Mediterranean Flavors</h3>
         <p>The local food scene presents a delicious fusion of Sicilian and Arabic influences. You must sample <strong>Pastizzi</strong>, flaky pastries filled with warm ricotta cheese or mushy peas. Other local culinary specialties include slow-cooked rabbit stew (Fenkata), savory Ftira bread, and fresh olive oil appetizers.</p>
         
-        <!-- 🌟 SECTION 1: GIORGIO'S CAFE (HIGHLIGHT) -->
+        <!-- 🌟 SEÇÃO GIORGIO'S CAFETERIA (MÁXIMO DESTAQUE COM HARMONIA) -->
         <div class="section-block">
-            <div class="giorgios-container">
-                <div class="giorgios-header">
-                    <h2>Giorgio's Cafe</h2>
-                    <p>A premier and essential landmark in Malta's vibrant cafe culture. Located beautifully on the lively Sliema Promenade, it is the absolute best spot to relax with an authentic Mediterranean espresso, traditional sweet pastries, and a spectacular waterfront breeze.</p>
-                </div>
+            <div class="giorgios-box">
                 
-                <div class="address-info">
-                    📍 <strong>Address:</strong> 19, Sliema Promenade, Sliema, Malta <br>
-                    📌 <strong>Reference Point:</strong> Situated right on the main Strand waterfront walkway looking directly across the harbor towards Valletta.
-                </div>
-
-                <!-- Os dois cards lado a lado do Giorgio's -->
-                <div class="giorgios-grid">
-                    <!-- CARD 1: O PRATO DO CARDÁPIO -->
-                    <div class="small-card">
-                        <img src="image3.jpeg" alt="Giorgio's Menu Special">
-                        <div class="small-card-body">
-                            <h4>Delicious Menu Options</h4>
-                            <p>Premium dishes crafted with fresh savory ingredients, fine local cheeses, and traditional Mediterranean culinary styles.</p>
+                <!-- Bloco Superior: Logo + Endereço Lado a Lado -->
+                <div class="giorgios-brand-row">
+                    <img src="giorgios.png" alt="Giorgio's Cafe Boutique Menu" class="giorgios-logo-img">
+                    <div class="giorgios-info-text">
+                        <h2>Giorgio's Cafe</h2>
+                        <p>An iconic staple in Malta's upscale coffee and food scene. Established as an essential social meeting ground along the golden shoreline walkway.</p>
+                        <div class="address-info">
+                            📍 <strong>Address:</strong> 19, Sliema Promenade, Sliema, Malta <br>
+                            📌 <strong>Reference:</strong> Located right on the bustling waterfront, looking out across the Mediterranean Strand.
                         </div>
                     </div>
+                </div>
 
-                    <!-- CARD 2: A FOTO DO OMBRELONE EXTERNO -->
+                <!-- Cards Internos Relacionados ao Giorgio's (malta10 e malta09) -->
+                <div class="giorgios-gallery-grid">
+                    
+                    <!-- Card Esquerdo: Área Externa Ombrelone -->
                     <div class="small-card">
-                        <img src="giorgios.png" alt="Giorgio's Outdoor Seating">
+                        <img src="malta10.jpg.jpge.webp" alt="Giorgio's Terrace Lounge">
                         <div class="small-card-body">
                             <h4>Outdoor Terrace Lounge</h4>
-                            <p>Relax under the iconic dark blue umbrellas along the promenade, enjoying the ocean breeze and urban movement.</p>
+                            <p>Enjoy premium coffee under the distinctive dark boutique umbrellas on the scenic promenade deck.</p>
                         </div>
                     </div>
+
+                    <!-- Card Direito: O prato servido -->
+                    <div class="small-card">
+                        <img src="malta09.jpg.jpge.webp" alt="Giorgio's Culinary Serving">
+                        <div class="small-card-body">
+                            <h4>Gourmet Menu Selections</h4>
+                            <p>Artisanal dishes, savory appetizer platters, and fresh local pastries served daily with top-tier presentation.</p>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
         </div>
 
-        <!-- 🏛️ SECTION 2: ARCHITECTURE EXTENSIONS -->
+        <!-- 🏛️ SEÇÃO DA CATEDRAL HISTÓRICA (FOTO REAL MALTA6) -->
         <div class="section-block">
             <h3>Historical Architectural Icons</h3>
-            <p>Malta's structures are highly detailed masterpieces built out of regional golden globe globigerina limestone.</p>
+            <p>Malta's structures are highly detailed masterpieces built out of regional golden globigerina limestone blocks.</p>
             
-            <div class="single-card-center">
-                <!-- CARD DA CATEDRAL COM NOME CORRETO (malta09.webp ou substitua por malta06.jpg) -->
-                <div class="small-card wide-card">
-                    <img src="malta09.webp" alt="St. John's Co-Cathedral">
+            <div class="architecture-center">
+                <div class="small-card cathedral-card">
+                    <img src="malta06.jpg" alt="St. John's Co-Cathedral Exterior">
                     <div class="small-card-body">
                         <h4>St. John's Co-Cathedral</h4>
-                        <p>A high baroque masterpiece located in Valletta. Features breathtaking gold-carved walls, magnificent hand-painted ceiling frescoes, and historic marble tombs of the Knights of St. John.</p>
+                        <p>A spectacular historic Roman Catholic co-cathedral located right in the heart of Valletta, built by the Knights of St. John between 1572 and 1577 as an iconic gem of high Baroque design.</p>
                     </div>
                 </div>
             </div>
