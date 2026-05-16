@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Discover Malta</title>
+<title>Discover Malta | Mediterranean Escape</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,111 +17,119 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:#f5efe4;
-    color:#2b2b2b;
-    font-family:'Inter',sans-serif;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
 }
 
 /* HEADER */
 
 header{
+    position:fixed;
     width:100%;
-    padding:24px 8%;
+    top:0;
+    left:0;
+    z-index:999;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.navbar{
+    max-width:1400px;
+    margin:auto;
+    padding:20px 6%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:1000;
-    background:rgba(245,239,228,0.92);
-    backdrop-filter:blur(10px);
 }
 
 .logo{
-    font-size:30px;
+    font-size:28px;
     font-family:'Playfair Display',serif;
-    letter-spacing:5px;
-    color:#b68a4c;
+    font-weight:700;
+    letter-spacing:2px;
+    color:#fff;
 }
 
-nav{
+.nav-links{
     display:flex;
     gap:35px;
 }
 
-nav a{
+.nav-links a{
     text-decoration:none;
-    color:#5f5346;
-    font-size:13px;
-    letter-spacing:3px;
+    color:#eee;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#d6b98c;
 }
 
 /* HERO */
 
 .hero{
-    width:100%;
     height:100vh;
-    background:url('malta01.jpg.png') center center/cover no-repeat;
-    position:relative;
+    background:
+    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.6)),
+    url('maltahero.jpg') center/cover no-repeat;
+    
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
-}
-
-.hero::before{
-    content:'';
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.45);
+    padding:0 8%;
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
-    max-width:850px;
-    padding:20px;
+    max-width:900px;
 }
 
-.hero-content span{
-    color:#f1d7a2;
-    letter-spacing:5px;
-    font-size:14px;
-}
-
-.hero-content h1{
+.hero h1{
     font-size:90px;
-    color:white;
-    margin-top:20px;
-    margin-bottom:25px;
     font-family:'Playfair Display',serif;
-    letter-spacing:8px;
+    font-weight:700;
+    margin-bottom:25px;
+    line-height:1.05;
 }
 
-.hero-content p{
-    color:white;
-    font-size:20px;
+.hero p{
+    font-size:18px;
+    color:#ddd;
     line-height:1.8;
     margin-bottom:40px;
 }
 
-.hero-content a{
+.hero-btn{
     display:inline-block;
-    padding:16px 40px;
-    border:1px solid #f1d7a2;
-    color:#f1d7a2;
+    padding:16px 42px;
+    background:#d6b98c;
+    color:black;
     text-decoration:none;
-    letter-spacing:3px;
+    border-radius:50px;
+    font-weight:600;
+    letter-spacing:1px;
+    transition:0.4s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-4px);
+    background:white;
 }
 
 /* SECTION */
 
-.destinations{
-    width:92%;
-    margin:120px auto;
+.section{
+    padding:120px 8%;
 }
 
 .section-title{
@@ -130,41 +137,33 @@ nav a{
     margin-bottom:70px;
 }
 
-.section-title span{
-    color:#b68a4c;
-    letter-spacing:4px;
-    font-size:13px;
-}
-
 .section-title h2{
-    font-size:58px;
-    margin-top:20px;
-    margin-bottom:20px;
+    font-size:52px;
     font-family:'Playfair Display',serif;
-    letter-spacing:5px;
+    margin-bottom:20px;
 }
 
 .section-title p{
-    max-width:760px;
+    color:#aaa;
+    max-width:700px;
     margin:auto;
-    color:#7b6f62;
     line-height:1.8;
 }
 
-/* CARDS */
+/* DESTINATIONS */
 
-.cards{
+.destinations{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:40px;
+    gap:35px;
 }
 
 .card{
-    background:#fffaf2;
-    border-radius:28px;
+    background:#151515;
+    border-radius:22px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
-    transition:0.4s;
+    transition:0.5s;
+    border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
@@ -173,117 +172,144 @@ nav a{
 
 .card img{
     width:100%;
-    height:500px;
+    height:320px;
     object-fit:cover;
 }
 
 .card-content{
-    padding:35px;
+    padding:30px;
 }
 
 .card-content h3{
-    font-size:32px;
-    margin-bottom:16px;
+    font-size:28px;
+    margin-bottom:15px;
     font-family:'Playfair Display',serif;
-    color:#2b2b2b;
 }
 
 .card-content p{
-    color:#6f6459;
+    color:#bbb;
     line-height:1.8;
-    margin-bottom:25px;
+    font-size:15px;
 }
 
-.card-content a{
-    text-decoration:none;
-    color:#b68a4c;
-    letter-spacing:3px;
-    font-size:13px;
+/* EXPERIENCE */
+
+.experience{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+    margin-top:60px;
 }
 
-/* VIDEO */
-
-.video-section{
-    width:92%;
-    margin:0 auto 120px;
+.exp-box{
+    padding:40px;
+    background:#121212;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,0.05);
+    transition:0.4s;
 }
 
-.video-title{
-    text-align:center;
-    margin-bottom:50px;
+.exp-box:hover{
+    background:#181818;
+    transform:translateY(-8px);
 }
 
-.video-title h2{
-    font-size:56px;
+.exp-box h3{
+    margin-bottom:18px;
+    font-size:26px;
     font-family:'Playfair Display',serif;
-    margin-bottom:20px;
 }
 
-.video-title p{
-    color:#7b6f62;
+.exp-box p{
+    color:#aaa;
+    line-height:1.8;
 }
 
-.video-section video{
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery img{
     width:100%;
-    border-radius:30px;
+    height:300px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.5s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
 }
 
 /* FOOTER */
 
 footer{
-    padding:70px 20px;
+    padding:60px 8%;
     text-align:center;
-    border-top:1px solid rgba(0,0,0,0.08);
+    border-top:1px solid rgba(255,255,255,0.08);
+    background:#080808;
+}
+
+footer h2{
+    font-family:'Playfair Display',serif;
+    margin-bottom:15px;
+    font-size:32px;
 }
 
 footer p{
-    color:#8d8175;
-    letter-spacing:3px;
-    font-size:13px;
+    color:#999;
+    line-height:1.7;
 }
 
-/* RESPONSIVO */
+/* MOBILE */
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-.hero-content h1{
-    font-size:52px;
+    .hero h1{
+        font-size:58px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
 }
 
-.hero-content p{
-    font-size:16px;
-}
+@media(max-width:600px){
 
-.section-title h2{
-    font-size:40px;
-}
+    .hero h1{
+        font-size:42px;
+    }
 
-.video-title h2{
-    font-size:38px;
-}
+    .hero p{
+        font-size:15px;
+    }
+
+    .section-title h2{
+        font-size:38px;
+    }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
+    <div class="navbar">
+        <div class="logo">MALTA</div>
 
-    <div class="logo">
-        MALTA
+        <div class="nav-links">
+            <a href="#destinations">DESTINATIONS</a>
+            <a href="#experience">EXPERIENCE</a>
+            <a href="#gallery">GALLERY</a>
+        </div>
     </div>
-
-    <nav>
-
-        <a href="#">HOME</a>
-        <a href="#destinations">DESTINATIONS</a>
-        <a href="#video">VIDEO</a>
-
-    </nav>
-
 </header>
 
 <!-- HERO -->
@@ -292,21 +318,18 @@ footer p{
 
     <div class="hero-content">
 
-        <span>
-            MEDITERRANEAN EXPERIENCE
-        </span>
-
         <h1>
-            DISCOVER MALTA
+            Mediterranean<br>
+            Luxury Escape
         </h1>
 
         <p>
-            Discover breathtaking coastlines, golden sunsets
-            and timeless Mediterranean beauty.
+            Discover Malta through timeless architecture, crystal-clear waters,
+            luxury experiences and unforgettable Mediterranean beauty.
         </p>
 
-        <a href="#destinations">
-            EXPLORE
+        <a href="#destinations" class="hero-btn">
+            Explore Malta
         </a>
 
     </div>
@@ -315,124 +338,129 @@ footer p{
 
 <!-- DESTINATIONS -->
 
-<section class="destinations" id="destinations">
+<section class="section" id="destinations">
 
     <div class="section-title">
-
-        <span>
-            DISCOVER
-        </span>
-
-        <h2>
-            ICONIC DESTINATIONS
-        </h2>
+        <h2>Iconic Destinations</h2>
 
         <p>
-            Explore Malta’s most beautiful beaches,
-            historic architecture and cinematic landscapes.
+            Explore the most breathtaking places across Malta,
+            where history meets coastal paradise.
         </p>
-
     </div>
 
-    <div class="cards">
-
-        <!-- CARD 1 -->
+    <div class="destinations">
 
         <div class="card">
-
-            <img src="valeta.png" alt="Valetta">
+            <img src="valeta.png" alt="Valletta">
 
             <div class="card-content">
-
-                <h3>
-                    VALLETTA
-                </h3>
+                <h3>Valletta</h3>
 
                 <p>
-                    Historic streets and timeless Mediterranean elegance.
+                    The elegant capital of Malta filled with golden architecture,
+                    luxury cafés and breathtaking Mediterranean views.
                 </p>
-
-                <a href="#">
-                    EXPLORE
-                </a>
-
             </div>
-
         </div>
 
-        <!-- CARD 2 -->
-
         <div class="card">
-
-            <img src="goldenbay.png" alt="Golden Bay">
+            <img src="goldebay.png" alt="Golden Bay">
 
             <div class="card-content">
-
-                <h3>
-                    GOLDEN BAY
-                </h3>
+                <h3>Golden Bay</h3>
 
                 <p>
-                    Crystal-clear waters and unforgettable coastal scenery.
+                    One of Malta’s most iconic beaches featuring golden sand,
+                    crystal waters and unforgettable sunsets.
                 </p>
-
-                <a href="#">
-                    DISCOVER
-                </a>
-
             </div>
-
         </div>
 
-        <!-- CARD 3 -->
-
         <div class="card">
-
-            <img src="imagem10.jpg.png" alt="Malta Experience">
+            <img src="bluegrotto.jpg" alt="Blue Grotto">
 
             <div class="card-content">
-
-                <h3>
-                    MALTA EXPERIENCE
-                </h3>
+                <h3>Blue Grotto</h3>
 
                 <p>
-                    Luxury Mediterranean inspiration and cinematic travel moments.
+                    Famous sea caves with vibrant turquoise reflections and
+                    stunning natural Mediterranean scenery.
                 </p>
-
-                <a href="#">
-                    VIEW MORE
-                </a>
-
             </div>
-
         </div>
 
     </div>
 
 </section>
 
-<!-- VIDEO -->
+<!-- EXPERIENCE -->
 
-<section class="video-section" id="video">
+<section class="section" id="experience">
 
-    <div class="video-title">
-
-        <h2>
-            CINEMATIC MALTA
-        </h2>
+    <div class="section-title">
+        <h2>Luxury Experience</h2>
 
         <p>
-            Experience Malta through immersive cinematic storytelling.
+            Malta combines relaxation, history and modern elegance
+            into a unique Mediterranean lifestyle.
         </p>
+    </div>
+
+    <div class="experience">
+
+        <div class="exp-box">
+            <h3>Luxury Resorts</h3>
+
+            <p>
+                Premium hotels and seaside resorts designed for unforgettable
+                comfort and exclusive Mediterranean experiences.
+            </p>
+        </div>
+
+        <div class="exp-box">
+            <h3>Private Boat Tours</h3>
+
+            <p>
+                Discover hidden beaches, caves and crystal lagoons
+                with luxury private yacht experiences.
+            </p>
+        </div>
+
+        <div class="exp-box">
+            <h3>Historic Beauty</h3>
+
+            <p>
+                Walk through centuries of history surrounded by elegant
+                architecture and timeless European charm.
+            </p>
+        </div>
 
     </div>
 
-    <video controls autoplay muted loop>
+</section>
 
-        <source src="bluelagoon.png.mp4" type="video/mp4">
+<!-- GALLERY -->
 
-    </video>
+<section class="section" id="gallery">
+
+    <div class="section-title">
+        <h2>Malta Gallery</h2>
+
+        <p>
+            A visual journey through one of the Mediterranean’s
+            most beautiful destinations.
+        </p>
+    </div>
+
+    <div class="gallery">
+
+        <img src="gallery1.jpg" alt="">
+        <img src="gallery2.jpg" alt="">
+        <img src="gallery3.jpg" alt="">
+        <img src="gallery4.jpg" alt="">
+
+    </div>
 
 </section>
 
@@ -440,8 +468,10 @@ footer p{
 
 <footer>
 
+    <h2>Discover Malta</h2>
+
     <p>
-        © 2026 DISCOVER MALTA
+        Mediterranean elegance • Luxury travel • Timeless beauty
     </p>
 
 </footer>
