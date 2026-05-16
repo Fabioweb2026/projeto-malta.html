@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malta Mediterranean</title>
     <style>
-        /* Colors and Background (Cream/Beige) */
         body {
             background-color: #F5F2EB; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             color: #3E3B35;
             margin: 0;
             padding: 20px;
@@ -16,24 +15,10 @@
             flex-direction: column;
             align-items: center;
         }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        header h1 {
-            color: #8C6D46; 
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-
-        header p {
-            font-style: italic;
-            color: #706B62;
-        }
-
-        /* Container of the 3 Cards */
+        header { text-align: center; margin-bottom: 40px; }
+        header h1 { color: #8C6D46; font-size: 2.5rem; margin-bottom: 5px; }
+        header p { font-style: italic; color: #706B62; }
+        
         .card-container {
             display: flex;
             gap: 25px;
@@ -42,8 +27,7 @@
             max-width: 1200px;
             width: 100%;
         }
-
-        /* Card Styling */
+        .card-link { text-decoration: none; color: inherit; }
         .card {
             background-color: #FFFFFF;
             border: 1px solid #E6DFD3;
@@ -52,111 +36,15 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(140, 109, 70, 0.15);
         }
-
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .card h3 {
-            color: #8C6D46;
-            margin: 15px 0 10px 0;
-            font-size: 1.3rem;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* Modal (Pop-up Window) Styling */
-        .modal {
-            display: none; 
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background-color: #FDFBF7; 
-            padding: 30px;
-            border-radius: 16px;
-            max-width: 700px; /* Wider for more content */
-            width: 90%;
-            max-height: 85vh;
-            overflow-y: auto; /* Scroll bar if content is long */
-            position: relative;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            color: #A0998E;
-        }
-
-        .close-btn:hover {
-            color: #3E3B35;
-        }
-
-        /* Inside the Modal Elements */
-        .modal-body h2 {
-            color: #8C6D46;
-            margin-top: 0;
-            border-bottom: 2px solid #E6DFD3;
-            padding-bottom: 10px;
-        }
-
-        .modal-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .modal-gallery img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 6px;
-        }
-
-        .modal-text-block {
-            margin-top: 15px;
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        /* Subtitles inside popup */
-        .modal-body h4 {
-            color: #8C6D46;
-            margin: 15px 0 5px 0;
-        }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+        .card h3 { color: #8C6D46; margin: 15px 0 10px 0; font-size: 1.3rem; }
+        .card p { font-size: 0.9rem; color: #666; }
     </style>
 </head>
 <body>
@@ -166,111 +54,35 @@
         <p>Explore the wonders of the heart of the Mediterranean</p>
     </header>
 
-    <!-- CARDS CONTAINER -->
     <div class="card-container">
-
-        <!-- CARD 1: TOURISM -->
-        <div class="card" onclick="openCard('tourism')">
-            <img src="imagem10.png" alt="Tourism in Malta">
-            <h3>Tourism</h3>
-            <p>Click to explore top destinations and travel routes.</p>
-        </div>
-
-        <!-- CARD 2: GASTRONOMY & ARCHITECTURE -->
-        <div class="card" onclick="openCard('gastronomy')">
-            <img src="malta01.png" alt="Gastronomy and Architecture">
-            <h3>Gastronomia & Arquitetura</h3>
-            <p>Click to discover historic buildings and local flavors.</p>
-        </div>
-
-        <!-- CARD 3: BLUE LAGOON -->
-        <div class="card" onclick="openCard('bluelagoon')">
-            <img src="bluelagoon.png" alt="Blue Lagoon">
-            <h3>Blue Lagoon</h3>
-            <p>Click to view photos and information about Comino island.</p>
-        </div>
-
-    </div>
-
-    <!-- POP-UP DETAILS WINDOW (MODAL) -->
-    <div id="detailModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeCard()">&times;</span>
-            <div class="modal-body" id="modal-dynamic-content">
-                <!-- Content will be loaded here dynamically by JavaScript -->
+        <!-- CARD 1 -->
+        <a href="tourism.html" class="card-link">
+            <div class="card">
+                <img src="imagem10.png" alt="Tourism">
+                <h3>Tourism</h3>
+                <p>Click to explore top destinations and travel routes.</p>
             </div>
-        </div>
+        </a>
+
+        <!-- CARD 2 -->
+        <a href="gastronomy.html" class="card-link">
+            <div class="card">
+                <img src="malta01.png" alt="Gastronomy">
+                <h3>Gastronomy & Architecture</h3>
+                <p>Click to discover historic buildings and local flavors.</p>
+            </div>
+        </a>
+
+        <!-- CARD 3 -->
+        <a href="bluelagoon.html" class="card-link">
+            <div class="card">
+                <img src="bluelagoon.png" alt="Blue Lagoon">
+                <h3>Blue Lagoon</h3>
+                <p>Click to view photos and information about Comino island.</p>
+            </div>
+        </a>
     </div>
-
-    <script>
-        // Data structure where you can easily configure texts and pictures
-        const cardData = {
-            tourism: `
-                <h2>Tourism in Malta</h2>
-                <div class="modal-gallery">
-                    <img src="imagem10.png" alt="Tourism 1">
-                    <img src="imagem8.png" alt="Tourism 2">
-                </div>
-                <div class="modal-text-block">
-                    <p>Malta is an archipelago packed with rich history and breathtaking landscapes. From ancient walled cities to open crystal bays, there is something for every traveler.</p>
-                    
-                    <h4>Top Attractions</h4>
-                    <p>Visit the historic city of Valletta, explore the silent streets of Mdina, and take a boat ride to Gozo Island.</p>
-                    
-                    <h4>Travel Information</h4>
-                    <p>The best time to visit is between May and October. Public transportation connects all major historical landmarks effectively.</p>
-                </div>
-            `,
-            gastronomy: `
-                <h2>Gastronomy & Architecture</h2>
-                <div class="modal-gallery">
-                    <img src="malta01.png" alt="Gastronomy">
-                    <img src="imagem5.jpeg" alt="Architecture">
-                </div>
-                <div class="modal-text-block">
-                    <p>Maltese architecture reflects centuries of diverse cultural influences, blending Baroque structures with heavy limestone fortresses built by the Knights of St. John.</p>
-                    
-                    <h4>Traditional Flavors</h4>
-                    <p>Do not miss trying <strong>Pastizzi</strong> (savory pastry filled with ricotta or peas), fresh Mediterranean seafood, and local rabbit stew.</p>
-                    
-                    <h4>Historic Landmarks</h4>
-                    <p>Walk around Valletta to see the traditional colorful wooden balconies and visit the ancient Megalithic Temples, which are older than the pyramids.</p>
-                </div>
-            `,
-            bluelagoon: `
-                <h2>Blue Lagoon</h2>
-                <div class="modal-gallery">
-                    <img src="bluelagoon.png" alt="Blue Lagoon Main">
-                    <img src="bluelagoon3.png" alt="Blue Lagoon View">
-                </div>
-                <div class="modal-text-block">
-                    <p>Located on the small, car-free island of Comino, the Blue Lagoon is a paradise famous for its brilliant cyan waters and white sand bar.</p>
-                    
-                    <h4>Activities</h4>
-                    <p>It is the perfect spot for swimming, snorkeling, and sunbathing. You can also explore the small caves around the cliffs by boat.</p>
-                    
-                    <h4>How to get there</h4>
-                    <p>Regular ferry services operate daily departing from Cirkewwa (Malta) and Marfa, making it an easy and beautiful day trip choice.</p>
-                </div>
-            `
-        };
-
-        function openCard(id) {
-            document.getElementById("modal-dynamic-content").innerHTML = cardData[id];
-            document.getElementById("detailModal").style.display = "flex";
-        }
-
-        function closeCard() {
-            document.getElementById("detailModal").style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            let modal = document.getElementById("detailModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 
 </body>
 </html>
+
