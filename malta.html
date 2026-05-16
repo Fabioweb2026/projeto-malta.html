@@ -23,8 +23,8 @@ html{
 }
 
 body{
-    background:#0f0f0f;
-    color:white;
+    background:#f5efe4;
+    color:#2b2b2b;
     font-family:'Inter',sans-serif;
     overflow-x:hidden;
 }
@@ -33,7 +33,7 @@ body{
 
 header{
     width:100%;
-    padding:25px 8%;
+    padding:24px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -41,15 +41,16 @@ header{
     top:0;
     left:0;
     z-index:1000;
-    background:rgba(0,0,0,0.65);
-    backdrop-filter:blur(12px);
+    background:rgba(245,239,228,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
 .logo{
-    font-size:28px;
+    font-size:30px;
     font-family:'Playfair Display',serif;
-    letter-spacing:4px;
-    color:#d8bc84;
+    letter-spacing:5px;
+    color:#b68a4c;
 }
 
 nav{
@@ -58,15 +59,15 @@ nav{
 }
 
 nav a{
-    color:white;
     text-decoration:none;
+    color:#4a4036;
     font-size:13px;
     letter-spacing:3px;
     transition:0.3s;
 }
 
 nav a:hover{
-    color:#d8bc84;
+    color:#b68a4c;
 }
 
 /* HERO */
@@ -74,7 +75,7 @@ nav a:hover{
 .hero{
     width:100%;
     height:100vh;
-    background:url('images/goldenbay.png') center center/cover no-repeat;
+    background:url('goldenbay.png') center center/cover no-repeat;
     position:relative;
     display:flex;
     justify-content:center;
@@ -89,8 +90,8 @@ nav a:hover{
     height:100%;
     background:linear-gradient(
         to bottom,
-        rgba(0,0,0,0.45),
-        rgba(0,0,0,0.75)
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.55)
     );
 }
 
@@ -102,13 +103,14 @@ nav a:hover{
 }
 
 .hero-subtitle{
-    color:#d8bc84;
+    color:#f7e4b8;
     letter-spacing:5px;
     font-size:14px;
 }
 
 .hero-content h1{
-    font-size:90px;
+    font-size:92px;
+    color:white;
     font-family:'Playfair Display',serif;
     letter-spacing:8px;
     margin-top:20px;
@@ -116,25 +118,26 @@ nav a:hover{
 }
 
 .hero-content p{
+    color:white;
     font-size:20px;
     line-height:1.9;
-    color:#e2e2e2;
     margin-bottom:40px;
 }
 
 .hero-content a{
     display:inline-block;
-    padding:16px 40px;
-    border:1px solid #d8bc84;
-    color:#d8bc84;
+    padding:16px 42px;
+    border:1px solid #f7e4b8;
+    color:#f7e4b8;
     text-decoration:none;
     letter-spacing:3px;
     transition:0.4s;
+    background:rgba(255,255,255,0.08);
 }
 
 .hero-content a:hover{
-    background:#d8bc84;
-    color:black;
+    background:#f7e4b8;
+    color:#2b2b2b;
 }
 
 /* EDITORIAL */
@@ -143,7 +146,7 @@ nav a:hover{
     width:92%;
     margin:120px auto;
     position:relative;
-    border-radius:30px;
+    border-radius:32px;
     overflow:hidden;
 }
 
@@ -151,7 +154,7 @@ nav a:hover{
     width:100%;
     height:700px;
     object-fit:cover;
-    filter:brightness(72%);
+    filter:brightness(75%);
 }
 
 .editorial-content{
@@ -164,7 +167,8 @@ nav a:hover{
 }
 
 .editorial-content h2{
-    font-size:58px;
+    color:white;
+    font-size:60px;
     font-family:'Playfair Display',serif;
     letter-spacing:6px;
     margin-bottom:25px;
@@ -173,6 +177,7 @@ nav a:hover{
 .editorial-content p{
     max-width:760px;
     margin:auto;
+    color:white;
     line-height:1.9;
     font-size:18px;
 }
@@ -191,13 +196,13 @@ nav a:hover{
 }
 
 .section-header span{
-    color:#d8bc84;
+    color:#b68a4c;
     letter-spacing:4px;
     font-size:13px;
 }
 
 .section-header h2{
-    font-size:60px;
+    font-size:58px;
     margin-top:20px;
     margin-bottom:20px;
     font-family:'Playfair Display',serif;
@@ -207,7 +212,7 @@ nav a:hover{
 .section-header p{
     max-width:760px;
     margin:auto;
-    color:#c7c7c7;
+    color:#6d6257;
     line-height:1.9;
     font-size:17px;
 }
@@ -219,15 +224,15 @@ nav a:hover{
 }
 
 .card{
-    background:#171717;
+    background:#fffaf2;
     border-radius:28px;
     overflow:hidden;
     transition:0.5s;
-    border:1px solid rgba(255,255,255,0.04);
+    border:1px solid rgba(0,0,0,0.05);
 }
 
 .card:hover{
-    transform:translateY(-12px);
+    transform:translateY(-10px);
 }
 
 .card img{
@@ -246,21 +251,22 @@ nav a:hover{
 }
 
 .card-content h3{
-    font-size:32px;
+    font-size:30px;
     margin-bottom:18px;
     font-family:'Playfair Display',serif;
     letter-spacing:3px;
+    color:#2b2b2b;
 }
 
 .card-content p{
-    color:#bdbdbd;
+    color:#6d6257;
     line-height:1.8;
     margin-bottom:28px;
 }
 
 .card-content a{
     text-decoration:none;
-    color:#d8bc84;
+    color:#b68a4c;
     letter-spacing:3px;
     font-size:13px;
 }
@@ -285,7 +291,7 @@ nav a:hover{
 }
 
 .video-title p{
-    color:#bdbdbd;
+    color:#6d6257;
     line-height:1.8;
 }
 
@@ -299,21 +305,25 @@ nav a:hover{
 footer{
     padding:70px 20px;
     text-align:center;
-    border-top:1px solid #1f1f1f;
+    border-top:1px solid rgba(0,0,0,0.08);
 }
 
 footer p{
-    color:#999;
+    color:#8c8175;
     letter-spacing:3px;
     font-size:13px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVO */
 
 @media(max-width:768px){
 
 .hero-content h1{
     font-size:52px;
+}
+
+.hero-content p{
+    font-size:16px;
 }
 
 .editorial img{
@@ -325,11 +335,11 @@ footer p{
 }
 
 .section-header h2{
-    font-size:40px;
+    font-size:38px;
 }
 
 .video-title h2{
-    font-size:40px;
+    font-size:38px;
 }
 
 nav{
@@ -355,8 +365,14 @@ nav{
     <nav>
 
         <a href="#">HOME</a>
-        <a href="#destinations">DESTINATIONS</a>
-        <a href="#video">VIDEO</a>
+
+        <a href="#destinations">
+            DESTINATIONS
+        </a>
+
+        <a href="#video">
+            VIDEO
+        </a>
 
     </nav>
 
@@ -377,12 +393,12 @@ nav{
         </h1>
 
         <p>
-            Mediterranean beauty, coastal luxury and unforgettable
-            cinematic landscapes inspired by timeless island elegance.
+            Explore breathtaking coastlines, historic architecture,
+            crystal-clear waters and timeless Mediterranean beauty.
         </p>
 
         <a href="#destinations">
-            EXPLORE DESTINATIONS
+            EXPLORE MALTA
         </a>
 
     </div>
@@ -393,7 +409,7 @@ nav{
 
 <section class="editorial">
 
-    <img src="images/editorial.png">
+    <img src="editorial.png" alt="Malta Editorial">
 
     <div class="editorial-content">
 
@@ -402,8 +418,8 @@ nav{
         </h2>
 
         <p>
-            Explore Malta through cinematic coastal scenery,
-            historic architecture and unforgettable luxury experiences.
+            Discover luxury landscapes, cinematic sunsets and unforgettable
+            travel experiences inspired by Malta’s coastal elegance.
         </p>
 
     </div>
@@ -426,7 +442,7 @@ nav{
 
         <p>
             A curated visual journey across Malta’s most breathtaking
-            beaches, historic cities and Mediterranean landscapes.
+            beaches, historic cities and Mediterranean scenery.
         </p>
 
     </div>
@@ -437,7 +453,7 @@ nav{
 
         <div class="card">
 
-            <img src="images/valeta.png" alt="Valletta">
+            <img src="valeta.png" alt="Valletta">
 
             <div class="card-content">
 
@@ -461,7 +477,8 @@ nav{
         <!-- CARD 2 -->
 
         <div class="card">
-            background:url('images/goldenbay.png')
+
+            <img src="goldenbay.png" alt="Golden Bay">
 
             <div class="card-content">
 
@@ -486,7 +503,7 @@ nav{
 
         <div class="card">
 
-            <img src="images/image10.jpg.png" alt="Malta Experience">
+            <img src="editorial.png" alt="Malta Experience">
 
             <div class="card-content">
 
@@ -496,7 +513,7 @@ nav{
 
                 <p>
                     Luxury travel inspiration across beaches,
-                    culture and cinematic scenery.
+                    culture and cinematic landscapes.
                 </p>
 
                 <a href="#">
@@ -529,7 +546,7 @@ nav{
 
     <video controls autoplay muted loop>
 
-        <source src="videos/reel1.mp4" type="video/mp4">
+        <source src="reel1.mp4" type="video/mp4">
 
     </video>
 
