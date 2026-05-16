@@ -3,174 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Malta Mediterranean</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
+    url('foto.fabio1.jpg') center/cover no-repeat;
+    color: white;
+    padding: 40px 20px;
 }
 
-body{
-    background:#F5F0E8; /* creme elegante */
-    font-family:'Playfair Display', serif;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    height:100vh;
-    overflow:hidden;
+h1 {
+    text-align: center;
+    color: #b39359;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.texto{
-    position:relative;
-    width:900px;
-    height:250px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
+/* GRID */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* TEXTO FUNDO */
-
-.titulo2{
-    font-size:140px;
-
-    color:rgba(47, 93, 115, 0.12);
-
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%, -50%);
-
-    z-index:0;
-
-    font-weight:700;
-
-    letter-spacing:8px;
+/* CARD */
+.card {
+    width: 350px;
+    background: rgba(26,26,26,0.95);
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(179,147,89,0.3);
+    transition: 0.35s ease;
 }
 
-/* TEXTO PRINCIPAL */
-
-.titulo1{
-    font-size:95px;
-
-    color:#C9A227; /* dourado premium */
-
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%, -50%);
-
-    z-index:1;
-
-    font-weight:bold;
-
-    letter-spacing:6px;
-
-    text-shadow:0 4px 15px rgba(0,0,0,0.08);
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(179,147,89,0.8);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
+/* IMAGEM */
+.card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #111;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.05);
+}
+
+/* 🔥 SOLLENE GROUP (AGORA COM NOVA IMAGEM) */
+.card:nth-child(1) .card-img {
+    background: radial-gradient(circle at center, #1a1a1a, #0d0d0d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+}
+
+.card:nth-child(1) .card-img img {
+    width: 92%;
+    height: 92%;
+    object-fit: contain;
+    filter: drop-shadow(0px 6px 10px rgba(0,0,0,0.6));
+}
+
+/* RESUME */
+.resume-preview {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.resume-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.88;
+    transition: 0.4s ease;
+}
+
+.card:hover .resume-image {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* CONTENT */
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card h3 {
+    color: #b39359;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #dcdcdc;
+}
+
+/* HOME BUTTON */
+.home-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 9999;
+    background: #b39359;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background: #8c6d3c;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 92%;
+    }
+}
 </style>
 </head>
 
 <body>
-<section class="hero">
 
-    <div class="hero-text">
+<a class="home-btn" href="https://fabioweb2026.github.io/portifolio-web/">
+← Home
+</a>
 
-        <h2 class="background-title">
-            Mediterranean
-        </h2>
+<h1>Web Portfolio</h1>
 
-        <h1>
-            MALTA
-        </h1>
+<div class="projects-grid">
+
+    <!-- CARD 1 - MALTA (NOVA IMAGEM) -->
+    <div class="
+
+        <div class="card-img">
+            <img src="imagem5.jpg.jpeg" alt="Golden Bay">
+        </div>
+
+        <div class="card-content">
+            <h3>Golden Bay </h3>
+            <p>Inventory system</p>
+        </div>
 
     </div>
 
-</section>
-    .hero{
-    height:100vh;
+    <!-- CARD 2 -->
+    <div class"
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+        <div class="card-img">
+            <img src="malta01.jpg.png" alt="Malta Project">
+        </div>
 
-    background:#F5F0E8;
+        <div class="card-content">
+            <h3>🌍 Malta Project</h3>
+            <p>Global business platform</p>
+        </div>
 
-    overflow:hidden;
-}
+    </div>
 
-.hero-text{
-    position:relative;
-
-    width:100%;
-    text-align:center;
-}
-
-/* TEXTO FUNDO */
-
-.background-title{
-
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%, -50%);
-
-    font-size:9rem;
-
-    color:rgba(47, 93, 115, 0.10);
-
-    letter-spacing:10px;
-
-    font-weight:700;
-
-    z-index:1;
-
-    white-space:nowrap;
-}
-
-/* MALTA */
-
-.hero h1{
-
-    position:relative;
-
-    z-index:2;
-
-    font-size:7rem;
-
-    color:#C9A227;
-
-    letter-spacing:8px;
-
-    font-weight:bold;
-
-    text-shadow:0 5px 20px rgba(0,0,0,0.10);
-}
-    @media(max-width:768px){
-
-    .background-title{
-        font-size:4rem;
-    }
-
-    .hero h1{
-        font-size:3.5rem;
-    }
-
-}
-
+</body>
+</html>
