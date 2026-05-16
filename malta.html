@@ -2,70 +2,102 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Malta Mediterranean</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    background:#2F5D73;
+    background:#F5F0E8; /* creme elegante */
+    font-family:'Playfair Display', serif;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     height:100vh;
+    overflow:hidden;
 }
 
 .texto{
     position:relative;
-    width:500px;
-    height:200px;
+    width:900px;
+    height:250px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.titulo1{
-    font-size:90px; /* tamanho da letra */
-    color:white;
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:1;
-    font-weight:bold;
-}
+/* TEXTO FUNDO */
 
 .titulo2{
-    font-size:120px;
-    color:rgba(255,255,255,0.15);
+    font-size:140px;
+
+    color:rgba(47, 93, 115, 0.12);
+
     position:absolute;
-    top:20px;
-    left:40px;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
     z-index:0;
+
+    font-weight:700;
+
+    letter-spacing:8px;
+}
+
+/* TEXTO PRINCIPAL */
+
+.titulo1{
+    font-size:95px;
+
+    color:#C9A227; /* dourado premium */
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    z-index:1;
+
     font-weight:bold;
+
+    letter-spacing:6px;
+
+    text-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
 </style>
 </head>
+
 <body>
 
 <div class="texto">
-    <div class="titulo1">MALTA</div>
-    <div class="titulo2">Mediterranean</div>
+
+    <div class="titulo2">
+        Mediterranean
+    </div>
+
+    <div class="titulo1">
+        MALTA
+    </div>
+
 </div>
 
 </body>
 </html>
-<style>
-
-body{
-    background:#F5F0E8;
-    font-family: 'Playfair Display', serif;
-}
-
-h1{
-    font-size:90px;
-    color:#2F5D73;
-    letter-spacing:4px;
-}
-
-p{
-    color:#555;
-    font-size:20px;
-}
-
-</style>
-
