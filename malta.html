@@ -86,18 +86,91 @@ body{
 </head>
 
 <body>
+<section class="hero">
 
-<div class="texto">
+    <div class="hero-text">
 
-    <div class="titulo2">
-        Mediterranean
+        <h2 class="background-title">
+            Mediterranean
+        </h2>
+
+        <h1>
+            MALTA
+        </h1>
+
     </div>
 
-    <div class="titulo1">
-        MALTA
-    </div>
+</section>
+    .hero{
+    height:100vh;
 
-</div>
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-</body>
-</html>
+    background:#F5F0E8;
+
+    overflow:hidden;
+}
+
+.hero-text{
+    position:relative;
+
+    width:100%;
+    text-align:center;
+}
+
+/* TEXTO FUNDO */
+
+.background-title{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    font-size:9rem;
+
+    color:rgba(47, 93, 115, 0.10);
+
+    letter-spacing:10px;
+
+    font-weight:700;
+
+    z-index:1;
+
+    white-space:nowrap;
+}
+
+/* MALTA */
+
+.hero h1{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:7rem;
+
+    color:#C9A227;
+
+    letter-spacing:8px;
+
+    font-weight:bold;
+
+    text-shadow:0 5px 20px rgba(0,0,0,0.10);
+}
+    @media(max-width:768px){
+
+    .background-title{
+        font-size:4rem;
+    }
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+}
+
