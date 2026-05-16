@@ -1,182 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malta Mediterranean</title>
+    <style>
+        /* Cores e Estilo do Fundo Creme/Bege */
+        body {
+            background-color: #F5F2EB; /* Bege predominante */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #3E3B35;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-<title>Discover Malta</title>
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-<style>
+        header h1 {
+            color: #8C6D46; /* Tom bronze/mediterrâneo */
+            font-size: 2.5rem;
+        }
 
-/* ====== MANTENDO ESTILO BASE ====== */
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#2F5D73; /* mantido como você já tinha */
-    color:white;
-}
+        /* Container dos 3 Cards */
+        .card-container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            width: 100%;
+        }
 
-/* ====== HOME CARDS ====== */
-#home{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    padding:50px;
-    flex-wrap:wrap;
-}
+        /* Estilo dos Cards */
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #E6DFD3;
+            border-radius: 12px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
 
-.card{
-    width:250px;
-    background:rgba(0,0,0,0.25);
-    border-radius:15px;
-    overflow:hidden;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-}
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(140, 109, 70, 0.15);
+        }
 
-.card img{
-    width:100%;
-    height:160px;
-    object-fit:cover;
-}
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            background-color: #EEE;
+        }
 
-.card h3{
-    margin:10px 0;
-}
+        .card h3 {
+            color: #8C6D46;
+            margin: 15px 0 10px 0;
+        }
 
-.card button{
-    margin:15px;
-    padding:10px 15px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    background:white;
-    color:#2F5D73;
-    font-weight:bold;
-}
+        /* Estilo da Janela que Abre (Modal) */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
 
-/* ====== PÁGINAS INTERNAS ====== */
-.page{
-    display:none;
-    padding:40px;
-    max-width:900px;
-    margin:auto;
-}
+        .modal-content {
+            background-color: #FDFBF7; /* Fundo creme claro interno */
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            animation: fadeIn 0.3s;
+        }
 
-.page img{
-    width:100%;
-    border-radius:15px;
-    margin-top:20px;
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.back-btn{
-    padding:10px 15px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    background:white;
-    color:#2F5D73;
-    font-weight:bold;
-    margin-bottom:20px;
-}
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #A0998E;
+        }
 
-</style>
+        .close-btn:hover {
+            color: #3E3B35;
+        }
+
+        .modal-body img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- ================= HOME ================= -->
-<div id="home">
+    <header>
+        <h1>Malta Mediterranean</h1>
+        <p>Explore as maravilhas do coração do Mediterrâneo</p>
+    </header>
 
-    <div class="card">
-        <img src="goldenbay.jpg" alt="Golden Bay">
-        <h3>Golden Bay</h3>
-        <button onclick="openPage('goldenbay')">Explore</button>
+    <!-- CONTAINER DOS CARDS -->
+    <div class="card-container">
+
+        <!-- CARD 1: TURISMO -->
+        <div class="card" onclick="openModal('Turismo em Malta', 'Descubra os melhores pontos turísticos, praias históricas e passeios guiados pelas ilhas maltesas.', 'imagem10.png')">
+            <img src="imagem10.png" alt="Turismo em Malta">
+            <h3>Turismo</h3>
+            <p>Clique para explorar os principais pontos e rotas.</p>
+        </div>
+
+        <!-- CARD 2: GASTRONOMIA E ARQUITETURA -->
+        <div class="card" onclick="openModal('Gastronomia e Arquitetura', 'Experimente o tradicional Pastizzi e encante-se com as construções barrocas e templos milenares de Valletta.', 'malta01.png')">
+            <img src="malta01.png" alt="Gastronomia e Arquitetura">
+            <h3>Gastronomia & Arquitetura</h3>
+            <p>Clique para ver a culinária e as construções históricas.</p>
+        </div>
+
+        <!-- CARD 3: BLUE LAGOON -->
+        <div class="card" onclick="openModal('Blue Lagoon', 'A lagoa de águas mais cristalinas e azuis de toda a Europa, localizada na icônica ilha de Comino.', 'bluelagoon.png')">
+            <img src="bluelagoon.png" alt="Blue Lagoon">
+            <h3>Blue Lagoon</h3>
+            <p>Clique para ver fotos e detalhes sobre a lagoa azul.</p>
+        </div>
+
     </div>
 
-    <div class="card">
-        <img src="valletta.jpg" alt="Valletta">
-        <h3>Valletta</h3>
-        <button onclick="openPage('valletta')">Explore</button>
+    <!-- JANELA FLUTUANTE (MODAL) -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="Imagem do Card">
+                <h2 id="modal-title" style="color: #8C6D46; margin-top:0;"></h2>
+                <p id="modal-text"></p>
+            </div>
+        </div>
     </div>
 
-    <div class="card">
-        <img src="bluelagoon.jpg" alt="Blue Lagoon">
-        <h3>Blue Lagoon</h3>
-        <button onclick="openPage('bluelagoon')">Explore</button>
-    </div>
+    <!-- SCRIPT PARA ABRIR E FECHAR -->
+    <script>
+        function openModal(title, text, imgSrc) {
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-text").innerText = text;
+            document.getElementById("modal-img").src = imgSrc;
+            document.getElementById("myModal").style.display = "flex";
+        }
 
-</div>
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
 
-<!-- ================= PAGE 1 ================= -->
-<div id="goldenbay" class="page">
-
-    <button class="back-btn" onclick="goBack()">← Back</button>
-
-    <h1>Golden Bay</h1>
-
-    <img src="goldenbay.jpg">
-
-    <p>
-        Golden Bay is one of the most beautiful beaches in Malta.
-        Here you can add all your description, history, photos and travel info.
-    </p>
-
-</div>
-
-<!-- ================= PAGE 2 ================= -->
-<div id="valletta" class="page">
-
-    <button class="back-btn" onclick="goBack()">← Back</button>
-
-    <h1>Valletta</h1>
-
-    <img src="valletta.jpg">
-
-    <p>
-        Valletta is the capital of Malta, full of history, architecture and culture.
-    </p>
-
-</div>
-
-<!-- ================= PAGE 3 ================= -->
-<div id="bluelagoon" class="page">
-
-    <button class="back-btn" onclick="goBack()">← Back</button>
-
-    <h1>Blue Lagoon</h1>
-
-    <img src="bluelagoon.jpg">
-
-    <p>
-        Blue Lagoon is famous for its crystal clear water and amazing views.
-    </p>
-
-</div>
-
-<!-- ================= SCRIPT ================= -->
-<script>
-
-function openPage(pageId){
-
-    document.getElementById("home").style.display = "none";
-
-    let pages = document.querySelectorAll(".page");
-    pages.forEach(p => p.style.display = "none");
-
-    document.getElementById(pageId).style.display = "block";
-}
-
-function goBack(){
-
-    let pages = document.querySelectorAll(".page");
-    pages.forEach(p => p.style.display = "none");
-
-    document.getElementById("home").style.display = "flex";
-}
-
-</script>
+        // Fecha se clicar fora da janelinha branca
+        window.onclick = function(event) {
+            let modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
