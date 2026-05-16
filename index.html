@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malta Mediterranean</title>
     <style>
-        /* Cores e Estilo do Fundo Creme/Bege */
+        /* Colors and Background (Cream/Beige) */
         body {
-            background-color: #F5F2EB; /* Bege predominante */
+            background-color: #F5F2EB; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #3E3B35;
             margin: 0;
@@ -23,11 +23,17 @@
         }
 
         header h1 {
-            color: #8C6D46; /* Tom bronze/mediterrâneo */
+            color: #8C6D46; 
             font-size: 2.5rem;
+            margin-bottom: 5px;
         }
 
-        /* Container dos 3 Cards */
+        header p {
+            font-style: italic;
+            color: #706B62;
+        }
+
+        /* Container of the 3 Cards */
         .card-container {
             display: flex;
             gap: 25px;
@@ -37,7 +43,7 @@
             width: 100%;
         }
 
-        /* Estilo dos Cards */
+        /* Card Styling */
         .card {
             background-color: #FFFFFF;
             border: 1px solid #E6DFD3;
@@ -60,15 +66,20 @@
             height: 180px;
             object-fit: cover;
             border-radius: 8px;
-            background-color: #EEE;
         }
 
         .card h3 {
             color: #8C6D46;
             margin: 15px 0 10px 0;
+            font-size: 1.3rem;
         }
 
-        /* Estilo da Janela que Abre (Modal) */
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Modal (Pop-up Window) Styling */
         .modal {
             display: none; 
             position: fixed;
@@ -77,17 +88,19 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             justify-content: center;
             align-items: center;
         }
 
         .modal-content {
-            background-color: #FDFBF7; /* Fundo creme claro interno */
+            background-color: #FDFBF7; 
             padding: 30px;
             border-radius: 16px;
-            max-width: 500px;
+            max-width: 700px; /* Wider for more content */
             width: 90%;
+            max-height: 85vh;
+            overflow-y: auto; /* Scroll bar if content is long */
             position: relative;
             box-shadow: 0 5px 30px rgba(0,0,0,0.3);
             animation: fadeIn 0.3s;
@@ -111,12 +124,38 @@
             color: #3E3B35;
         }
 
-        .modal-body img {
+        /* Inside the Modal Elements */
+        .modal-body h2 {
+            color: #8C6D46;
+            margin-top: 0;
+            border-bottom: 2px solid #E6DFD3;
+            padding-bottom: 10px;
+        }
+
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .modal-gallery img {
             width: 100%;
-            max-height: 250px;
+            height: 150px;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+
+        .modal-text-block {
+            margin-top: 15px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Subtitles inside popup */
+        .modal-body h4 {
+            color: #8C6D46;
+            margin: 15px 0 5px 0;
         }
     </style>
 </head>
@@ -124,63 +163,109 @@
 
     <header>
         <h1>Malta Mediterranean</h1>
-        <p>Explore as maravilhas do coração do Mediterrâneo</p>
+        <p>Explore the wonders of the heart of the Mediterranean</p>
     </header>
 
-    <!-- CONTAINER DOS CARDS -->
+    <!-- CARDS CONTAINER -->
     <div class="card-container">
 
-        <!-- CARD 1: TURISMO -->
-        <div class="card" onclick="openModal('Turismo em Malta', 'Descubra os melhores pontos turísticos, praias históricas e passeios guiados pelas ilhas maltesas.', 'imagem10.png')">
-            <img src="imagem10.png" alt="Turismo em Malta">
-            <h3>Turismo</h3>
-            <p>Clique para explorar os principais pontos e rotas.</p>
+        <!-- CARD 1: TOURISM -->
+        <div class="card" onclick="openCard('tourism')">
+            <img src="imagem10.png" alt="Tourism in Malta">
+            <h3>Tourism</h3>
+            <p>Click to explore top destinations and travel routes.</p>
         </div>
 
-        <!-- CARD 2: GASTRONOMIA E ARQUITETURA -->
-        <div class="card" onclick="openModal('Gastronomia e Arquitetura', 'Experimente o tradicional Pastizzi e encante-se com as construções barrocas e templos milenares de Valletta.', 'malta01.png')">
-            <img src="giorgios.png" alt="Gastronomia e Arquitetura">
+        <!-- CARD 2: GASTRONOMY & ARCHITECTURE -->
+        <div class="card" onclick="openCard('gastronomy')">
+            <img src="malta01.png" alt="Gastronomy and Architecture">
             <h3>Gastronomia & Arquitetura</h3>
-            <p>Clique para ver a culinária e as construções históricas.</p>
+            <p>Click to discover historic buildings and local flavors.</p>
         </div>
 
         <!-- CARD 3: BLUE LAGOON -->
-        <div class="card" onclick="openModal('Blue Lagoon', 'A lagoa de águas mais cristalinas e azuis de toda a Europa, localizada na icônica ilha de Comino.', 'bluelagoon.png')">
-            <img src="bluelagoon2.png" alt="Blue Lagoon">
+        <div class="card" onclick="openCard('bluelagoon')">
+            <img src="bluelagoon.png" alt="Blue Lagoon">
             <h3>Blue Lagoon</h3>
-            <p>Clique para ver fotos e detalhes sobre a lagoa azul.</p>
+            <p>Click to view photos and information about Comino island.</p>
         </div>
 
     </div>
 
-    <!-- JANELA FLUTUANTE (MODAL) -->
-    <div id="myModal" class="modal">
+    <!-- POP-UP DETAILS WINDOW (MODAL) -->
+    <div id="detailModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div class="modal-body">
-                <img id="modal-img" src="" alt="Imagem do Card">
-                <h2 id="modal-title" style="color: #8C6D46; margin-top:0;"></h2>
-                <p id="modal-text"></p>
+            <span class="close-btn" onclick="closeCard()">&times;</span>
+            <div class="modal-body" id="modal-dynamic-content">
+                <!-- Content will be loaded here dynamically by JavaScript -->
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT PARA ABRIR E FECHAR -->
     <script>
-        function openModal(title, text, imgSrc) {
-            document.getElementById("modal-title").innerText = title;
-            document.getElementById("modal-text").innerText = text;
-            document.getElementById("modal-img").src = imgSrc;
-            document.getElementById("myModal").style.display = "flex";
+        // Data structure where you can easily configure texts and pictures
+        const cardData = {
+            tourism: `
+                <h2>Tourism in Malta</h2>
+                <div class="modal-gallery">
+                    <img src="imagem10.png" alt="Tourism 1">
+                    <img src="imagem8.png" alt="Tourism 2">
+                </div>
+                <div class="modal-text-block">
+                    <p>Malta is an archipelago packed with rich history and breathtaking landscapes. From ancient walled cities to open crystal bays, there is something for every traveler.</p>
+                    
+                    <h4>Top Attractions</h4>
+                    <p>Visit the historic city of Valletta, explore the silent streets of Mdina, and take a boat ride to Gozo Island.</p>
+                    
+                    <h4>Travel Information</h4>
+                    <p>The best time to visit is between May and October. Public transportation connects all major historical landmarks effectively.</p>
+                </div>
+            `,
+            gastronomy: `
+                <h2>Gastronomy & Architecture</h2>
+                <div class="modal-gallery">
+                    <img src="malta01.png" alt="Gastronomy">
+                    <img src="imagem5.jpeg" alt="Architecture">
+                </div>
+                <div class="modal-text-block">
+                    <p>Maltese architecture reflects centuries of diverse cultural influences, blending Baroque structures with heavy limestone fortresses built by the Knights of St. John.</p>
+                    
+                    <h4>Traditional Flavors</h4>
+                    <p>Do not miss trying <strong>Pastizzi</strong> (savory pastry filled with ricotta or peas), fresh Mediterranean seafood, and local rabbit stew.</p>
+                    
+                    <h4>Historic Landmarks</h4>
+                    <p>Walk around Valletta to see the traditional colorful wooden balconies and visit the ancient Megalithic Temples, which are older than the pyramids.</p>
+                </div>
+            `,
+            bluelagoon: `
+                <h2>Blue Lagoon</h2>
+                <div class="modal-gallery">
+                    <img src="bluelagoon.png" alt="Blue Lagoon Main">
+                    <img src="bluelagoon3.png" alt="Blue Lagoon View">
+                </div>
+                <div class="modal-text-block">
+                    <p>Located on the small, car-free island of Comino, the Blue Lagoon is a paradise famous for its brilliant cyan waters and white sand bar.</p>
+                    
+                    <h4>Activities</h4>
+                    <p>It is the perfect spot for swimming, snorkeling, and sunbathing. You can also explore the small caves around the cliffs by boat.</p>
+                    
+                    <h4>How to get there</h4>
+                    <p>Regular ferry services operate daily departing from Cirkewwa (Malta) and Marfa, making it an easy and beautiful day trip choice.</p>
+                </div>
+            `
+        };
+
+        function openCard(id) {
+            document.getElementById("modal-dynamic-content").innerHTML = cardData[id];
+            document.getElementById("detailModal").style.display = "flex";
         }
 
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
+        function closeCard() {
+            document.getElementById("detailModal").style.display = "none";
         }
 
-        // Fecha se clicar fora da janelinha branca
         window.onclick = function(event) {
-            let modal = document.getElementById("myModal");
+            let modal = document.getElementById("detailModal");
             if (event.target == modal) {
                 modal.style.display = "none";
             }
