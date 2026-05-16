@@ -1,200 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Malta | Mediterranean Experience</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cards SPA</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
-    background:#f6f0e7;
-    font-family:'Poppins', sans-serif;
-    color:#2b2b2b;
+    margin:0;
+    font-family: Arial;
+    background:#0f1720;
+    color:white;
 }
 
-/* HEADER */
-
-header{
-    width:100%;
-    padding:70px 20px 40px;
-    text-align:center;
-}
-
-header h1{
-    font-size:72px;
-    font-family:'Playfair Display', serif;
-    letter-spacing:3px;
-    color:#8c6a43;
-}
-
-/* CARDS */
-
-.cards-container{
-    width:90%;
-    max-width:1300px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
-    gap:35px;
-    padding-bottom:80px;
+/* HOME (cards) */
+#home{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    padding:50px;
 }
 
 .card{
-    background:white;
-    border-radius:25px;
+    width:250px;
+    background:#1c2a35;
+    border-radius:15px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.10);
-    transition:0.4s ease;
-}
-
-.card:hover{
-    transform:translateY(-10px);
+    text-align:center;
 }
 
 .card img{
     width:100%;
-    height:260px;
+    height:150px;
     object-fit:cover;
 }
 
-.card-content{
-    padding:28px;
+.card button{
+    margin:15px;
+    padding:10px 15px;
+    border:none;
+    cursor:pointer;
+    border-radius:10px;
+    background:#00bcd4;
+    color:black;
+    font-weight:bold;
 }
 
-.card-content h2{
-    font-size:30px;
-    margin-bottom:15px;
-    font-family:'Playfair Display', serif;
-    color:#8c6a43;
+/* PÁGINA INTERNA */
+.page{
+    display:none;
+    padding:40px;
 }
 
-.card-content p{
-    font-size:16px;
-    line-height:1.8;
-    color:#555;
+.page img{
+    width:100%;
+    max-width:600px;
+    border-radius:15px;
 }
 
-/* BUTTON */
-
-.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:12px 28px;
-    background:#8c6a43;
-    color:white;
-    text-decoration:none;
-    border-radius:40px;
-    transition:0.3s ease;
-    font-size:14px;
-    letter-spacing:1px;
+.back{
+    margin-top:20px;
+    padding:10px 15px;
+    border:none;
+    background:white;
+    color:black;
+    border-radius:10px;
+    cursor:pointer;
 }
-
-.btn:hover{
-    background:#6f5334;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-    header h1{
-        font-size:52px;
-    }
-
-    .card-content h2{
-        font-size:24px;
-    }
-
-}
-
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Malta</h1>
-</header>
-
-<section class="cards-container">
-
-    <!-- CARD 1 -->
+<!-- HOME -->
+<div id="home">
 
     <div class="card">
-
-        <img src="goldenbay.jpg" alt="Golden Bay Malta">
-
-        <div class="card-content">
-
-            <h2>Goldenbay</h2>
-
-            <p>
-                Golden Bay is one of Malta’s most iconic beaches,
-                known for its crystal-clear waters, golden sand
-                and breathtaking Mediterranean sunsets.
-            </p>
-
-            <a href="#" class="btn">Explore</a>
-
-        </div>
-
+        <img src="goldenbay.jpg">
+        <h3>Golden Bay</h3>
+        <button onclick="openPage('page1')">Explore</button>
     </div>
-
-    <!-- CARD 2 -->
 
     <div class="card">
-
-        <img src="bluelagoon2.png" alt="Tourism and Leisure">
-
-        <div class="card-content">
-
-            <h2>Turismo e Lazer</h2>
-
-            <p>
-                Malta offers luxury resorts, boat tours,
-                nightlife, diving experiences and unforgettable
-                cultural adventures across the island.
-            </p>
-
-            <a href="#" class="btn">Discover</a>
-
-        </div>
-
+        <img src="imagem2.jpg">
+        <h3>Valletta</h3>
+        <button onclick="openPage('page2')">Explore</button>
     </div>
-
-    <!-- CARD 3 -->
 
     <div class="card">
-
-        <img src="malta01.jpg.png" alt="Gastronomy and Architecture">
-
-        <div class="card-content">
-
-            <h2>Gastronomia e Arquitetura</h2>
-
-            <p>
-                Discover Mediterranean cuisine, elegant cafés,
-                historic streets and stunning architecture
-                inspired by centuries of cultural influence.
-            </p>
-
-            <a href="#" class="btn">View More</a>
-
-        </div>
-
+        <img src="imagem3.jpg">
+        <h3>Blue Lagoon</h3>
+        <button onclick="openPage('page3')">Explore</button>
     </div>
 
-</section>
+</div>
+
+<!-- PÁGINA 1 -->
+<div id="page1" class="page">
+    <img src="goldenbay.jpg">
+    <h1>Golden Bay</h1>
+    <p>Informações completas sobre Golden Bay aqui...</p>
+    <button class="back" onclick="goBack()">Voltar</button>
+</div>
+
+<!-- PÁGINA 2 -->
+<div id="page2" class="page">
+    <img src="imagem2.jpg">
+    <h1>Valletta</h1>
+    <p>Informações completas sobre Valletta aqui...</p>
+    <button class="back" onclick="goBack()">Voltar</button>
+</div>
+
+<!-- PÁGINA 3 -->
+<div id="page3" class="page">
+    <img src="imagem3.jpg">
+    <h1>Blue Lagoon</h1>
+    <p>Informações completas sobre Blue Lagoon aqui...</p>
+    <button class="back" onclick="goBack()">Voltar</button>
+</div>
+
+<script>
+function openPage(pageId){
+    document.getElementById("home").style.display = "none";
+
+    let pages = document.querySelectorAll(".page");
+    pages.forEach(p => p.style.display = "none");
+
+    document.getElementById(pageId).style.display = "block";
+}
+
+function goBack(){
+    let pages = document.querySelectorAll(".page");
+    pages.forEach(p => p.style.display = "none");
+
+    document.getElementById("home").style.display = "flex";
+}
+</script>
 
 </body>
 </html>
