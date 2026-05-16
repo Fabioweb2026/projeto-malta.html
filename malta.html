@@ -1,95 +1,56 @@
 <!DOCTYPE html>
-<html lang="en"
-
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malta Mediterranean</title>
+    <style>
+        /* Reseta as margens e força a página a ocupar a tela inteira */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<title>Malta Mediterranean</title>
+        body {
+            /* Cor de fundo em tom de creme */
+            background-color: #FFFDD0; 
+            
+            /* Altura total da tela visível */
+            height: 100vh; 
+            
+            /* Centraliza os itens no meio da página */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* Define a fonte padrão e evita barras de rolagem desnecessárias */
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+        .titulo-central {
+            /* Dezoito por cento da largura da tela (proporcional) */
+            font-size: 8vw; 
+            
+            /* Cor do texto, opcionalmente um cinza bem escuro */
+            color: #333333; 
+            
+            /* Centraliza o texto caso o título quebre em duas linhas */
+            text-align: center; 
+            
+            /* Efeito opcional de sombra para destacar o texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
 
-<style>
+    <h1 class="titulo-central">Malta Mediterranean</h1>
 
-*{
-body{
-    background:#0a0a0a;
-    color:white;
-    font-family:'Poppins',sans-serif;
-    overflow-x:hidden;
-}
+</body>
+</html>
 
-/* HERO */
-
-.hero{
-    height:100vh;
-    background:
-    url('maltahero.jpg') center/cover no-repeat;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:0 8%;
-}
-
-.hero-content{
-    max-width:850px;
-}
-
-.hero h1{
-    font-size:90px;
-    font-family:'Playfair Display',serif;
-    line-height:1;
-    margin-bottom:25px;
-}
-
-.hero p{
-    color:#ddd;
-    font-size:18px;
-    line-height:1.8;
-    margin-bottom:40px;
-}
-
-.hero-btn{
-    display:inline-block;
-    padding:16px 40px;
-    background:#d6b98c;
-    color:black;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:600;
-    transition:0.4s;
-}
-
-.hero-btn:hover{
-    background:white;
-    transform:translateY(-4px);
-}
-
-/* SECTION */
-
-.section{
-    padding:120px 8%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:70px;
-}
-
-.section-title h2{
-    font-size:52px;
-    font-family:'Playfair Display',serif;
-    margin-bottom:20px;
-}
-
-.section-title p{
-    color:#aaa;
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
-}
 
 /* CARDS */
 
