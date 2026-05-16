@@ -14,7 +14,6 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
 }
 
 body{
@@ -38,7 +37,7 @@ header h1{
     color:#8c6a43;
 }
 
-/* MAIN CARDS */
+/* CARDS */
 
 .cards-container{
     width:90%;
@@ -104,51 +103,6 @@ header h1{
     background:#6f5334;
 }
 
-/* EXPLORE SECTIONS */
-
-.explore-section{
-    width:90%;
-    max-width:1200px;
-    margin:80px auto;
-    background:white;
-    border-radius:30px;
-    overflow:hidden;
-    box-shadow:0 10px 35px rgba(0,0,0,0.08);
-}
-
-.explore-image img{
-    width:100%;
-    height:450px;
-    object-fit:cover;
-}
-
-.explore-content{
-    padding:50px;
-}
-
-.explore-content h2{
-    font-size:48px;
-    margin-bottom:25px;
-    color:#8c6a43;
-    font-family:'Playfair Display', serif;
-}
-
-.explore-content p{
-    font-size:18px;
-    line-height:2;
-    color:#555;
-    margin-bottom:20px;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:50px 20px;
-    color:#777;
-    font-size:14px;
-}
-
 /* RESPONSIVE */
 
 @media(max-width:768px){
@@ -161,18 +115,6 @@ footer{
         font-size:24px;
     }
 
-    .explore-content{
-        padding:30px;
-    }
-
-    .explore-content h2{
-        font-size:34px;
-    }
-
-    .explore-image img{
-        height:300px;
-    }
-
 }
 
 </style>
@@ -183,8 +125,6 @@ footer{
 <header>
     <h1>Malta</h1>
 </header>
-
-<!-- MAIN CARDS -->
 
 <section class="cards-container">
 
@@ -199,11 +139,12 @@ footer{
             <h2>Goldenbay</h2>
 
             <p>
-                Crystal waters, golden sand and unforgettable
-                Mediterranean sunsets.
+                Golden Bay is one of Malta’s most iconic beaches,
+                known for its crystal-clear waters, golden sand
+                and breathtaking Mediterranean sunsets.
             </p>
 
-            <a href="#goldenbay" class="btn">Explore</a>
+            <a href="#" class="btn">Explore</a>
 
         </div>
 
@@ -220,11 +161,12 @@ footer{
             <h2>Turismo e Lazer</h2>
 
             <p>
-                Luxury resorts, adventures, nightlife
-                and Mediterranean experiences.
+                Malta offers luxury resorts, boat tours,
+                nightlife, diving experiences and unforgettable
+                cultural adventures across the island.
             </p>
 
-            <a href="#turismo" class="btn">Explore</a>
+            <a href="#" class="btn">Discover</a>
 
         </div>
 
@@ -241,99 +183,18 @@ footer{
             <h2>Gastronomia e Arquitetura</h2>
 
             <p>
-                Elegant cafés, historic architecture
-                and Mediterranean cuisine.
+                Discover Mediterranean cuisine, elegant cafés,
+                historic streets and stunning architecture
+                inspired by centuries of cultural influence.
             </p>
 
-            <a href="#gastronomia" class="btn">Explore</a>
+            <a href="#" class="btn">View More</a>
 
         </div>
 
     </div>
 
 </section>
-
-<!-- SECTION 1 -->
-
-<section class="explore-section" id="goldenbay">
-
-    <div class="explore-image">
-        <img src="goldenbay.jpg" alt="Golden Bay">
-    </div>
-
-    <div class="explore-content">
-
-        <h2>Golden Bay</h2>
-
-        <p>
-            Golden Bay is one of Malta’s most famous beaches,
-            surrounded by dramatic cliffs and crystal-clear waters.
-        </p>
-
-        <p>
-            The beach is perfect for relaxing sunsets,
-            luxury resorts and unforgettable Mediterranean landscapes.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- SECTION 2 -->
-
-<section class="explore-section" id="turismo">
-
-    <div class="explore-image">
-        <img src="bluelagoon2.png" alt="Blue Lagoon">
-    </div>
-
-    <div class="explore-content">
-
-        <h2>Turismo e Lazer</h2>
-
-        <p>
-            Malta offers boat tours, diving adventures,
-            nightlife experiences and luxury coastal destinations.
-        </p>
-
-        <p>
-            Visitors enjoy Mediterranean culture,
-            turquoise waters and unforgettable island experiences.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- SECTION 3 -->
-
-<section class="explore-section" id="gastronomia">
-
-    <div class="explore-image">
-        <img src="malta01.jpg.png" alt="Malta Architecture">
-    </div>
-
-    <div class="explore-content">
-
-        <h2>Gastronomia e Arquitetura</h2>
-
-        <p>
-            Malta combines rich Mediterranean flavors,
-            elegant cafés and timeless European architecture.
-        </p>
-
-        <p>
-            Historic streets, luxury restaurants and
-            cultural heritage create a unique atmosphere.
-        </p>
-
-    </div>
-
-</section>
-
-<footer>
-    Malta Mediterranean Experience © 2026
-</footer>
 
 </body>
 </html>
