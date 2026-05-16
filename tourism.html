@@ -26,7 +26,7 @@
         h1 { border-bottom: 2px solid #E6DFD3; padding-bottom: 10px; margin-top: 0; }
         p { line-height: 1.7; font-size: 1.05rem; color: #4A463F; }
         
-        /* HEROBANNER FOR MAIN DESTINATION */
+        /* HEROBANNER FOR MAIN HARBOR VIEW */
         .tourism-banner {
             background-color: #FDFBF7;
             border: 2px solid #8C6D46;
@@ -55,7 +55,7 @@
             padding-top: 30px;
         }
 
-        /* 3-Card Symmetrical Grid for Travel Destinations */
+        /* Fixed Symmetrical Grid for Travel Destinations */
         .destinations-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -63,7 +63,6 @@
             margin-top: 20px;
         }
         
-        /* Destinos secundários ocupam metade, o último pode se ajustar */
         .dest-card {
             background-color: #FDFBF7;
             border: 1px solid #E6DFD3;
@@ -75,7 +74,7 @@
         }
         .dest-card img { 
             width: 100%; 
-            height: 200px; 
+            height: 220px; 
             object-fit: cover; 
         }
         .dest-card-body {
@@ -95,20 +94,11 @@
             line-height: 1.4;
         }
         
-        .wide-card {
-            grid-column: span 2;
-            display: flex;
-            flex-direction: row;
-        }
-        .wide-card img {
-            width: 50%;
-            height: 220px;
-        }
-        .wide-card .dest-card-body {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        /* Mobile adjustment to ensure no duplicates or overlapping style */
+        @media (max-width: 650px) {
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .back-btn { display: inline-block; margin-top: 45px; padding: 12px 24px; background-color: #8C6D46; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
@@ -120,16 +110,16 @@
         <h1>Maltese Tourism</h1>
         <p>Malta is a sun-drenched Mediterranean archipelago packed with breathtaking historical heritage, crystal ocean vistas, and dramatic coastal cliffs. It offers an incredible fusion of summer relaxation and ancient time travel.</p>
         
-        <!-- 🌟 MAIN DESTINATION HIGHLIGHT: VALLETTA -->
+        <!-- 🌟 CORREÇÃO: HERO BANNER PARA ST. JULIAN'S / GŻIRA -->
         <div class="tourism-banner">
-            <img src="imagem10.png" alt="Valletta Capital City">
+            <img src="imagem10.png" alt="St. Julian's and Gżira Harbors">
             <div class="tourism-banner-content">
-                <h2>Valletta: The Fortress Capital</h2>
-                <p>Built entirely by the Knights of St. John in the 16th century, Valletta stands proud as a UNESCO World Heritage site. Walking through its steep streets rewards travelers with dramatic overlooking views of the Grand Harbour, military fortresses, and beautiful limestone balconies.</p>
+                <h2>St. Julian's & Gżira: The Vibrant Harbors</h2>
+                <p>Renowned for their lively promenade walkways, traditional boats, and modern yachts, the coastal areas of St. Julian's and Gżira represent the energetic pulse of Malta. It is the absolute premier destination for stunning night views, exceptional harborside dining, and scenic seaside walks.</p>
             </div>
         </div>
 
-        <!-- 🗺️ MORE DESTINATIONS SECTION -->
+        <!-- 🗺️ SEÇÃO DE DESTINOS CORRIGIDA (SEM DUPLICADOS) -->
         <div class="section-block">
             <h3>Top Destinations & Hidden Gems</h3>
             <p>From silent medieval walking alleys to sandy coastal getaways, discover the unique locations that make Malta unforgettable.</p>
@@ -154,12 +144,21 @@
                     </div>
                 </div>
 
-                <!-- CARD 3: GOLDEN BAY (goldenbay.jpg) - EXPANDED HORIZONTAL -->
-                <div class="dest-card wide-card">
+                <!-- CARD 3: GOLDEN BAY (goldenbay.jpg) -->
+                <div class="dest-card">
                     <img src="goldenbay.jpg" alt="Golden Bay Beach">
                     <div class="dest-card-body">
                         <h4>Golden Bay Beach</h4>
-                        <p>One of Malta's most popular sandy beach bays. An ideal destination for sunbathing, clear shallow water swimming, and dynamic ocean activities along the northwest coast line.</p>
+                        <p>One of Malta's most popular sandy beach bays. An ideal destination for sunbathing, clear shallow water swimming, and dynamic ocean activities along the northwest coastline.</p>
+                    </div>
+                </div>
+
+                <!-- CARD 4: SEGUNDA IMAGEM DE GŻIRA / PROMENADE (gziira.png ou gzira2.png) -->
+                <div class="dest-card">
+                    <img src="gziira.png" alt="Gżira Promenade Walkway">
+                    <div class="dest-card-body">
+                        <h4>Gżira Promenade</h4>
+                        <p>Walk along the extensive coastal front line connecting Sliema to Gżira, boasting beautiful views of Manoel Island and the historic Valletta skyline architecture across the water.</p>
                     </div>
                 </div>
 
