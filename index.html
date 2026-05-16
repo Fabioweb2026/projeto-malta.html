@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malta Mediterranean</title>
+    <style>
+        /* Reseta as margens e força a página a ocupar a tela inteira */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            /* Cor de fundo em tom de creme */
+            background-color: #FFFDD0; 
+            
+            /* Altura total da tela visível */
+            height: 100vh; 
+            
+            /* Centraliza os itens no meio da página */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* Define a fonte padrão e evita barras de rolagem desnecessárias */
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .titulo-central {
+            /* Dezoito por cento da largura da tela (proporcional) */
+            font-size: 8vw; 
+            
+            /* Cor do texto, opcionalmente um cinza bem escuro */
+            color: #333333; 
+            
+            /* Centraliza o texto caso o título quebre em duas linhas */
+            text-align: center; 
+            
+            /* Efeito opcional de sombra para destacar o texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="titulo-central">Malta Mediterranean</h1>
+
+</body>
+</html>
+
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+    border-radius:28px;
+    height:500px;
+    background:#111;
+    transition:0.5s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s;
+}
+    
+.card-content{
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:2;
+    padding:35px;
+}
+
+.card-content h3{
+    font-size:36px;
+    font-family:'Playfair Display',serif;
+    margin-bottom:12px;
+}
+
+.card-content p{
+    color:#ddd;
+    line-height:1.7;
+    font-size:15px;
+}
+/* FOOTER */
+
+footer{
+    padding:60px 8%;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+footer h2{
+    font-family:'Playfair Display',serif;
+    margin-bottom:15px;
+    font-size:30px;
+}
+
+footer p{
+    color:#888;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero h1{
+    font-size:58px;
+}
+
+@media(max-width:600px){
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:15px;
+}
+
+.section-title h2{
+    font-size:38px;
+}
+
+</style>
+</head
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Malta<br>
+            Mediterranean
+        </h1>
+
+        <p>
+            
+        </p
+
+    </div>
+    
+<div class="cards">
+
+    <!-- CARD 1 -->
+
+    <div class="card">
+
+        <img src="imagem10.jpg.png" alt="Malta">
+
+        <div class="card-content">
+
+            <h3>Valletta</h3>
+
+            <p>
+                Timeless Mediterranean architecture,
+                luxury cafés and historic beauty.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="card">
+
+        <img src="imagem5.jpg.jpeg" alt="Golden Bay">
+
+        <div class="card-content">
+
+            <h3>Golden Bay</h3>
+
+            <p>
+                Crystal-clear waters, golden sand
+                and unforgettable sunset views.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="card">
+
+        <img src="bluelagoon2.png" alt="Blue Lagoon">
+
+        <div class="card-content">
+
+            <h3>Blue Lagoon</h3>
+
+            <p>
+                Stunning turquoise sea and cinematic
+                Mediterranean scenery.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+    
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>Malta Mediterranean</h2>
+
+    <p>
+        Luxury Mediterranean Experience
+    </p>
+
+</footer>
+
+</body>
+</html>
