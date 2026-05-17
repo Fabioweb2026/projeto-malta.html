@@ -1,212 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tourism in Malta</title>
+    <title>Exploring Comino Island</title>
     <style>
-        body { 
-            background-color: #F5F2EB; 
-            font-family: 'Segoe UI', sans-serif; 
-            color: #3E3B35; 
-            padding: 40px 20px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-        }
-        .container { 
-            max-width: 850px; 
-            background: white; 
-            padding: 40px; 
-            border-radius: 16px; 
-            border: 1px solid #E6DFD3; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
-        }
-        h1, h2, h3 { color: #8C6D46; }
-        h1 { border-bottom: 2px solid #E6DFD3; padding-bottom: 10px; margin-top: 0; }
-        p { line-height: 1.7; font-size: 1.05rem; color: #4A463F; }
-        
-        /* HEROBANNER FOR MAIN HARBOR VIEW */
-        .tourism-banner {
-            background-color: #FDFBF7;
-            border: 2px solid #8C6D46;
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 35px;
-            box-shadow: 0 6px 20px rgba(140, 109, 70, 0.15);
-        }
-        .tourism-banner img { 
-            width: 100%; 
-            height: 380px; 
-            object-fit: cover; 
-        }
-        .tourism-banner-content { 
-            padding: 25px; 
-        }
-        .tourism-banner-content h2 { 
-            margin: 0 0 10px 0; 
-            color: #8C6D46; 
-            font-size: 1.9rem; 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
-        .section-block {
-            margin-top: 35px;
-            border-top: 2px dashed #E6DFD3;
-            padding-top: 30px;
+        body {
+            background-color: #ffffff;
+            padding: 40px 20px;
         }
 
-        /* 🏛️ VALLETTA EXCLUSIVE FEATURE BOX */
-        .valletta-box {
-            background-color: #FDFBF7;
-            border: 2px solid #8C6D46;
-            border-radius: 14px;
-            padding: 25px;
-            margin-top: 20px;
-            box-shadow: 0 6px 20px rgba(140, 109, 70, 0.08);
-        }
-        .valletta-brand-row {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        .valletta-img {
-            width: 45%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 1px solid #E6DFD3;
-        }
-        .valletta-info-text {
-            width: 55%;
-        }
-        .valletta-info-text h2 { margin: 0 0 10px 0; color: #8C6D46; font-size: 1.8rem; }
-        .address-info { 
-            font-size: 0.95rem; 
-            color: #706B62; 
-            background: #F5F2EB;
-            padding: 12px;
-            border-radius: 6px;
-            line-height: 1.5;
-            margin-top: 15px;
+        .secao-titulo {
+            font-size: 1.8rem;
+            color: #a47c48;
+            font-weight: bold;
+            max-width: 1100px;
+            margin: 0 auto 25px auto;
         }
 
-        /* Fixed Symmetrical Grid for Travel Destinations */
-        .destinations-grid {
+        .container-cards {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
-        .dest-card {
-            background-color: #FDFBF7;
-            border: 1px solid #E6DFD3;
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
         }
-        .dest-card img { 
-            width: 100%; 
-            height: 220px; 
-            object-fit: cover; 
+
+        /* Mantém a proporção exata e o visual igual para a imagem e o vídeo */
+        .card img, .card video {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
         }
-        .dest-card-body {
-            padding: 15px;
+
+        .card-conteudo {
+            padding: 25px;
             text-align: center;
             flex-grow: 1;
         }
-        .dest-card-body h4 {
-            margin: 0 0 8px 0;
-            color: #8C6D46;
-            font-size: 1.15rem;
-        }
-        .dest-card-body p { 
-            font-size: 0.9rem; 
-            margin: 0; 
-            color: #666; 
-            line-height: 1.4;
-        }
-        
-        @media (max-width: 650px) {
-            .destinations-grid { grid-template-columns: 1fr; }
-            .valletta-brand-row { flex-direction: column; }
-            .valletta-img, .valletta-info-text { width: 100%; }
+
+        .card-conteudo h3 {
+            color: #a47c48;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
 
-        .back-btn { display: inline-block; margin-top: 45px; padding: 12px 24px; background-color: #8C6D46; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
-        .back-btn:hover { background-color: #705431; }
+        .card-conteudo p {
+            color: #666666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Maltese Tourism</h1>
-        <p>Malta is a sun-drenched Mediterranean archipelago packed with breathtaking historical heritage, crystal ocean vistas, and dramatic coastal cliffs. It offers an incredible fusion of summer relaxation and ancient time travel.</p>
+
+    <h2 class="secao-titulo">Exploring Comino Island</h2>
+
+    <div class="container-cards">
         
-        <!-- 🌟 HERO BANNER: ST. JULIAN'S / GŻIRA -->
-        <div class="tourism-banner">
-            <img src="st-julians.png" alt="St. Julian's and Gżira Harbors">
-            <div class="tourism-banner-content">
-                <h2>St. Julian's & Gżira: The Vibrant Harbors</h2>
-                <p>Renowned for their lively promenade walkways, traditional boats, and modern yachts, the coastal areas of St. Julian's and Gżira represent the energetic pulse of Malta. It is the absolute premier destination for stunning night views, exceptional harborside dining, and scenic seaside walks.</p>
+        <!-- CARD 1: Com a imagem bluelagoon3.jpeg -->
+        <div class="card">
+            <img src="bluelagoon3.jpeg" alt="Hidden Coastal Caves">
+            <div class="card-conteudo">
+                <h3>Hidden Coastal Caves</h3>
+                <p>Rent kayak gear or take boat excursions to explore deep natural arches and secret crystalline swimming coves nearby.</p>
             </div>
         </div>
 
-        <!-- 🌟 NOVA SEÇÃO DESTAQUE: VALLETTA (valeta.png) -->
-        <div class="section-block">
-            <div class="valletta-box">
-                <div class="valletta-brand-row">
-                    <img src="valeta.png" alt="Valletta Fortress Capital" class="valletta-img">
-                    <div class="valletta-info-text">
-                        <h2>Valletta: Cultural Fortress Capital</h2>
-                        <p>Established by the Knights of St. John in the 16th century, Valletta is a majestic UNESCO World Heritage capital packed with Baroque masterworks, iconic colorful balconies, and immense stone fortifications surrounded entirely by the sea.</p>
-                        <div class="address-info">
-                            📍 <strong>Tourist Office Info:</strong> Valletta City Gate Area, Republic Street, Valletta, Malta<br>
-                            📌 <strong>Reference Point:</strong> Right inside the main limestone City Gate entrance, situated adjacent to the magnificent Triton Fountain plaza.
-                        </div>
-                    </div>
-                </div>
+        <!-- CARD 2: Com o vídeo bluelagoon1.mp4 -->
+        <div class="card">
+            <!-- Os atributos adicionados garantem que o vídeo toque sozinho em loop e sem som -->
+            <video src="bluelagoon1.mp4" autoplay loop muted playsinline></video>
+            <div class="card-conteudo">
+                <h3>Travel & Ferry Information</h3>
+                <p>Daily standard shuttle boats depart from Marfa or Cirkewwa harbors. We recommend early morning visits to avoid standard tour crowding.</p>
             </div>
         </div>
 
-        <!-- 🗺️ SEÇÃO DOS OUTROS DESTINOS -->
-        <div class="section-block">
-            <h3>Top Destinations & Hidden Gems</h3>
-            <p>From silent medieval walking alleys to sandy coastal getaways, discover the unique locations that make Malta unforgettable.</p>
-            
-            <div class="destinations-grid">
-                
-                <!-- CARD 1: MDINA (imagem8.png) -->
-                <div class="dest-card">
-                    <img src="imagem8.png" alt="Mdina Walled City">
-                    <div class="dest-card-body">
-                        <h4>Mdina: The Silent City</h4>
-                        <p>A beautiful medieval walled settlement perched on a hill. Explore peaceful narrow stone alleys, golden palaces, and centuries of preserved aristocratic charm.</p>
-                    </div>
-                </div>
-
-                <!-- CARD 2: RIVIERA BAY / COAST (goldenbay.jpg) -->
-                <div class="dest-card">
-                    <img src="goldenbay.jpg" alt="Riviera Beach Bay">
-                    <div class="dest-card-body">
-                        <h4>Riviera Bay Beach</h4>
-                        <p>One of Malta's most popular panoramic beach bays. An ideal destination for sunbathing, clear shallow water swimming, and viewing scenic coastal cliffs at sunset.</p>
-                    </div>
-                </div>
-
-                <!-- CARD 3: ST. JULIANS PROMENADE (st-julians1.png) -->
-                <div class="dest-card">
-                    <img src="st-julians1.png" alt="St. Julian's Promenade">
-                    <div class="dest-card-body">
-                        <h4>St. Julian's Promenade</h4>
-                        <p>Walk along the extensive coastal front line, boasting beautiful views of traditional colored boats and the vibrant urban skyline architecture across the water.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <a href="index.html" class="back-btn">⬅ Back to Home</a>
     </div>
+
 </body>
 </html>
+
