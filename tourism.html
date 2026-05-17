@@ -47,44 +47,44 @@
         .back-link a:hover {
             color: #3E3B35;
         }
-        .content-container {
+        .card-container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .card {
             background-color: #FFFFFF;
             border: 1px solid #E6DFD3;
             border-radius: 12px;
-            max-width: 1200px;
-            width: 100%;
-            padding: 30px;
-            box-shadow: 0 4 px 15px rgba(0, 0, 0, 0.05);
-            box-sizing: border-box;
+            width: 320px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .section-title {
-            color: #8C6D46;
-            border-bottom: 2px solid #E6DFD3;
-            padding-bottom: 10px;
-            margin-top: 30px;
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(140, 109, 70, 0.2);
         }
-        .destination-grid {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+        .card img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 8px; 
         }
-        .dest-card {
-            background-color: #FBFBFA;
-            border: 1px solid #E6DFD3;
-            border-radius: 8px;
-            flex: 1 1 300px;
-            padding: 15px;
+        .card h3 { 
+            color: #8C6D46; 
+            margin: 15px 0 10px 0; 
+            font-size: 1.4rem; 
         }
-        .dest-card h4 {
-            color: #8C6D46;
-            margin-top: 0;
-            font-size: 1.2rem;
-        }
-        .dest-card p {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.5;
+        .card p { 
+            font-size: 0.95rem; 
+            color: #666; 
+            line-height: 1.4; 
         }
     </style>
 </head>
@@ -99,33 +99,26 @@
         <p>Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
     </header>
 
-    <div class="content-container">
-        <h2 class="section-title">Top Historical Cities</h2>
-        <div class="destination-grid">
-            <div class="dest-card">
-                <h4>Valletta</h4>
-                <p>The majestic capital city, a UNESCO World Heritage site packed with Baroque architecture, historic forts, and deep harbors.</p>
-            </div>
-            <div class="dest-card">
-                <h4>Mdina</h4>
-                <p>Known as the "Silent City," this ancient medieval walled capital offers peaceful narrow streets and breathtaking island views.</p>
-            </div>
-            <div class="dest-card">
-                <h4>The Three Cities</h4>
-                <p>Vittoriosa, Senglea, and Cospicua offer a genuine slice of Maltese history and gorgeous waterfront marinas.</p>
-            </div>
+    <div class="card-container">
+        <!-- CARD 1: Valletta -->
+        <div class="card">
+            <img src="valeta.png" alt="Valletta">
+            <h3>Valletta</h3>
+            <p>The majestic capital city, a UNESCO World Heritage site packed with Baroque architecture, historic forts, and deep harbors.</p>
         </div>
 
-        <h2 class="section-title">Scenic Routes & Trails</h2>
-        <div class="destination-grid">
-            <div class="dest-card">
-                <h4>Dingli Cliffs</h4>
-                <p>The highest point of Malta, offering dramatic coastal views and unforgettable Mediterranean sunset vantage points.</p>
-            </div>
-            <div class="dest-card">
-                <h4>Gozo Coastal Walks</h4>
-                <p>Explore hidden paths, salt pans, and rugged cliffside views around Malta's quieter sister island.</p>
-            </div>
+        <!-- CARD 2: St. Julian's View -->
+        <div class="card">
+            <img src="st-julians1.png" alt="St. Julian's Bay">
+            <h3>St. Julian's Bay</h3>
+            <p>Discover historic coastal routes, vibrant seaside promenades, and beautiful views of the Mediterranean coastline.</p>
+        </div>
+
+        <!-- CARD 3: St. Julian's Exploration -->
+        <div class="card">
+            <img src="st-julians.png" alt="St. Julian's Scenery">
+            <h3>Coastal Paths</h3>
+            <p>Explore hidden viewpoint routes and ancient paths tucked away in the lively districts of the islands.</p>
         </div>
     </div>
 
